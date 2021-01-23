@@ -1,8 +1,8 @@
 {
 	"background_color": "#ffffff",
 	"theme_color": "#333333",
-	"name": "TODO",
-	"short_name": "TODO",
+	"name": "Ganga View",
+	"short_name": "GangaView",
 	"display": "minimal-ui",
 	"start_url": "/",
 	"icons": [

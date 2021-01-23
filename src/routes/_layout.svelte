@@ -5,7 +5,9 @@
 </script>
 
 <style>
-
+	main {
+		width: 100%;
+	}
 </style>
 
 <Nav {segment} />

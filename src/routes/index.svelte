@@ -4,12 +4,11 @@
 
 <style>
 	.hero-section {
-		width: 100vw;
+		width: 100%;
 		height: 100vh;
 		flex-flow: column wrap;
 		justify-items: flex-end;
 		position: relative;
-		overflow: hidden;
 		background-image: url("../images/sunset.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -22,7 +21,6 @@
 
 	.info {
 		width: 100%;
-		margin: 2vh;
 		color: white;
 		justify-self: flex-end;
 		text-shadow: 0 0 5px black, 0 0 3px black;
