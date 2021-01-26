@@ -29,10 +29,11 @@
 
 	.info {
 		position: absolute;
-		bottom: 10px;
+		bottom: 10vh;
 		color: white;
 		justify-self: flex-end;
 		text-shadow: 0 0 5px black, 0 0 3px black;
+		font-size: large;
 	}
 
 	.btn-book {
@@ -59,7 +60,8 @@
 		<div>
 			Rooms Starting @ Rs. 699 <br />Open 24 X 7
 		</div>
-		<div class="btn-book"><a href="https://www.booking.com/hotel/in/shri-ganga-view-guest-house.en-gb.html">Book
+		<div class="btn-book"><a href="https://www.booking.com/hotel/in/shri-ganga-view-guest-house.en-gb.html"
+				target="_blank">Book
 				Now</a></div>
 	</div>
 	<div class="info">Scroll Down To See More</div>
