@@ -18,7 +18,7 @@
     .menu {
         z-index: 1;
         position: fixed;
-        top: -100%;
+        top: -110%;
         height: 100vh;
         width: 100%;
         transition: top 0.4s ease-in-out;
