@@ -7,20 +7,22 @@
 <style>
     h1 {
         margin: 0;
+        width: 100%;
     }
 
     a {
         text-decoration: none;
+        width: 100%;
     }
 
     .menu {
         z-index: 1;
-        position: absolute;
+        position: fixed;
         top: -100%;
-        height: 100%;
+        height: 100vh;
         width: 100%;
         transition: top 0.4s ease-in-out;
-        background: #adeaff46;
+        background: #adeaffde;
         flex-direction: column;
     }
 
@@ -55,6 +57,7 @@
         .menu {
             backdrop-filter: blur(4px);
             -webkit-backdrop-filter: blur(4px);
+            background: #adeaff5d;
         }
 
     }
