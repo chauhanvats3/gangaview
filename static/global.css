@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
 
+
+html {
+	scroll-behavior: smooth;
+  }
+
+  
 body {
 	margin: 0;
 	font-family: 'Quicksand',Ubuntu,Helvetica Neue,Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,  Cantarell, Fira Sans, Droid Sans,  sans-serif;

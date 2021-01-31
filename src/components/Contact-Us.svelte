@@ -31,6 +31,6 @@
 
 <IntersectionObserver {element} bind:intersecting threshold=0.9 on:observe={inView}>
 
-    <div class="contact-us" bind:this={element}>
+    <div class="contact-us" id="contact-us" bind:this={element}>
     </div>
 </IntersectionObserver>

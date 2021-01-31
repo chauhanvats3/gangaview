@@ -69,7 +69,7 @@
             <h1><a href="#rooms">Our Rooms</a></h1>
         </div>
         <div class="item">
-            <h1><a href="#testimonials">Testimonials</a></h1>
+            <h1><a href="#reviews">Testimonials</a></h1>
         </div>
         <div class="item">
             <h1><a href="#about-us">About Us</a></h1>

@@ -27,7 +27,7 @@
         z-index: 2;
         width: 100%;
         height: 50px;
-        background: rgba(255, 255, 255, 0.158);
+        background: rgba(255, 255, 255, 0);
         justify-content: space-between;
     }
 
@@ -43,12 +43,12 @@
 
 
 
-    @supports (backdrop-filter: bluur()) or (-webkit-backdrop-filter: blur()) {
+    @supports (backdrop-filter: blur()) or (-webkit-backdrop-filter: blur()) {
 
-        .navbar {
+        /*   .navbar {
             backdrop-filter: blur(4px);
             -webkit-backdrop-filter: blur(4px);
         }
-
+ */
     }
 </style>

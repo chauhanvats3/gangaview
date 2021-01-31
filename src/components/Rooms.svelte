@@ -60,7 +60,7 @@
 </style>
 <IntersectionObserver {element} bind:intersecting threshold=0.9 on:observe={inView}>
 
-    <div class="rooms" bind:this={element}>
+    <div class="rooms" id="rooms" bind:this={element}>
 
         <div class="slider">
             <img src="images/room1.jpg" alt="">
