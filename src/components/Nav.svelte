@@ -11,7 +11,7 @@
 </script>
 
 <div class="navbar">
-    <div class="logo">Ganga View</div>
+    <div id="logo" class="logo">Ganga View</div>
     <div class="hamburger">
         <Ham on:hamClick={hamClicked} />
     </div>

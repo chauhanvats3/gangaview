@@ -1,3 +1,6 @@
+<script>
+
+</script>
 <div class="hero-section">
     <div class="banner">
         <div>
