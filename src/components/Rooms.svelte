@@ -1,5 +1,16 @@
 <script>
+    import IntersectionObserver from "svelte-intersection-observer";
+    let element, intersecting, previous, logo;
+    import { onMount } from 'svelte';
+    onMount(() => {
+        logo = document.getElementById("logo");
+        previous = logo.innerHTML;
+    });
 
+    function inView() {
+        if (intersecting)
+            logo.innerHTML = "Our Rooms"
+    }
 </script>
 
 <style>
@@ -41,12 +52,14 @@
         }
     }
 </style>
+<IntersectionObserver {element} bind:intersecting threshold=0.5 on:observe={inView}>
 
-<div class="rooms">
+    <div class="rooms" bind:this={element}>
 
-    <div class="slider">
-        <img src="images/room1.jpg" alt="">
-        <img src="images/room2.jpg" alt="">
-        <img src="images/room3.jpg" alt="">
+        <div class="slider">
+            <img src="images/room1.jpg" alt="">
+            <img src="images/room2.jpg" alt="">
+            <img src="images/room3.jpg" alt="">
+        </div>
     </div>
-</div>
+</IntersectionObserver>

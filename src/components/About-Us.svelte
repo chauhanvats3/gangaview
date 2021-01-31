@@ -1,5 +1,16 @@
 <script>
+    import IntersectionObserver from "svelte-intersection-observer";
+    let element, intersecting, previous, logo;
+    import { onMount } from 'svelte';
+    onMount(() => {
+        logo = document.getElementById("logo");
+        previous = logo.innerHTML;
+    });
 
+    function inView() {
+        if (intersecting)
+            logo.innerHTML = "About Us"
+    }
 </script>
 
 <style>
@@ -20,6 +31,8 @@
     }
 </style>
 
-<div class="about-us">
-    <h1>About Us</h1>
-</div>
+<IntersectionObserver {element} bind:intersecting threshold=0.5 on:observe={inView}>
+
+    <div class="about-us" bind:this={element}>
+    </div>
+</IntersectionObserver>
