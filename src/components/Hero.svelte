@@ -1,19 +1,33 @@
 <script>
+    import IntersectionObserver from "svelte-intersection-observer";
+    let element, intersecting, previous, logo;
+    import { onMount } from 'svelte';
+    onMount(() => {
+        logo = document.getElementById("logo");
+        previous = logo.innerHTML;
+    });
 
+    function inView() {
+        if (intersecting)
+            logo.innerHTML = "Ganga View"
+    }
 </script>
-<div class="hero-section">
-    <div class="banner">
-        <div>
-            Rooms Starting @ Rs. 699 <br />Open 24 X 7
-        </div>
-        <div class="btn-book">
-            <a href="https://www.booking.com/hotel/in/shri-ganga-view-guest-house.en-gb.html" target="_blank">Book
-                Now</a>
-        </div>
-    </div>
-    <div class="info">Scroll Down To See More</div>
-</div>
 
+<IntersectionObserver {element} bind:intersecting threshold=0.5 on:observe={inView}>
+
+    <div class="hero-section" bind:this={element}>
+        <div class="banner">
+            <div>
+                Rooms Starting @ Rs. 699 <br />Open 24 X 7
+            </div>
+            <div class="btn-book">
+                <a href="https://www.booking.com/hotel/in/shri-ganga-view-guest-house.en-gb.html" target="_blank">Book
+                    Now</a>
+            </div>
+        </div>
+        <div class="info">Scroll Down To See More</div>
+    </div>
+</IntersectionObserver>
 <style>
     .hero-section {
         width: 100%;
