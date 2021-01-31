@@ -4,12 +4,17 @@
     import { onMount } from 'svelte';
     onMount(() => {
         logo = document.getElementById("logo");
-        previous = logo.innerHTML;
+        previous = "About Us";
     });
 
     function inView() {
         if (intersecting)
-            logo.innerHTML = "Contact Us"
+            logo.innerHTML = "Contact Us";
+        else {
+            if (window.dirn === "down") {
+                logo.innerHTML = previous
+            }
+        }
     }
 </script>
 
@@ -22,16 +27,9 @@
         justify-content: flex-start;
         overflow: hidden;
     }
-
-    h1 {
-        width: 100%;
-        justify-content: flex-start;
-        padding: 70px 0 40px 40px;
-        margin: 0;
-    }
 </style>
 
-<IntersectionObserver {element} bind:intersecting threshold=0.5 on:observe={inView}>
+<IntersectionObserver {element} bind:intersecting threshold=0.9 on:observe={inView}>
 
     <div class="contact-us" bind:this={element}>
     </div>

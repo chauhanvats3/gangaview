@@ -1,19 +1,21 @@
 <script>
     import IntersectionObserver from "svelte-intersection-observer";
-    let element, intersecting, previous, logo;
+    let element, intersecting, previous, logo, dirn;
     import { onMount } from 'svelte';
     onMount(() => {
         logo = document.getElementById("logo");
         previous = logo.innerHTML;
     });
 
+
     function inView() {
         if (intersecting)
             logo.innerHTML = "Ganga View"
+
     }
 </script>
 
-<IntersectionObserver {element} bind:intersecting threshold=0.5 on:observe={inView}>
+<IntersectionObserver {element} bind:intersecting threshold=0.9 on:observe={inView}>
 
     <div class="hero-section" bind:this={element}>
         <div class="banner">
