@@ -1,7 +1,8 @@
 <script>
     import IntersectionObserver from "svelte-intersection-observer";
-    let element, intersecting, previous, logo;
     import { onMount } from 'svelte';
+
+    let element, intersecting, previous, logo;
     onMount(() => {
         logo = document.getElementById("logo");
         previous = "About Us";

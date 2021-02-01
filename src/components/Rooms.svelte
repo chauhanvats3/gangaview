@@ -1,7 +1,11 @@
 <script>
     import IntersectionObserver from "svelte-intersection-observer";
-    let element, intersecting, previous, logo, dirn;
+    import { Slidy } from 'svelte-slidy';
     import { onMount } from 'svelte';
+
+
+    let element, intersecting, previous, logo, dirn, index;
+
     onMount(() => {
         logo = document.getElementById("logo");
         previous = "Ganga View";
@@ -17,6 +21,49 @@
             }
         }
     }
+
+    const images = [
+        { id: 1, src: "images/room1.jpg" },
+        { id: 2, src: "images/room2.jpg" },
+        { id: 3, src: "images/room3.jpg" }
+    ];
+
+    $: slidy_default = { // any name you like
+        slides: images, // new name "slides" for arr yours slides elements in 2.0
+        wrap: {
+            id: 'slidy_default', // customize this instance Slidy by #id
+            width: '100%',
+            height: '100%',
+            padding: '0',
+            align: 'middle',
+            alignmargin: 50
+        },
+        slide: {
+            gap: 10,
+            class: 'room-slide', // classname for styling slide
+            width: '100%',
+            height: '100%',
+            backimg: false, // if true image on background slidewrap & slot for content empty
+            imgsrckey: 'src', // prop for ypurs image src key
+            objectfit: 'cover', // new in 2.3.0
+            overflow: 'hidden' // new in 2.4.1
+        },
+        controls: {
+            dots: true,
+            dotsnum: true,
+            dotsarrow: false,
+            dotspure: true, // dotnav like realy dots :)
+            arrows: true,
+            keys: true, // nav by arrow keys
+            drag: true, // nav by mousedrag
+            wheel: true, // nav by mousewheel (shift + wheel) or swipe on touch/trackpads
+        },
+        options: {
+            axis: 'x', // new in 2.2.0 axis direction
+            loop: true, // new in 2.3.0 loop/no options
+            duration: 550, // duration slides animation
+        }
+    } // slidy settings for current instance
 </script>
 
 <style>
@@ -33,28 +80,9 @@
         border: 10px solid transparent;
     }
 
-    /*  h1 {
-        width: 100%;
-        justify-content: flex-start;
-        padding: 70px 0 40px 40px;
-        margin: 0;
-    } */
-
-    .slider {
-        width: 300%;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: flex-start;
-    }
-
-    img {
-        width: 100%;
-    }
-
     @media(max-width: 1024px) {
-        img {
-            height: 100vw;
-            object-fit: cover;
+        :global(.room-slide img) {
+            object-fit: contain !important;
         }
     }
 </style>
@@ -62,10 +90,6 @@
 
     <div class="rooms" id="rooms" bind:this={element}>
 
-        <div class="slider">
-            <img src="images/room1.jpg" alt="">
-            <img src="images/room2.jpg" alt="">
-            <img src="images/room3.jpg" alt="">
-        </div>
+        <Slidy {...slidy_default} bind:index let:item />
     </div>
 </IntersectionObserver>
