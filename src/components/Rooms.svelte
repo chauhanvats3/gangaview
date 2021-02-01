@@ -80,6 +80,11 @@
         border: 10px solid transparent;
     }
 
+    :global(#room-slidy-wrap),
+    :global(.room-slide img) {
+        border-radius: 10px;
+    }
+
     @media(max-width: 1024px) {
         :global(.room-slide img) {
             object-fit: contain !important;
