@@ -88,6 +88,8 @@
     @media(max-width: 1024px) {
         :global(.room-slide img) {
             object-fit: contain !important;
+            width: fit-content !important;
+            height: fit-content !important;
         }
 
         :global(#room-slidy-wrap) {
