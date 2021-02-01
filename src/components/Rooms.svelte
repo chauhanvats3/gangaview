@@ -31,7 +31,7 @@
     $: slidy_default = { // any name you like
         slides: images, // new name "slides" for arr yours slides elements in 2.0
         wrap: {
-            id: 'slidy_default', // customize this instance Slidy by #id
+            id: 'room-slidy-wrap', // customize this instance Slidy by #id
             width: '100%',
             height: '100%',
             padding: '0',
@@ -61,7 +61,7 @@
         options: {
             axis: 'x', // new in 2.2.0 axis direction
             loop: true, // new in 2.3.0 loop/no options
-            duration: 550, // duration slides animation
+            duration: 1050, // duration slides animation
         }
     } // slidy settings for current instance
 </script>
@@ -83,6 +83,10 @@
     @media(max-width: 1024px) {
         :global(.room-slide img) {
             object-fit: contain !important;
+        }
+
+        :global(#room-slidy-wrap) {
+            height: 60%;
         }
     }
 </style>
