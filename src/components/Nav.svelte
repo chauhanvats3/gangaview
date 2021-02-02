@@ -11,7 +11,7 @@
 </script>
 
 <div class="navbar">
-    <div id="logo" class="logo">Ganga View</div>
+    <div id="logo" class="logo"><a href="." style='text-decoration:none'>Ganga View</a></div>
     <div class="hamburger">
         <Ham on:hamClick={hamClicked} />
     </div>
@@ -39,16 +39,5 @@
 
     .hamburger {
         margin: 0 2vw;
-    }
-
-
-
-    @supports (backdrop-filter: blur()) or (-webkit-backdrop-filter: blur()) {
-
-        /*   .navbar {
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-        }
- */
     }
 </style>

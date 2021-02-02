@@ -65,17 +65,12 @@
 
 <div class="menu" class:showMenu>
     <div class="menu-items">
-        <div class="item">
-            <h1><a href="#rooms">Our Rooms</a></h1>
-        </div>
-        <div class="item">
-            <h1><a href="#reviews">Testimonials</a></h1>
-        </div>
-        <div class="item">
-            <h1><a href="#about-us">About Us</a></h1>
-        </div>
+
         <div class="item">
             <h1><a href="#contact-us">Contact Us</a></h1>
+        </div>
+        <div class="item">
+            <h1><a href="./cform">C-Form</a></h1>
         </div>
     </div>
     <div class="lower">

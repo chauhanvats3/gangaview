@@ -8,7 +8,7 @@
 
     onMount(() => {
         logo = document.getElementById("logo");
-        previous = "Ganga View";
+        previous = "<a href='.' style='text-decoration:none'>Ganga View<a>";
     });
 
     function inView() {

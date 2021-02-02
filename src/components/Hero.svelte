@@ -11,8 +11,7 @@
 
     function inView() {
         if (intersecting)
-            logo.innerHTML = "Ganga View"
-
+            logo.innerHTML = "<a href='.' style='text-decoration:none'>Ganga View</a>"
     }
 </script>
 
