@@ -38,15 +38,21 @@
         text-transform: capitalize;
     }
 
-    @media (max-width: 860px) {
+    @media(max-width: 860px) {
         p {
             font-size: 1.5rem;
         }
     }
 
-    @media (max-width: 470px) {
+    @media(max-width: 470px) {
         p {
-            font-size: 1.2rem;
+            font-size: 1rem
+        }
+    }
+
+    @media(max-width:370px) {
+        p {
+            font-size: 0.8rem;
         }
     }
 </style>

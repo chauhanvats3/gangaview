@@ -57,7 +57,7 @@
         width: 100%;
     }
 
-    @media (max-width: 850px) {
+    @media(max-width: 850px) {
         .contact-us {
             flex-direction: column;
         }
@@ -70,6 +70,22 @@
 
         p {
             text-align: center;
+            font-size: 1.3rem;
+        }
+
+        a {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media(max-width: 450px) {
+
+        p {
+            font-size: 1rem;
+        }
+
+        a {
+            font-size: 1.2rem;
         }
     }
 </style>
