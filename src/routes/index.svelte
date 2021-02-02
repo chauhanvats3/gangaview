@@ -1,10 +1,13 @@
 <script>
+	import Metadata from '../components/metadata.svelte';
 	import Hero from '../components/Hero.svelte';
 	import Rooms from '../components/Rooms.svelte';
 	import Reviews from '../components/Reviews.svelte';
 	import AboutUs from '../components/About-Us.svelte';
 	import ContactUs from '../components/Contact-Us.svelte';
 	import Footer from '../components/Footer.svelte';
+
+	const metadata = { title: "Shri Ganga View Guest House", description: "Best budget Guest House with river view in Laxman Jhula, Rishikesh with rooms starting @ Rs 699", keywords: "", thumbnail: "" }
 </script>
 <style>
 	.index {
@@ -12,6 +15,8 @@
 		width: 100%;
 	}
 </style>
+
+<Metadata {metadata} />
 
 <div class="index">
 	<Hero />

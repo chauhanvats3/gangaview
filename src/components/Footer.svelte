@@ -37,5 +37,5 @@
 <div class="footer">
     <div>Privacy Policy</div>
     <div>Copyright {year} by Sarvah Group</div>
-    <div><a href="https://github.com/chauhanvats3" target="_blank">Made by Vatsal</a></div>
+    <div><a href="https://github.com/chauhanvats3" target="_blank" rel="noreferrer">Made by Vatsal</a></div>
 </div>
