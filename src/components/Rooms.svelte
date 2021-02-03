@@ -5,29 +5,11 @@
 
 
     let element, intersecting, previous, logo, dirn, index;
-
-    onMount(() => {
-        logo = document.getElementById("logo");
-        previous = "<a href='.' style='text-decoration:none'>Ganga View<a>";
-    });
-
-    function inView() {
-        if (intersecting) {
-            logo.innerHTML = "Our Rooms"
-        }
-        else {
-            if (window.dirn === "down") {
-                logo.innerHTML = previous
-            }
-        }
-    }
-
     const images = [
         { id: 1, src: "images/room1.jpg" },
         { id: 2, src: "images/room2.jpg" },
         { id: 3, src: "images/room3.jpg" }
     ];
-
     $: slidy_default = { // any name you like
         slides: images, // new name "slides" for arr yours slides elements in 2.0
         wrap: {
@@ -64,6 +46,25 @@
             duration: 1050, // duration slides animation
         }
     } // slidy settings for current instance
+
+    onMount(() => {
+        logo = document.getElementById("logo");
+        previous = "<a href='.' style='text-decoration:none'>Ganga View<a>";
+    });
+
+    function inView() {
+        if (intersecting) {
+            logo.innerHTML = "Our Rooms"
+        }
+        else {
+            if (window.dirn === "down") {
+                logo.innerHTML = previous
+            }
+        }
+    }
+
+
+
 </script>
 
 <style>

@@ -7,7 +7,7 @@
     });
 </script>
 
-<form class="c-form" name="c-form" netlify>
+<div class="c-form">
     <p>
         <label>Surname <input type="text" name="lastname" /></label>
     </p>
@@ -20,7 +20,7 @@
     <p>
         <button type="submit">Send</button>
     </p>
-</form>
+</div>
 
 <style>
     .c-form {
