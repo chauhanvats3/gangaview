@@ -67,16 +67,6 @@
     }
 
 
-    .btn {
-        border-radius: 10px;
-        color: white;
-        width: 130px;
-        height: 70px;
-        cursor: pointer;
-        font-weight: normal;
-        transition: all 0.4s ease;
-        margin: 0 10px;
-    }
 
     .cta {
         height: 100%;
