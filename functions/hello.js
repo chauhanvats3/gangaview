@@ -1,7 +1,10 @@
 exports.handler = async function (event, context) {
-    console.log(process.env.AUTH_PASS);
+    const params = event.queryStringParameters;
+
+    console.log(process.env.ZOHO_AUTH_PASS);
+
     return {
         statusCode: 200,
-        body: JSON.stringify({ message: "Hello World" })
+        body: JSON.stringify({ message: "Hello " + params.email })
     };
 }
