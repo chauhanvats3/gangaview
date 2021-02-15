@@ -4,7 +4,8 @@
 
 <style>
     .footer {
-        width: 100%;
+        justify-self: flex-end;
+        width: 100vw;
         min-height: 60px;
         justify-content: space-around;
 
