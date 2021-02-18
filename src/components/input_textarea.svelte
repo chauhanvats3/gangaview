@@ -2,12 +2,14 @@
     export let inputName;
     export let id;
     export let val;
-    export let height = "50px";
+    export let rows = "5";
+    export let cols = "33";
 
 </script>
 
-<div class="input-container" style="height: {height}">
-    <input id="{id}" class="input" type="text" placeholder=" " bind:value={val} spellcheck="false" />
+<div class="input-container">
+    <textarea {id} class="input" placeholder=" " bind:value={val} name={inputName} {rows} {cols} autocomplete="on"
+        spellcheck="false"></textarea>
     <div class="cut"></div>
     <label for="{id}" class="placeholder">{inputName}</label>
 </div>
@@ -33,6 +35,7 @@
         width: 100%;
         transition: box-shadow .2s ease-in-out;
         box-shadow: inset 0px 0px 0px 0px transparent;
+        resize: vertical;
     }
 
     .input:focus {
@@ -103,17 +106,17 @@
     }
 
 
-    input:focus::-webkit-input-placeholder {
+    textarea:focus::-webkit-input-placeholder {
         /* Edge */
         opacity: 1;
     }
 
-    input:focus:-ms-input-placeholder {
+    textarea:focus:-ms-input-placeholder {
         /* Internet Explorer 10-11 */
         opacity: 1;
     }
 
-    input:focus::placeholder {
+    textarea:focus::placeholder {
         opacity: 1;
     }
 </style>
