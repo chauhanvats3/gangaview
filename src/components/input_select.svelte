@@ -2,24 +2,51 @@
     export let inputName;
     export let id;
     export let val;
-    export let rows = "5";
-    export let cols = "33";
+    export let options;
 
+    function capitalize(str) {
+        var result;
+
+        if (!str.trim()) {
+            return "";
+        }
+
+        var slcs = str.split(" ");
+        var new_slcs = [];
+        slcs.forEach(slc => {
+            slc = slc[0].toUpperCase() + slc.slice(1);
+            new_slcs.push(slc);
+        });
+
+        return new_slcs.join(" ");
+    }
 </script>
 
 <div class="input-container">
-    <textarea {id} class="input" placeholder=" " bind:value={val} name={inputName} {rows} {cols} autocomplete="on"
-        spellcheck="false"></textarea>
+    <select id="{id}" class="input" bind:value={val}>
+        {#each options as option,i}
+        {#if i==0}
+        <option selected disabled hidden style='display: none'>{option}</option>
+        {:else}
+        <option value={option}>{capitalize(option)}</option>
+        {/if}
+        {/each}
+    </select>
     <div class="cut"></div>
     <label for="{id}" class="placeholder">{inputName}</label>
 </div>
 
 <style>
+    option::first-letter {
+        text-transform: capitalize;
+    }
+
     .input-container {
         position: relative;
         width: 100%;
-        max-width: 500px;
         margin: 15px;
+        max-width: 500px;
+        height: 50px;
     }
 
 
@@ -36,7 +63,6 @@
         width: 100%;
         transition: box-shadow .2s ease-in-out;
         box-shadow: inset 0px 0px 0px 0px transparent;
-        resize: vertical;
     }
 
     .input:focus {
@@ -107,17 +133,17 @@
     }
 
 
-    textarea:focus::-webkit-input-placeholder {
+    select:focus::-webkit-input-placeholder {
         /* Edge */
         opacity: 1;
     }
 
-    textarea:focus:-ms-input-placeholder {
+    select:focus:-ms-input-placeholder {
         /* Internet Explorer 10-11 */
         opacity: 1;
     }
 
-    textarea:focus::placeholder {
+    select:focus::placeholder {
         opacity: 1;
     }
 </style>

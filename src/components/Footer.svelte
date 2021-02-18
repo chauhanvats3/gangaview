@@ -4,6 +4,11 @@
 
 <style>
     .footer {
+        position: absolute;
+        bottom: -55px;
+        z-index: 2;
+        height: 50px;
+        justify-content: space-between;
         justify-self: flex-end;
         width: 100vw;
         min-height: 60px;

@@ -1,5 +1,6 @@
 <script>
 	import Nav from '../components/Nav.svelte';
+	import Footer from '../components/Footer.svelte';
 	import { fade } from "svelte/transition"
 	import { stores } from "@sapper/app"
 	import PageLoadingBar from "sapper-page-loading-bar/PageLoadingBar.svelte"
@@ -37,3 +38,5 @@
 	<slot></slot>
 </main>
 {/if}
+
+<Footer />

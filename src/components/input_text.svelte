@@ -2,11 +2,9 @@
     export let inputName;
     export let id;
     export let val;
-    export let height = "50px";
-
 </script>
 
-<div class="input-container" style="height: {height}">
+<div class="input-container">
     <input id="{id}" class="input" type="text" placeholder=" " bind:value={val} spellcheck="false" />
     <div class="cut"></div>
     <label for="{id}" class="placeholder">{inputName}</label>
@@ -17,6 +15,8 @@
         position: relative;
         width: 100%;
         margin: 15px;
+        max-width: 500px;
+        height: 50px;
     }
 
 

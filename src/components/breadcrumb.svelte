@@ -11,10 +11,13 @@
 
     p {
         align-items: baseline;
+        color: rgb(90, 90, 90);
+
     }
 
     a {
         margin: 0 5px;
+        color: rgb(90, 90, 90);
     }
 
     a:last-child {
@@ -22,6 +25,7 @@
         overflow: hidden;
         text-align: left;
         text-overflow: ellipsis;
+        color: black;
     }
 
     @media (max-width: 500px) {

@@ -3,10 +3,12 @@
     import Breadcrumb from '../components/breadcrumb.svelte';
     import InputText from '../components/input_text.svelte';
     import InputTextarea from '../components/input_textarea.svelte';
-    import Footer from '../components/Footer.svelte';
+    import InputSelect from '../components/input_select.svelte';
+
 
     const path = [{ name: "C-Form", href: "./cform" }]
     let logo;
+    const sex_options = ["Select Gender", "male", "female", "transgender"];
     let dataset = {
         photo: "",
         first_name: "",
@@ -64,7 +66,7 @@
 
 
     async function api_send_c_form() {
-        const url = `/api/hello?dataset=${JSON.stringify(dataset)}`;
+        const url = `/api/send-c-form-email?dataset=${JSON.stringify(dataset)}`;
         try {
             const response = await fetch(url);
             const data = await response.json();
@@ -78,22 +80,25 @@
 
 
 <div class="c-form">
+    <Breadcrumb {path} />
+
     <div class="form_wrapper">
 
-        <Breadcrumb {path} />
+        <h2>General Details</h2>
 
-        <InputText inputName="First Name" id="first_name" bind:val={dataset.first_name} />
-        <InputText inputName="Last Name" id="last_name" bind:val={dataset.last_name} />
+        <div class="group">
+            <InputText inputName="First Name" id="first_name" bind:val={dataset.first_name} />
+            <InputText inputName="Last Name" id="last_name" bind:val={dataset.last_name} />
+        </div>
+        <InputSelect inputName="Sex" id="sex" bind:val={dataset.sex} options={sex_options} />
+
         <InputText inputName="Email ID" id="email" bind:val={dataset.email} />
         <InputTextarea inputName="Address" id="address" bind:val={dataset.address} />
-
-        <p>
-            <button class="btn" on:click={api_send_c_form}>Submit</button>
-        </p>
     </div>
 
-    <Footer />
-
+    <p>
+        <button class="btn" on:click={api_send_c_form}>Submit</button>
+    </p>
 </div>
 <style>
     .c-form,
@@ -104,13 +109,27 @@
 
     .c-form {
         min-height: 100vh;
-        justify-content: space-between;
+        justify-content: flex-start;
         padding: 20px;
         padding-bottom: 0;
     }
 
     .form_wrapper {
         padding: 20px;
+        max-width: 1200px;
+    }
+
+    h2 {
+        align-self: flex-start;
+        font-size: 2rem;
+        color: rgb(94, 93, 93);
+        font-family: 'Quicksand';
+        letter-spacing: 0.6rem;
+    }
+
+    .group {
+        flex-flow: row wrap;
+        width: 100%;
     }
 
     p {
