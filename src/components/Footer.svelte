@@ -4,14 +4,12 @@
 
 <style>
     .footer {
+        height: 60px;
         position: absolute;
-        bottom: -55px;
-        z-index: 2;
-        height: 50px;
+        bottom: -60px;
         justify-content: space-between;
         justify-self: flex-end;
         width: 100vw;
-        min-height: 60px;
         justify-content: space-around;
 
         background: rgb(5, 102, 141);

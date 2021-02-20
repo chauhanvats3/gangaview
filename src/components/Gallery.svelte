@@ -54,7 +54,7 @@
 
     function inView() {
         if (intersecting) {
-            logo.innerHTML = "Our Rooms"
+            logo.innerHTML = "Gallery"
         }
         else {
             if (window.dirn === "down") {

@@ -50,6 +50,8 @@
     }
 
     a {
+        font-family: 'Courier New', monospace;
+        font-weight: lighter;
         font-size: 1.5rem;
         margin: 5px;
         word-break: break-all;
@@ -97,8 +99,8 @@
             <p>Shri Ganga View Guest House<br>In Front Of Rani Temple <br> Laxman Jhula
                 <br>Rishikesh, Uttarakhand <br>249302
             </p> <br> <br>
+            <a href="tel:+917579472022">+91-7579472022</a>
             <a href="tel:+919148220111">+91-9148220111</a>
-            <a href="tel:+917500497481">+91-7500497481</a>
             <a href="mailto:contact@gangaview.com">contact@gangaview.com</a>
         </div>
         <div class="map">

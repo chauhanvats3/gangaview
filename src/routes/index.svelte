@@ -1,7 +1,7 @@
 <script>
 	import Metadata from '../components/metadata.svelte';
 	import Hero from '../components/Hero.svelte';
-	import Rooms from '../components/Rooms.svelte';
+	import Gallery from '../components/Gallery.svelte';
 	import Reviews from '../components/Reviews.svelte';
 	import AboutUs from '../components/About-Us.svelte';
 	import ContactUs from '../components/Contact-Us.svelte';
@@ -19,7 +19,7 @@
 
 <div class="index">
 	<Hero />
-	<Rooms />
+	<Gallery />
 	<Reviews />
 	<AboutUs />
 	<ContactUs />

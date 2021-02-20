@@ -47,9 +47,11 @@
     }
 
     .contact {
+        font-family: 'Courier New', monospace;
         font-size: larger;
         margin: 20px auto;
         flex-direction: column;
+        line-height: 2.5rem;
     }
 
     @supports (backdrop-filter: blur()) or (-webkit-backdrop-filter: blur()) {
@@ -76,8 +78,8 @@
     <div class="lower">
         <p class="contact">
 
+            <a href="tel:=917579472022">+91-7579472022</a>
             <a href="tel:=919148220111">+91-9148220111</a>
-            <a href="tel:=917500497481">+91-7500497481</a>
         </p>
         <p style="font-family: 'Julius Sans One' ">Ganga View</p>
     </div>

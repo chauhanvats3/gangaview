@@ -2,10 +2,11 @@
     export let inputName;
     export let id;
     export let val;
+    export let placeholder = "";
 </script>
 
 <div class="input-container">
-    <input id="{id}" class="input" type="text" placeholder=" " bind:value={val} spellcheck="false" />
+    <input id="{id}" class="input" type="text" {placeholder} bind:value={val} spellcheck="false" />
     <div class="cut"></div>
     <label for="{id}" class="placeholder">{inputName}</label>
 </div>

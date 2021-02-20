@@ -1,5 +1,6 @@
 <script>
     import { onMount } from 'svelte';
+    import Datepicker from 'svelte-calendar';
     import Breadcrumb from '../components/breadcrumb.svelte';
     import InputText from '../components/input_text.svelte';
     import InputTextarea from '../components/input_textarea.svelte';
@@ -9,6 +10,7 @@
     const path = [{ name: "C-Form", href: "./cform" }]
     let logo;
     const sex_options = ["Select Gender", "male", "female", "transgender"];
+    const today = new Date();
     let dataset = {
         photo: "",
         first_name: "",
@@ -87,12 +89,12 @@
         <h2>General Details</h2>
 
         <div class="group">
-            <InputText inputName="First Name" id="first_name" bind:val={dataset.first_name} />
-            <InputText inputName="Last Name" id="last_name" bind:val={dataset.last_name} />
+            <InputText inputName="First Name" id="first_name" bind:val={dataset.first_name} placeholder="John" />
+            <InputText inputName="Last Name" id="last_name" bind:val={dataset.last_name} placeholder="Doe" />
         </div>
         <InputSelect inputName="Sex" id="sex" bind:val={dataset.sex} options={sex_options} />
-
-        <InputText inputName="Email ID" id="email" bind:val={dataset.email} />
+        <Datepicker start={new Date("01/01/1900")} end={new Date()} selected={today} />
+        <InputText inputName="Email ID" id="email" bind:val={dataset.email} placeholder="johndoe@email.com" />
         <InputTextarea inputName="Address" id="address" bind:val={dataset.address} />
     </div>
 
@@ -134,5 +136,21 @@
 
     p {
         width: 100%;
+    }
+
+    :global(.heading-section) {
+        width: 100%;
+    }
+
+    :global(.datepicker) {
+        margin: 10px auto !important;
+    }
+
+    :global(.calendar, .month-selector) {
+        display: block;
+    }
+
+    :global(.month-container) {
+        justify-content: initial;
     }
 </style>
