@@ -101,7 +101,7 @@
             </p> <br> <br>
             <a href="tel:+917579472022">+91-7579472022</a>
             <a href="tel:+919148220111">+91-9148220111</a>
-            <a href="mailto:contact@gangaview.com">contact@gangaview.com</a>
+            <a href="mailto:contact-us@gangaview.com">contact-us@gangaview.com</a>
         </div>
         <div class="map">
             <iframe title="map_embed"
