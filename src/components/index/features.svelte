@@ -58,6 +58,8 @@
     .illus p {
         font-size: 24px;
         margin: 10px auto;
+        font-family: 'Julius Sans One';
+        text-align: center;
     }
 </style>
 

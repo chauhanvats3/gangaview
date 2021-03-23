@@ -29,7 +29,7 @@
     .line {
         fill: none;
         transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-        stroke: rgb(255, 255, 255);
+        stroke: #dddddd;
         stroke-width: 3.5;
         stroke-linecap: round;
     }
