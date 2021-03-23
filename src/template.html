@@ -40,6 +40,10 @@
 	     because `src/client.js` references it -->
 	<div id="sapper" style="min-height: 100vh;">%sapper.html%</div>
 
+	<script>if ('ontouchstart' in window) {
+			document.addEventListener('touchstart', onTouchStart, { passive: true });
+
+		}</script>
 </body>
 
 </html>
