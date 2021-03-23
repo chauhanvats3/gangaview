@@ -74,7 +74,7 @@
     </div>
 
     <div class="content">
-        <img src="images/Rooms/view/3.jpg" alt="" width="1037" height="1037">
+        <img src="images/Rooms/view/3.jpg" alt="" width="519" height="519">
     </div>
 
 </div>
