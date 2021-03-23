@@ -15,7 +15,7 @@
 
 <div class="navbar">
     <div id="logo" class="logo">
-        <a href="." style='text-decoration:none'> <img src="images/Logo/Logo-Full.png"> </a>
+        <a href="." style='text-decoration:none'> <img src="images/Logo/Logo-Full.png" alt="Logo"> </a>
     </div>
     <div class="hamburger">
         <Ham on:hamClick={hamClicked} bind:ham />

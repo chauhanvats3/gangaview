@@ -39,6 +39,10 @@
         justify-content: flex-start;
 
     }
+
+    .content>img {
+        width: 100%;
+    }
 </style>
 
 <div class="rooms">

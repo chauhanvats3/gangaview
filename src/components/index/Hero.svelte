@@ -17,7 +17,8 @@
                 <p class="gradient-blue-pink gradient-text">Call Us</p>
             </div>
         </a>
-        <a href="https://www.booking.com/hotel/in/shri-ganga-view-guest-house.en-gb.html" target="_blank">
+        <a rel="noreferrer" href="https://www.booking.com/hotel/in/shri-ganga-view-guest-house.en-gb.html"
+            target="_blank">
             <div class="book">
                 <p class=" gradient-blue-green gradient-text">Book Now</p>
             </div>
