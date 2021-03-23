@@ -116,7 +116,7 @@
         .menu {
             backdrop-filter: blur(4px);
             -webkit-backdrop-filter: blur(4px);
-            background: #252525a1;
+            background: #252525d7;
         }
 
     }

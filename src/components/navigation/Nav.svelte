@@ -39,20 +39,21 @@
 
 
     .logo,
-    .logo>a,
-    .logo>a>img {
+    .logo>a {
         height: 100%;
     }
 
     img {
         z-index: -1;
+        height: 60px;
+        width: 113.33px;
     }
 
     .logo {
-        margin: 0 20px;
+        margin: 0 15px;
     }
 
     .hamburger {
-        margin: 0 2vw;
+        margin: 0;
     }
 </style>
