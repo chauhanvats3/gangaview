@@ -69,7 +69,7 @@
     </div>
 
     <div class="content">
-        <img src="images/Rooms/view/2.jpg" alt="">
+        <img src="images/Rooms/view/2-new.jpg" alt="">
     </div>
 
 </div>
