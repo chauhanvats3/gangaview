@@ -67,8 +67,11 @@
         align-items: flex-start;
         padding: 5px 20px;
         font-family: 'Courier New', Courier, monospace;
-        line-height: 2.3rem;
         width: 75%;
+    }
+
+    .number>div>a {
+        margin: 5px 0;
     }
 </style>
 
