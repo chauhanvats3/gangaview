@@ -42,6 +42,7 @@
 
     .content>img {
         width: 100%;
+        height: auto;
     }
 </style>
 
@@ -73,7 +74,7 @@
     </div>
 
     <div class="content">
-        <img src="images/Rooms/view/3.jpg" alt="">
+        <img src="images/Rooms/view/3.jpg" alt="" width="1037" height="1037">
     </div>
 
 </div>
