@@ -579,11 +579,11 @@
 
             </div>
         </div>
-        <div class="map">
+        <!--     <div class="map">
             <iframe title="map_embed"
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13803.794981680101!2d78.3297814!3d30.1242801!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa6e60e6bcb16dcf8!2sShri%20Ganga%20View%20Guest%20House!5e0!3m2!1sen!2sin!4v1612277629324!5m2!1sen!2sin"
                 width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
                 tabindex="0"></iframe>
-        </div>
+        </div> -->
     </div>
 </div>

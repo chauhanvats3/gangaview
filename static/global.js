@@ -1,4 +1,7 @@
+/* if ('ontouchstart' in window) {
+    document.addEventListener('touchstart', onTouchStart, { passive: true });
 
+} */
 function vats_capitalize(str) {
     var result;
 
