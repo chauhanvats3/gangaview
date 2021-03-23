@@ -12,15 +12,15 @@
         width: 100vw;
         justify-content: space-around;
 
-        background: rgb(5, 102, 141);
-        background: -moz-linear-gradient(90deg, rgba(5, 102, 141, 1) 0%, rgba(2, 128, 144, 1) 33%, rgba(0, 168, 150, 1) 66%, rgba(2, 195, 154, 1) 100%);
-        background: -webkit-linear-gradient(90deg, rgba(5, 102, 141, 1) 0%, rgba(2, 128, 144, 1) 33%, rgba(0, 168, 150, 1) 66%, rgba(2, 195, 154, 1) 100%);
-        background: linear-gradient(90deg, rgba(5, 102, 141, 1) 0%, rgba(2, 128, 144, 1) 33%, rgba(0, 168, 150, 1) 66%, rgba(2, 195, 154, 1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#05668d", endColorstr="#02c39a", GradientType=1);
+        background: #24B7DB;
+
+        background: -moz-linear-gradient(90deg, #24B7DB, #B7DB24);
+        background: -webkit-linear-gradient(90deg, #24B7DB, #B7DB24);
+        background: linear-gradient(90deg, #24B7DB, #B7DB24);
     }
 
     div {
-        color: white;
+        color: var(--dark-gray);
         font-weight: bold;
         letter-spacing: 0.1rem;
         word-spacing: 0.2rem;

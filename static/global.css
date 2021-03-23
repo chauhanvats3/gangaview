@@ -8,11 +8,15 @@
 
   .gradient-blue-green {
     background-color: #fff;
+	background-image: -moz-linear-gradient(90deg, #24B7DB, #B7DB24);
+	background-image: -webkit-linear-gradient(90deg, #24B7DB, #B7DB24);
 	background-image: linear-gradient(90deg, #24B7DB, #B7DB24);
 }
 
   .gradient-blue-pink {
     background-color: #000;
+	background-image: -moz-linear-gradient(90deg, #24B7DB, #DB24B7);
+	background-image: -webkit-linear-gradient(90deg, #24B7DB, #DB24B7);
 	background-image: linear-gradient(90deg, #24B7DB, #DB24B7);
 }
 
