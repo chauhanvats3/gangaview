@@ -136,12 +136,12 @@
     }
 
     .pro p {
-        background: rgba(183, 219, 36, 0.85);
+        background: rgba(183, 219, 36, 0.75);
     }
 
 
     .con p {
-        background: rgba(244, 36, 17, 0.85);
+        background: rgba(244, 36, 17, 0.75);
     }
 
     .cta {

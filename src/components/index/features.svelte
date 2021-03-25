@@ -19,7 +19,7 @@
         min-height: 50vh;
         flex-flow: column nowrap;
         justify-content: flex-start;
-        background-color: #f1f1f1;
+        background-color: var(--back-white);
     }
 
     .title {
