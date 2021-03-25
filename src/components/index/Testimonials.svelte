@@ -36,8 +36,9 @@
     .review {
         margin: 10%;
         width: 30ch;
-        font-size: 1.3rem;
-        word-spacing: 0.2rem;
+        font-size: 1.1rem;
+        word-spacing: 0.3rem;
+        letter-spacing: 0.1rem;
     }
 
     .author {

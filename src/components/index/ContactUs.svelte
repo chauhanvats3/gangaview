@@ -41,7 +41,7 @@
 
     .contact>div {
         flex-grow: 1;
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .address {
@@ -72,6 +72,7 @@
 
     .number>div>a {
         margin: 5px 0;
+        text-align: right;
     }
 </style>
 

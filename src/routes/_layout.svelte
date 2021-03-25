@@ -37,7 +37,7 @@
 
 <Nav {segment} />
 
-<PageLoadingBar {preloading} height="3px" color1="white" color2="#00171f" />
+<PageLoadingBar {preloading} height="2px" color1="#252525" color2="#B7DB24" />
 
 {#if !$preloading}
 <main transition:fade>
