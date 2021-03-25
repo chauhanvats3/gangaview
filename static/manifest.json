@@ -1,6 +1,6 @@
 {
-	"background_color": "#ffffff",
-	"theme_color": "#333333",
+	"background_color": "#252525",
+	"theme_color": "#24B7DB",
 	"name": "Ganga View",
 	"short_name": "GangaView",
 	"display": "minimal-ui",
