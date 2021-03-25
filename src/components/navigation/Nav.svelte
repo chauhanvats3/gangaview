@@ -46,7 +46,7 @@
     img {
         z-index: -1;
         height: 60px;
-        width: 113.33px;
+        width: 105px;
     }
 
     .logo {
