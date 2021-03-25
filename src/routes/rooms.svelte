@@ -29,7 +29,7 @@
     },
     {
         name: "Patio",
-        image: "images/Rooms/patio/1.jpg",
+        image: "images/Rooms/patio/2.jpg",
         features: {
             pro: ["Common", "River View", "Sunset View", "Huge Space"],
             con: []
