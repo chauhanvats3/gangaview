@@ -45,8 +45,8 @@
 
     img {
         z-index: -1;
-        height: 60px;
-        width: 105px;
+        height: 70px;
+        width: 123px;
     }
 
     .logo {
