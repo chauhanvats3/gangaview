@@ -25,6 +25,10 @@
 <style>
 	main {
 		width: 100%;
+		min-height: 70vh;
+		align-self: flex-start;
+		justify-content: flex-start;
+		align-items: flex-start;
 	}
 </style>
 

@@ -52,7 +52,7 @@
 
     embed {
         margin: 10px auto;
-        width: 100%;
+        width: 65%;
     }
 
     .illus p {

@@ -11,13 +11,13 @@
 
     p {
         align-items: baseline;
-        color: rgb(90, 90, 90);
-
+        color: rgb(255, 255, 255);
+        font-family: 'Julius Sans One';
     }
 
     a {
         margin: 0 5px;
-        color: rgb(90, 90, 90);
+        color: rgb(255, 255, 255);
     }
 
     a:last-child {
@@ -25,7 +25,7 @@
         overflow: hidden;
         text-align: left;
         text-overflow: ellipsis;
-        color: black;
+        color: #c7c7c7;
     }
 
     @media (max-width: 500px) {
@@ -38,5 +38,5 @@
 <div class="breadcrumb">
     <p>
         {#each pathWhole as node,i}
-        <a href="{node.href}">{node.name.toUpperCase()}</a>{#if i<totalNodes} / {/if} {/each} </p>
+        <a href="{node.href}">{node.name}</a>{#if i<totalNodes} / {/if} {/each} </p>
 </div>
