@@ -2,7 +2,8 @@
 	import Nav from '../components/navigation/Nav.svelte';
 	import Footer from '../components/Footer.svelte';
 	import { fade } from "svelte/transition"
-	import { stores } from "@sapper/app"
+	import { stores } from '@sapper/app';
+	import GoogleAnalytics from '../components/GoogleAnalytics.svelte';
 	import PageLoadingBar from "sapper-page-loading-bar/PageLoadingBar.svelte"
 	import { onMount } from 'svelte';
 
@@ -32,6 +33,7 @@
 	}
 </style>
 
+<GoogleAnalytics />
 
 <Nav {segment} />
 
