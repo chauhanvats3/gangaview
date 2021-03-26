@@ -16,13 +16,15 @@
     {#if metadata.thumb}
     <meta property="og:image" content="{metadata.thumb}">
     {/if}
+    <meta property="og:site_name" content="Shri Ganga View Guest House" key="ogsitename" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary_large_image" key="twcard" />
     <meta property="twitter:url" content="https://gangaview.com">
     <meta property="twitter:title" content="{metadata.title}">
     <meta property="twitter:description" content="{metadata.description}">
     {#if metadata.thumb}
     <meta property="twitter:image" content="{metadata.thumb}">
     {/if}
+
 </svelte:head>
