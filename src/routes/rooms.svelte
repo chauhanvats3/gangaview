@@ -5,15 +5,15 @@
     let path = [{ name: "Our Rooms", href: "./rooms" }];
     let categories = [{
         name: "Room With View",
-        image: "images/Rooms/view/3.jpg",
+        image: "images/Rooms/view/2.jpg",
         features: {
             pro: ["Rs. 999", "River View", "Patio", "Terrace"],
             con: ["Television", "Balcony", "Air Conditioning"]
         }
     },
     {
-        name: "Room Beside Patio",
-        image: "images/Rooms/front/3.jpg",
+        name: "Double Room",
+        image: "images/Rooms/double/3.jpg",
         features: {
             pro: ["Rs. 849", "Patio", "Terrace"],
             con: ["Television", "Balcony", "Air Conditioning", "River View"]
