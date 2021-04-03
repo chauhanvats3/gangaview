@@ -21,21 +21,30 @@
 
     </div>
     <div class="content">
-        {#each category.images as image}
-        <img src={image.src} alt="">
-        {/each}
+        <div class="scroll">
+            {#each category.images as image}
+            <img src={image.src} alt="">
+            {/each}
+        </div>
     </div>
+
+    <a href="google.com">
+        <div class="book">
+            <p class="bookp gradient-text gradient-blue-green">Book Now</p>
+        </div>
+    </a>
 </div>
 
 <style>
     .imageOverlay {
         width: 100vw;
+        height: 100vh;
         position: fixed;
         left: 0%;
         top: 100%;
         flex-flow: column nowrap;
         transition: top 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6);
-        background-color: var(--dark-gray);
+        background-color: white;
         z-index: 100;
     }
 
@@ -46,9 +55,11 @@
     .header {
         width: 100%;
         height: 90px;
-        padding: 0 20px;
         justify-content: space-between;
+        padding: 0 20px;
+        background-color: var(--dark-gray);
     }
+
 
     p {
         font-family: 'Julius Sans One';
@@ -60,10 +71,47 @@
     }
 
     .content {
-        flex-flow: column nowrap;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .scroll {
+        justify-content: flex-start;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    .scroll::-webkit-scrollbar {
+        display: none;
     }
 
     img {
-        margin-bottom: 10px;
+        margin: 10px;
+    }
+
+    img:last-child {
+        margin-bottom: 0;
+    }
+
+    a {
+        width: 100%;
+        text-decoration: none;
+    }
+
+    .book {
+        height: 60px;
+        width: 100%;
+        background-color: var(--dark-gray);
+    }
+
+    .bookp {
+        font-size: 1.5rem;
     }
 </style>
