@@ -28,7 +28,7 @@
         </div>
     </div>
 
-    <a href="google.com">
+    <a rel="noreferrer" href="https://www.booking.com/hotel/in/shri-ganga-view-guest-house.en-gb.html" target="_blank">
         <div class="book">
             <p class="bookp gradient-text gradient-blue-green">Book Now</p>
         </div>
