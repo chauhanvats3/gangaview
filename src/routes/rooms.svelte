@@ -21,7 +21,7 @@
     },
     {
         name: "Budget Room",
-        image: "images/Rooms/view/2.jpg",
+        image: "images/Rooms/budget/1.jpg",
         features: {
             pro: ["Rs. 699", "Terrace"],
             con: ["River View", "Patio", "Television", "Balcony", "Air Conditioning"]
