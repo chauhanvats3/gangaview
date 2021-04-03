@@ -1,6 +1,10 @@
 <script>
     import Hero from '../components/Hero.svelte';
     import Category from '../components/Rooms/Category.svelte'
+    import Metadata from '../components/metadata.svelte';
+
+    const metadata = { title: "Rooms - Shri Ganga View Guest House", description: "Best Budget Guest House with river view in Laxman Jhula, Rishikesh with rooms starting @ Rs 699", keywords: "guest house, budget, laxman jhula, ganga, view, hotel, rishikesh, room, sunset, terrace, ghat, cheap", thumb: "images/thumbnails/home.png" }
+
     let heroImage = "images/Rooms/view/3.jpg";
     let path = [{ name: "Our Rooms", href: "./rooms" }];
     let categories = [{
@@ -36,6 +40,9 @@
         }
     }];
 </script>
+
+<Metadata {metadata} />
+
 
 <div class="rooms">
     <Hero {heroImage} {path} />

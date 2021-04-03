@@ -1,9 +1,14 @@
 <script>
     import Hero from '../components/Hero.svelte';
     import ImageOverlay from '../components/ImageOverlay.svelte';
+    import Metadata from '../components/metadata.svelte';
+
+    const metadata = { title: "Gallery - Shri Ganga View Guest House", description: "Best Budget Guest House with river view in Laxman Jhula, Rishikesh with rooms starting @ Rs 699", keywords: "guest house, budget, laxman jhula, ganga, view, hotel, rishikesh, room, sunset, terrace, ghat, cheap", thumb: "images/thumbnails/home.png" }
+
     let heroImage = "images/Rooms/view/4.jpg"
     let path = [{ name: "Gallery", href: "./gallery" }]
-
+    let pageURL = "";
+    let pageTitle = ""
 
     let categories = [{
         id: "1", name: "Room With View", images: [
@@ -35,16 +40,36 @@
         ]
     }]
 
-    let showImageOverlay = false;
     let category = categories[0];
+    let showImageOverlay = false;
+
+
 
     let categoryClicked = (id) => {
         showImageOverlay = !showImageOverlay;
+
+
+        if (pageURL === "") {
+            pageURL = window.location.href;
+            pageTitle = document.title;
+        }
         if (id !== 0) {
+            //Category Clicked
             category = categories.find(o => o.id === id);
+
+            const nextURL = '?imageOverlay=true';
+            const nextTitle = pageTitle + " - Overlay";
+            const nextState = { additionalInformation: 'Opened Image Overlay' };
+
+            // This will create a new entry in the browser's history, without reloading
+            window.history.pushState(nextState, nextTitle, nextURL);
+        } else {
+            //Cross Clicked
+            window.history.back();
         }
     }
 </script>
+<Metadata {metadata} />
 
 <div class="gallery">
     <Hero {heroImage} {path} />
