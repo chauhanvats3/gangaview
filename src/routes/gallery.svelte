@@ -57,7 +57,7 @@
             //Category Clicked
             category = categories.find(o => o.id === id);
 
-            const nextURL = '?imageOverlay=true';
+            const nextURL = pageURL + '?imageOverlay=true';
             const nextTitle = pageTitle + " - Overlay";
             const nextState = { additionalInformation: 'Opened Image Overlay' };
 
