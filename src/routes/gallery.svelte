@@ -42,7 +42,7 @@
 
     let category = categories[0];
     let showImageOverlay = false;
-
+    let handlePop = (event) => { categoryClicked(-1) };
 
 
     let categoryClicked = (id) => {
@@ -53,7 +53,7 @@
             pageURL = window.location.href;
             pageTitle = document.title;
         }
-        if (id !== 0) {
+        if (id > 0) {
             //Category Clicked
             category = categories.find(o => o.id === id);
 
@@ -63,9 +63,16 @@
 
             // This will create a new entry in the browser's history, without reloading
             window.history.pushState(nextState, nextTitle, nextURL);
-        } else {
+            window.addEventListener('popstate', handlePop);
+        } else if (id === 0) {
             //Cross Clicked
+            console.log("cross clicked")
             window.history.back();
+        }
+        else if (id === -1) {
+            //back clicked
+            console.log("back clicked")
+            showImageOverlay = false;
         }
     }
 </script>
