@@ -40,7 +40,6 @@
         font-family: 'Julius Sans One';
         font-size: 2rem;
         text-decoration: none;
-        justify-content: flex-end;
         padding: 0 40px;
     }
 

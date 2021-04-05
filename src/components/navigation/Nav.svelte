@@ -8,6 +8,13 @@
     let pageURL = "", pageTitle = "";
     let handlePop = (event) => { hamClicked(1) };
 
+    function logoClicked() {
+        if (ham.classList.contains("active")) {
+            //cross clicked
+            window.history.back();
+        }
+    }
+
     function hamClicked(code) {
 
         if (pageURL === "") {
@@ -60,7 +67,7 @@
 </script>
 
 <div class="navbar">
-    <div id="logo" class="logo">
+    <div id="logo" class="logo" on:click={()=>logoClicked()}>
         <a href="." style='text-decoration:none'> <img src="images/Logo/Logo-Full.png" alt="Logo"> </a>
     </div>
     <div class="hamburger">
