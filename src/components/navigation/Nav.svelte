@@ -6,7 +6,9 @@
     let ham;
     const body = document.body;
     let pageURL = "", pageTitle = "";
-    let handlePop = (event) => { hamClicked(1) };
+    let handlePopMenuOverlay = (event) => {
+        hamClicked(1);
+    };
 
     function logoClicked() {
         if (ham.classList.contains("active")) {
@@ -23,9 +25,6 @@
             showMenu = true;
             body.classList.toggle("noscroll");
             ham.classList.toggle('active');
-
-            window.addEventListener('popstate', handlePop);
-
             const nextURL = pageURL + '?menu=true';
             const nextTitle = pageTitle + " - Menu";
             const nextState = { additionalInformation: 'Opened Menu Overlay' };
@@ -36,12 +35,19 @@
         if (code === 1) {
 
             //back pressed
+            let isImageOverlay = window.location.href.includes("imageOverlay=true");
+            if (isImageOverlay) return;
+
             showMenu = false;
             body.classList.toggle("noscroll");
             ham.classList.toggle('active');
         }
         else if (code === 0) {
             //ham clicked
+            //register on pop function
+            window.onpopstate = function (event) {
+                handlePopMenuOverlay();
+            };
 
             if (ham.classList.contains("active")) {
                 //cross clicked

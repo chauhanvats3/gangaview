@@ -42,12 +42,11 @@
 
     let category = categories[0];
     let showImageOverlay = false;
-    let handlePop = (event) => { categoryClicked(-1) };
+    let handlePopImageOverlay = (event) => { categoryClicked(-1); };
 
 
     let categoryClicked = (id) => {
         showImageOverlay = !showImageOverlay;
-
 
         if (pageURL === "") {
             pageURL = window.location.href;
@@ -61,15 +60,15 @@
             const nextTitle = pageTitle + " - Overlay";
             const nextState = { additionalInformation: 'Opened Image Overlay' };
             window.history.pushState(nextState, nextTitle, nextURL);
-            window.addEventListener('popstate', handlePop);
+            window.onpopstate = function (event) {
+                handlePopImageOverlay();
+            };
         } else if (id === 0) {
             //Cross Clicked
-            console.log("cross clicked")
             window.history.back();
         }
         else if (id === -1) {
             //back pressed
-            console.log("back clicked")
             showImageOverlay = false;
         }
     }
