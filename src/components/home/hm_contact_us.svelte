@@ -363,7 +363,7 @@
                 <div class="address">
 
 
-                    <p>Shri Ganga View Guest House<br>In Front Of Rani Temple <br> Laxman Jhula
+                    <p>Shri Ganga View Guest House<br>In Front Of Rani Mandir <br> Laxman Jhula
                         <br>Rishikesh, Uttarakhand <br>249302
                     </p>
                     <svg width="133" height="119" viewBox="0 0 133 119" fill="none" xmlns="http://www.w3.org/2000/svg">
