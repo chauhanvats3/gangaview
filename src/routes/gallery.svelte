@@ -68,7 +68,7 @@
             window.history.back();
         }
         else if (id === -1) {
-            //back clicked
+            //back pressed
             console.log("back clicked")
             showImageOverlay = false;
         }
