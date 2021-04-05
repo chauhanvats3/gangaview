@@ -3,7 +3,7 @@
     import ImageOverlay from '../components/ImageOverlay.svelte';
     import Metadata from '../components/metadata.svelte';
 
-    const metadata = { title: "Gallery - Shri Ganga View Guest House", description: "Best Budget Guest House with river view in Laxman Jhula, Rishikesh with rooms starting @ Rs 699", keywords: "guest house, budget, laxman jhula, ganga, view, hotel, rishikesh, room, sunset, terrace, ghat, cheap", thumb: "images/thumbnails/home.png" }
+    const metadata = { title: "Gallery - Shri Ganga View Guest House", description: "Photos of our Rooms and View", keywords: "guest house, budget, laxman jhula, ganga, view, hotel, rishikesh, room, sunset, terrace, ghat, cheap", thumb: "images/thumbnails/home.png" }
 
     let heroImage = "images/Rooms/view/4.jpg"
     let path = [{ name: "Gallery", href: "./gallery" }]
@@ -60,8 +60,6 @@
             const nextURL = pageURL + '?imageOverlay=true';
             const nextTitle = pageTitle + " - Overlay";
             const nextState = { additionalInformation: 'Opened Image Overlay' };
-
-            // This will create a new entry in the browser's history, without reloading
             window.history.pushState(nextState, nextTitle, nextURL);
             window.addEventListener('popstate', handlePop);
         } else if (id === 0) {

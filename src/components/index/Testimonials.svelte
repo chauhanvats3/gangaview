@@ -3,12 +3,19 @@
 </script>
 
 <style>
-    .features {
+    .reviews {
         width: 100%;
         min-height: 50vh;
         flex-flow: column nowrap;
         justify-content: flex-start;
         background-color: var(--back-white);
+    }
+
+    a {
+        flex-flow: column nowrap;
+        width: 100%;
+        min-height: 50vh;
+        text-decoration: none;
     }
 
     .title {
@@ -30,7 +37,7 @@
         width: 100%;
         flex-grow: 1;
         flex-flow: column nowrap;
-        justify-content: flex-start;
+        justify-content: center;
     }
 
     .review {
@@ -50,16 +57,18 @@
     }
 </style>
 
-<div class="features">
-    <div class="title">
-        <p class=" gradient-text gradient-blue-pink">Testimonials</p>
-    </div>
-    <div class="content">
-        <div class="review">
-            Wow what an amazing place! <br>
-            Stayed here for 3-4 months and had the best time! <br>
-            Good location, nice rooms and the family that own the place are super cute!!
+<div class="reviews">
+    <a href="./testimonials">
+        <div class="title">
+            <p class=" gradient-text gradient-blue-pink">Testimonials</p>
         </div>
-        <div class="author">- Azi Ben Arroch</div>
-    </div>
+        <div class="content">
+            <div class="review">
+                Wow what an amazing place! <br>
+                Stayed here for 3-4 months and had the best time! <br>
+                Good location, nice rooms and the family that own the place are super cute!!
+            </div>
+            <div class="author">- Azi Ben Arroch</div>
+        </div>
+    </a>
 </div>

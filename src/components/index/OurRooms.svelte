@@ -13,7 +13,8 @@
     a {
         text-decoration: none;
         width: 100%;
-        justify-content: space-between;
+        flex-flow: column nowrap;
+
     }
 
     .title {
@@ -21,7 +22,7 @@
         width: 100%;
         height: 65.5px;
         background-color: var(--dark-gray);
-        justify-content: flex-start;
+        justify-content: space-between;
         padding: 0 20px;
         cursor: pointer;
     }
@@ -47,9 +48,9 @@
 </style>
 
 <div class="rooms">
+    <a href="./rooms">
+        <div class="title">
 
-    <div class="title">
-        <a href="./rooms">
             <p class=" gradient-text gradient-blue-green">Our Rooms</p>
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -70,11 +71,11 @@
                     </linearGradient>
                 </defs>
             </svg>
-        </a>
-    </div>
 
-    <div class="content">
-        <img src="images/Rooms/view/3.jpg" alt="" width="519" height="519">
-    </div>
+        </div>
 
+        <div class="content">
+            <img src="images/Rooms/view/3.jpg" alt="" width="519" height="519">
+        </div>
+    </a>
 </div>

@@ -20,9 +20,9 @@
 
 <div class="index">
 	<Hero />
-	<Features />
-	<OurRooms />
 	<Testimonials />
+	<OurRooms />
+	<Features />
 	<FAQ />
 	<ContactUs />
 </div>
