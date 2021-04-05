@@ -11,7 +11,6 @@
     function hamClicked(code) {
 
         if (pageURL === "") {
-            console.log("initial")
             pageURL = window.location.href;
             pageTitle = document.title;
             showMenu = true;
@@ -28,7 +27,6 @@
         }
 
         if (code === 1) {
-            console.log("back")
 
             //back pressed
             showMenu = false;
@@ -37,15 +35,12 @@
         }
         else if (code === 0) {
             //ham clicked
-            console.log("ham")
 
             if (ham.classList.contains("active")) {
                 //cross clicked
-                console.log("ham > cross")
                 window.history.back();
             } else {
                 //hamburger clicked
-                console.log("ham > burger")
                 pageURL = window.location.href;
                 pageTitle = document.title;
                 showMenu = true;

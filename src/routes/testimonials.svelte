@@ -1,7 +1,11 @@
 <script>
     import EachReview from '../components/Testimonials/EachReview.svelte'
     import Metadata from '../components/metadata.svelte'
+    import Hero from '../components/Hero.svelte'
     const metadata = { title: "Testimonials - Shri Ganga View Guest House", description: "Our guests leave the best reviews. Here’s some nice things our guests wrote about us on Google.", keywords: "guest house, budget, laxman jhula, ganga, view, hotel, rishikesh, room, sunset, terrace, ghat, cheap", thumb: "images/thumbnails/home.png" }
+
+    const path = [{ href: "./testimonials", name: "Testimonials" }]
+
     let reviews = [
         {
             content: `It is the perfect hotel to fully enjoy Rishikesh. Close to all the nice places and still very peaceful. The rooms are big, clean and there is a nice rooftop place. <br><br>
@@ -48,9 +52,20 @@
 </script>
 
 <div class="testimonials">
+    <Hero heroImage="images/reviews.jpg" {path} />
+    <a class="write" rel="noreferrer" href="https://g.page/shri-ganga-view/review?rc" target="_blank">
+        <p class="gradient-text gradient-blue-green">Write A Review</p>
+    </a>
     <div class="info">
-        <p>Here’s some nice things our guests wrote about us on Google.</p>
+        <p>Here’s some nice things our guests wrote about us on
+            <span style="color:#4285F4">G</span><span style="color:#DB4437">O</span><span
+                style="color:#F4B400">O</span><span style="color:#4285F4">G</span><span
+                style="color:#0F9D58">L</span><span style="color:#DB4437">E</span>
+        </p>
+
+
     </div>
+
     {#each reviews as review,index}
     <EachReview {review} {index} />
     {/each}
@@ -60,17 +75,34 @@
     .testimonials {
         width: 100%;
         flex-flow: column nowrap;
-        margin-top: 70px;
     }
 
     .info {
         width: 100%;
         padding: 50px 20px;
+        flex-flow: column nowrap;
     }
 
     .info p {
         font-family: 'Julius Sans One';
         font-size: 2rem;
         text-align: center;
+        display: block;
+    }
+
+    span {
+        display: contents;
+    }
+
+    .write {
+        width: 100%;
+        height: 70px;
+        background-color: var(--dark-gray);
+        text-decoration: none;
+    }
+
+    .write p {
+        font-family: 'Julius Sans One';
+        font-size: 1.5rem;
     }
 </style>

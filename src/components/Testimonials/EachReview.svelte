@@ -24,15 +24,15 @@
     }
 
     .bg1 {
-        background-color: #F2FAFD;
+        background-color: #f5f5f5;
     }
 
     .bg2 {
-        background-color: #EEF8FC;
+        background-color: #ECECEC;
     }
 
     .bg3 {
-        background-color: #EAF6FB;
+        background-color: #E2E2E2;
     }
 
     .wrapper {
@@ -48,7 +48,7 @@
 
     .content p {
         font-family: 'Quicksand';
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         line-height: 2.3rem;
         letter-spacing: .07rem;
         word-spacing: .27rem;
@@ -58,7 +58,7 @@
     .author {
         width: 100%;
         font-family: 'Julius Sans One';
-        font-size: 1.7rem;
+        font-size: 1.2rem;
         justify-content: flex-end;
         padding: 20px;
     }

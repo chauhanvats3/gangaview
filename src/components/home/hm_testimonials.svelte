@@ -42,7 +42,7 @@
 
     .review {
         margin: 10%;
-        width: 30ch;
+        max-width: 30ch;
         font-family: 'Quicksand';
         font-size: 1.4rem;
         line-height: 2.3rem;
