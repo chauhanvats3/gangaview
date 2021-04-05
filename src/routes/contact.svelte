@@ -36,9 +36,9 @@
 
     .cta {
         width: 100%;
-        height: 100px;
+        height: 72px;
         font-family: 'Julius Sans One';
-        font-size: 2rem;
+        font-size: 1.6rem;
         text-decoration: none;
         padding: 0 40px;
     }
