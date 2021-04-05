@@ -24,15 +24,15 @@
     }
 
     .bg1 {
-        background-color: #F5F5F5;
+        background-color: #eafaff;
     }
 
     .bg2 {
-        background-color: #ececec;
+        background-color: #dff7ff;
     }
 
     .bg3 {
-        background-color: #e2e2e2;
+        background-color: #d6f7ff;
     }
 
     .wrapper {
@@ -64,6 +64,6 @@
     }
 
     .author p {
-        color: #797979;
+        color: #4b4b4b;
     }
 </style>

@@ -43,16 +43,20 @@
     .review {
         margin: 10%;
         width: 30ch;
-        font-size: 1.1rem;
-        word-spacing: 0.3rem;
+        font-family: 'Quicksand';
+        font-size: 1.4rem;
+        line-height: 2.3rem;
+        letter-spacing: .07rem;
+        word-spacing: .27rem;
+        text-align: left;
     }
 
     .author {
-        font-size: 1.3rem;
+        font-size: 1.7rem;
         width: 100%;
         justify-content: flex-end;
         font-family: 'Julius Sans One';
-        color: #555;
+        color: #797979;
         padding: 5px 10%;
     }
 </style>
@@ -68,7 +72,7 @@
                 Stayed here for 3-4 months and had the best time! <br>
                 Good location, nice rooms and the family that own the place are super cute!!
             </div>
-            <div class="author">- Azi Ben Arroch</div>
+            <div class="author">Azi Ben Arroch</div>
         </div>
     </a>
 </div>
