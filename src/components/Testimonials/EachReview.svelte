@@ -1,10 +1,10 @@
 <script>
     export let review;
     export let index;
-    index = (index + 1) % 3;
+    index = (index + 1) % 4;
 </script>
 
-<div class="review {index === 1 ? 'bg1' : index === 2 ? 'bg2' : 'bg3'}">
+<div class="review {index === 1 ? 'bg1' : index === 2 ? 'bg2' : index === 3 ? 'bg3' : 'bg2'}">
     <div class="wrapper">
         <div class="content">
             <p>{@html review.content}</p>
@@ -24,15 +24,15 @@
     }
 
     .bg1 {
-        background-color: #eafaff;
+        background-color: #F2FAFD;
     }
 
     .bg2 {
-        background-color: #dff7ff;
+        background-color: #EEF8FC;
     }
 
     .bg3 {
-        background-color: #d6f7ff;
+        background-color: #EAF6FB;
     }
 
     .wrapper {
