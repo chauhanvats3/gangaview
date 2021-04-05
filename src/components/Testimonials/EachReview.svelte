@@ -43,6 +43,7 @@
     .content {
         width: 100%;
         padding: 20px;
+        flex-flow: column nowrap;
     }
 
     .content p {
@@ -51,6 +52,7 @@
         line-height: 2.3rem;
         letter-spacing: .07rem;
         word-spacing: .27rem;
+        text-align: left;
     }
 
     .author {
