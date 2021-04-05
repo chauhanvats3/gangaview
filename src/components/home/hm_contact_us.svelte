@@ -30,7 +30,6 @@
     }
 
     .content>div {
-        height: 50vh;
         width: 100%;
     }
 
