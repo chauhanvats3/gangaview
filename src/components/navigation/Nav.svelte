@@ -35,12 +35,16 @@
         if (code === 1) {
 
             //back pressed
-            let isImageOverlay = window.location.href.includes("imageOverlay=true");
-            if (isImageOverlay) return;
+            /*     let isMenuOpen = window.location.href.includes("menu=true");
+                if (!isMenuOpen) return; */
 
+            if (ham.classList.contains("active")) {
+                body.classList.toggle("noscroll");
+                ham.classList.toggle('active');
+            }
             showMenu = false;
-            body.classList.toggle("noscroll");
-            ham.classList.toggle('active');
+
+
         }
         else if (code === 0) {
             //ham clicked

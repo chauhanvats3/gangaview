@@ -26,7 +26,7 @@
 <div class="local">
     <Hero {path} {heroImage} />
 
-    <p class="heading">Here's Some Of the best things to do around Laxman Jhula</p>
+    <p class="heading">Some Of the best things to do around Rishikesh</p>
 
     {#each localGuides as local}
     <LocalGuideLoader {local} />

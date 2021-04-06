@@ -57,7 +57,7 @@
         <p class="gradient-text gradient-blue-green">Write A Review</p>
     </a>
     <div class="info">
-        <p>Here’s some nice things our guests wrote about us on
+        <p>Some of the nice things our guests wrote about us on
             <span style="color:#4285F4">G</span><span style="color:#DB4437">O</span><span
                 style="color:#F4B400">O</span><span style="color:#4285F4">G</span><span
                 style="color:#0F9D58">L</span><span style="color:#DB4437">E</span>
