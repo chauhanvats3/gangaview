@@ -46,7 +46,7 @@
         },
         {
             que: `Do you have geyser in the bathroom ? Also, let me know if you have TV in the room`,
-            ans: `Hi, We do have geyser in the bathroom. Unfortunately, we don't have TVs.`
+            ans: `Hi, We do have geyser in the bathroom. Unfortunately, we don't have TV.`
         }
     ]
 </script>
