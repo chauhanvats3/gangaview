@@ -89,6 +89,7 @@
 
     .a {
         right: -35px;
+        font-size: 165px;
     }
 
     .que,

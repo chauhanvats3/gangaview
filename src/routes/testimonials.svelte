@@ -1,8 +1,8 @@
 <script>
     import EachReview from '../components/Testimonials/EachReview.svelte'
-    import Metadata from '../components/metadata.svelte'
     import Hero from '../components/Hero.svelte'
-    const metadata = { title: "Testimonials - Shri Ganga View Guest House", description: "Our guests leave the best reviews. Here’s some nice things our guests wrote about us on Google.", keywords: "guest house, budget, laxman jhula, ganga, view, hotel, rishikesh, room, sunset, terrace, ghat, cheap", thumb: "images/thumbnails/home.png" }
+    import Metadata from '../components/metadata.svelte'
+    const metadata = { url: "https://gangaview.com/testimonials", title: "Testimonials - Shri Ganga View Guest House", description: "Our guests leave the best reviews. Here’s some nice things our guests wrote about us on Google.", keywords: "guest house, budget, laxman jhula, ganga, view, hotel, rishikesh, room, sunset, terrace, ghat, cheap", thumb: "images/thumbnails/home.png" }
 
     const path = [{ href: "./testimonials", name: "Testimonials" }]
 

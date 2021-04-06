@@ -3,7 +3,7 @@
     import ImageOverlay from '../components/ImageOverlay.svelte';
     import Metadata from '../components/metadata.svelte';
 
-    const metadata = { title: "Gallery - Shri Ganga View Guest House", description: "Photos of our Rooms and View", keywords: "guest house, budget, laxman jhula, ganga, view, hotel, rishikesh, room, sunset, terrace, ghat, cheap", thumb: "images/thumbnails/home.png" }
+    const metadata = { url: "https://gangaview.com/gallery", title: "Gallery - Shri Ganga View Guest House", description: "Photos of our Rooms and View", keywords: "guest house, budget, laxman jhula, ganga, view, hotel, rishikesh, room, sunset, terrace, ghat, cheap", thumb: "images/thumbnails/home.png" }
 
     let heroImage = "images/Rooms/view/4.jpg"
     let path = [{ name: "Gallery", href: "./gallery" }]

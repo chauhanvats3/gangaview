@@ -10,7 +10,7 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gangaview.com">
+    <meta property="og:url" content="{metadata.url}">
     <meta property="og:title" content="{metadata.title}">
     <meta property="og:description" content="{metadata.description}">
     {#if metadata.thumb}
@@ -20,7 +20,7 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" key="twcard" />
-    <meta property="twitter:url" content="https://gangaview.com">
+    <meta property="twitter:url" content="{metadata.url}">
     <meta property="twitter:title" content="{metadata.title}">
     <meta property="twitter:description" content="{metadata.description}">
     {#if metadata.thumb}

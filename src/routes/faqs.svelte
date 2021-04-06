@@ -1,8 +1,11 @@
 <script>
+    import Metadata from '../components/metadata.svelte';
     import Hero from '../components/Hero.svelte'
     import EachFAQ from '../components/FAQs/eachfaq.svelte'
     const heroImage = "images/faqs.jpg"
     const path = [{ name: "FAQs", href: "./faqs" }]
+
+    const metadata = { url: "https://gangaview.com/faqs", title: "FAQs - Shri Ganga View Guest House", description: "Here are some of the most frequently asked questions.", keywords: "guest house, budget, laxman jhula, ganga, view, hotel, rishikesh, room, sunset, terrace, ghat, cheap", thumb: "images/thumbnails/home.png" }
 
     let faqs = [
         {

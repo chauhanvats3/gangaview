@@ -4,7 +4,8 @@
     import InputText from '../components/inputs/input_text.svelte';
     import InputTextarea from '../components/inputs/input_textarea.svelte';
     import InputSelect from '../components/inputs/input_select.svelte';
-
+    import Metadata from '../components/metadata.svelte'
+    const metadata = { url: "https://gangaview.com/cform", title: "CForm - Shri Ganga View Guest House", description: "Lets finalise your check in.", keywords: "guest house, budget, laxman jhula, ganga, view, hotel, rishikesh, room, sunset, terrace, ghat, cheap", thumb: "images/thumbnails/home.png" }
 
     const path = [{ name: "C-Form", href: "./cform" }];
 

@@ -1,6 +1,7 @@
 <script>
     import Hero from '../components/Hero.svelte'
-
+    import Metadata from '../components/metadata.svelte'
+    const metadata = { url: "https://gangaview.com/contact", title: "Contact Us - Shri Ganga View Guest House", description: "We are very accessible. Here's how to reach us.", keywords: "guest house, budget, laxman jhula, ganga, view, hotel, rishikesh, room, sunset, terrace, ghat, cheap", thumb: "images/thumbnails/home.png" }
     let heroImage = 'images/contact.jpg'
     const path = [{ name: "Contact Us", href: "./contact" }]
 </script>

@@ -7,7 +7,7 @@
 	import FAQ from '../components/home/hm_faq.svelte';
 	import ContactUs from '../components/home/hm_contact_us.svelte';
 
-	const metadata = { title: "Shri Ganga View Guest House", description: "Best Budget Guest House with river view in Laxman Jhula, Rishikesh with rooms starting @ Rs 699", keywords: "guest house, budget, laxman jhula, ganga, view, hotel, rishikesh, room, sunset, terrace, ghat, cheap", thumb: "images/thumbnails/home.png" }
+	const metadata = { url: "https://gangaview.com", title: "Shri Ganga View Guest House", description: "Best Budget Guest House with river view in Laxman Jhula, Rishikesh with rooms starting @ Rs 699", keywords: "guest house, budget, laxman jhula, ganga, view, hotel, rishikesh, room, sunset, terrace, ghat, cheap", thumb: "images/thumbnails/home.png" }
 </script>
 <style>
 	.index {
