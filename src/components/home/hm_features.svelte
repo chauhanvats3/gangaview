@@ -46,8 +46,9 @@
 
     .illus {
         flex-flow: column nowrap;
-        width: 100%;
+        max-width: 1000px;
         margin: 25px 0;
+        width: 100%;
     }
 
     embed {

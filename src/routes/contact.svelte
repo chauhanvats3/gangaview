@@ -20,12 +20,13 @@
         rel="noreferrer" target="_blank">
         <p>Booking.com</p>
     </a>
-    <a href="https://www.instagram.com/shrigangaview/" class="cta instagram dark" rel="noreferrer" target="_blank">
+    <a href="mailto:contact@gangaview.com" class="cta email dark" rel="noreferrer" target="_blank">
+        <p class="gradient-text gradient-blue-green">E-mail</p>
+    </a>
+    <a href="https://www.instagram.com/shrigangaview/" class="cta instagram " rel="noreferrer" target="_blank">
         <p class="gradient-text gradient-instagram">Instagram</p>
     </a>
-    <a href="mailto:contact@gangaview.com" class="cta email" rel="noreferrer" target="_blank">
-        <p class="gradient-text gradient-blue-pink">E-mail</p>
-    </a>
+
 </div>
 
 <style>
