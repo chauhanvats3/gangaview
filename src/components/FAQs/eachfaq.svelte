@@ -1,6 +1,6 @@
 <script>
     export let qna;
-    export let index;
+    export let index = 0;
     index = (index + 1) % 2;
 
 </script>
@@ -108,5 +108,7 @@
         justify-content: flex-end;
         text-align: left;
         width: 92%;
+        letter-spacing: .08rem;
+        word-spacing: .1rem;
     }
 </style>

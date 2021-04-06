@@ -11,7 +11,7 @@
         },
         {
             que: `Do you welcome unmarried couples here at the property?`,
-            ans: `Yes, unmarried couples are allowed as we are not currently discriminating based on marital status.`
+            ans: `Yes, unmarried couples are allowed as well as married couples.`
         },
         {
             que: `Is covid negative report mandatory to travel to Rishikesh?`,

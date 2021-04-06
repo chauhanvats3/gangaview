@@ -11,7 +11,7 @@
         font-family: 'Julius Sans One';
         width: 100%;
         height: 65.5px;
-        background-color: var(--dark-gray);
+        background-color: white;
         justify-content: flex-start;
         padding: 0 20px;
     }
@@ -21,7 +21,7 @@
     }
 
     .content {
-        border: 6px solid var(--dark-gray);
+        border: 6px solid white;
         border-top: 0px;
         width: 100%;
         flex-grow: 1;
@@ -98,7 +98,7 @@
 
 <div class="contact-us" id="contact-us">
     <div class="title">
-        <p class=" gradient-text gradient-blue-green">Contact Us</p>
+        <p class=" gradient-text gradient-blue-pink">Contact Us</p>
     </div>
     <div class="content">
         <div class="contact">
