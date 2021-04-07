@@ -14,7 +14,8 @@
     <a href="tel:+917579472022" class="cta call" rel="noreferrer" target="_blank">
         <p class="gradient-text gradient-blue-pink">Call Us</p>
     </a>
-    <a href="https://g.page/shri-ganga-view?share" class="cta directions dark" rel="noreferrer" target="_blank">
+    <a href="https://www.google.com/maps/dir//shri+ganga+view+guest+house/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3909165cf835eaad:0xa6e60e6bcb16dcf8?sa=X&ved=2ahUKEwjwp4TCuunvAhXsxTgGHfWrA2kQ9RcwDnoECBMQBA"
+        class="cta directions dark" rel="noreferrer" target="_blank">
         <p class="gradient-text gradient-blue-green">Directions</p>
     </a>
     <a href="https://www.booking.com/hotel/in/shri-ganga-view-guest-house.en-gb.html" class="cta booking"
