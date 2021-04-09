@@ -23,12 +23,6 @@
     });
 
     let menuItems = [{
-        name: "Home",
-        href: "."
-    }, {
-        name: "CForm",
-        href: "./cform"
-    }, {
         name: "Rooms & Amenities",
         href: "./rooms"
     }, {
@@ -38,17 +32,20 @@
         name: "Testimonials",
         href: "./testimonials"
     }, {
-        name: "Local Area",
-        href: "./local"
-    }, {
         name: "FAQs",
         href: "./faqs"
     }, {
-        name: "About Us",
-        href: "./about"
+        name: "Local Area",
+        href: "./local"
     }, {
         name: "Contact Us",
         href: "./contact"
+    }, {
+        name: "CForm",
+        href: "./cform"
+    }, {
+        name: "Home",
+        href: "."
     }];
 
 </script>

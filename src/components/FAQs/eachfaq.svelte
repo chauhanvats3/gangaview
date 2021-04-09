@@ -56,7 +56,6 @@
     .qna {
         max-width: 75ch;
         width: 100%;
-        overflow: hidden;
         flex-flow: column nowrap;
     }
 
