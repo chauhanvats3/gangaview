@@ -48,6 +48,7 @@
         } else {
             formGroup.classList.remove("invalid");
             warning.innerHTML = ""
+            val = searchTerm;
         }
     }
 </script>

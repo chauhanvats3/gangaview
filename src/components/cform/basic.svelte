@@ -16,6 +16,7 @@
 
 <div class="basic">
     <p>Basic Details</p>
+    {data.sex}
     <Text inputName="First Name" id="f_name" bind:val={data.f_name} placeholder="Greatest"
         hint="According to passport" />
     <Text inputName="Last Name" id="l_name" bind:val={data.l_name} placeholder="Ever" hint="Also called surname" />
