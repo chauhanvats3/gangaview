@@ -68,10 +68,14 @@
 
     .quewrapper {
         justify-content: flex-end;
+        overflow: hidden;
+
     }
 
     .answrapper {
         justify-content: flex-start;
+        overflow: hidden;
+
     }
 
     .q,

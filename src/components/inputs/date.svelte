@@ -90,16 +90,7 @@
         border-image-slice: 1;
     }
 
-    :global(.invalid .form__field,
-        .invalid .form__field:focus) {
-        border-bottom: 2px solid #d10404 !important;
-        border-image: linear-gradient(90deg, #d10404, #d10404) !important;
-        border-image-slice: 1 !important;
-    }
 
-    :global(.invalid .form__label) {
-        color: #d10404 !important;
-    }
 
 
 
@@ -121,12 +112,6 @@
     .form__field:required,
     .form__field:invalid {
         box-shadow: none;
-    }
-
-    .warning {
-        color: #d10404;
-        width: 100%;
-        justify-content: flex-start;
     }
 </style>
 

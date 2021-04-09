@@ -6,6 +6,9 @@
     export let placeholder = "Fame";
     export let options = [{ name: "default", index: 0 }];
 
+    let input, warning, formGroup;
+
+
     function capitalize(str) {
         var result;
 
@@ -30,7 +33,25 @@
     }
 
     let searchTerm = "";
-    $: filteredOptions = options.filter(option => option.text.indexOf(searchTerm) !== -1);
+    let filteredOptions = options;
+    $: {
+        filteredOptions = options.filter(option => option.text.indexOf(searchTerm.trim().toLowerCase()) !== -1);
+    }
+
+    let validateMe = () => {
+        console.log("validate" + searchTerm.trim().toLowerCase())
+        const found = options.find(element => element.text === searchTerm.trim().toLowerCase());
+
+        console.log(found)
+
+        if (!found) {
+            formGroup.classList.add("invalid");
+            warning.innerHTML = "Please select an Option from the list"
+        } else {
+            formGroup.classList.remove("invalid");
+            warning.innerHTML = ""
+        }
+    }
 </script>
 
 <style>
@@ -136,10 +157,12 @@
     }
 </style>
 
-<div class="form__group field">
+<div class="form__group field" bind:this={formGroup}>
     <input type="input" class="form__field noselect" {placeholder} name="{inputName}" {id} required
-        bind:value={searchTerm} />
+        bind:value={searchTerm} bind:this={input} on:input={validateMe} />
     <label for={id} class="form__label noselect">{inputName}</label>
+    <p class="warning" bind:this={warning}></p>
+
 
     <div class="options">
         {#each filteredOptions as option}
