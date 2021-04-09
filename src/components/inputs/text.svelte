@@ -4,6 +4,7 @@
     export let id;
     export let val;
     export let placeholder = "";
+
 </script>
 
 <style>
@@ -12,6 +13,7 @@
         padding: 15px 0 0;
         margin-top: 10px;
         width: 80%;
+        flex-flow: column nowrap;
     }
 
     .form__field {
@@ -78,6 +80,8 @@
 </style>
 
 <div class="form__group field">
+
     <input type="input" class="form__field noselect" {placeholder} name="{inputName}" {id} required bind:value={val} />
     <label for={id} class="form__label noselect">{inputName}</label>
+
 </div>

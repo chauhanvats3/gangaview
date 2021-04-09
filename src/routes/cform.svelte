@@ -132,7 +132,6 @@
     </div>
 
     <Buttons on:buttonPressed={buttonPressed} {currentPageIndex} bind:showSubmit={showSubmit} />
-    {dataset.basic.sex}
 </div>
 <style>
     .cform {
@@ -140,7 +139,7 @@
         width: 100%;
         min-height: 100vh;
         justify-content: flex-start;
-        margin: 20px 0;
+        margin: 0 0 20px 0;
     }
 
     .entrySection {

@@ -1,8 +1,18 @@
 <script>
     import Text from '../inputs/text.svelte';
     import Select from '../inputs/select.svelte';
+    import Date from '../inputs/date.svelte';
+    import { onMount } from 'svelte'
 
     export let passport, visa;
+
+
+    onMount(() => {
+
+        var today = new Date();
+        let todayStr = `${today.getFullYear()}-${parseInt(date.getMonth() + 1)}-${today.getDate()}`;
+        console.log(todayStr + "Date")
+    });
 
     const countries = [{ text: "India", index: 0 }, { text: "Israel", index: 1 }, { text: "USA", index: 2 }];
     const visaTypes = [{ text: "India", index: 0 }, { text: "Israel", index: 1 }, { text: "USA", index: 2 }];
@@ -13,8 +23,8 @@
 <div class="passport">
     <p>Passport Details</p>
     <Text inputName="Passport Number" id="pass_no" bind:val={passport.number} placeholder="AB123456" />
-    <Text inputName="Issued On" id="pdoi" bind:val={passport.issue} placeholder="dd/mm/yyyy" />
-    <Text inputName="Expiring On" id="pdoe" bind:val={passport.expiry} placeholder="dd/mm/yyyy" />
+    <Date inputName="Issued On" id="pdoi" bind:val={passport.issue} placeholder="dd/mm/yyyy" />
+    <Date inputName="Expiring On" id="pdoe" bind:val={passport.expiry} placeholder="dd/mm/yyyy" />
     <Text inputName="City" id="pcity" bind:val={passport.city} placeholder="Birnin Zana" />
     <Select inputName="Country" id="pcountry" bind:val={passport.country} placeholder="Wakanda" options={countries} />
 
