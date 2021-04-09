@@ -8,9 +8,9 @@
 
 
 
-    var today = new Date();
-    let todayStr = `${today.getFullYear()}-${parseInt(date.getMonth() + 1)}-${today.getDate()}`;
-    console.log(todayStr + "Date")
+    //var today = new Date('1995-12-17T03:24:00');
+    //let todayStr = `${today.getFullYear()}-${parseInt(date.getMonth() + 1)}-${today.getDate()}`;
+    //console.log(todayStr + "Date")
 
 
     const countries = [{ text: "India", index: 0 }, { text: "Israel", index: 1 }, { text: "USA", index: 2 }];
