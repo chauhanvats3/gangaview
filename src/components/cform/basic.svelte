@@ -12,19 +12,6 @@
 
     const countries = [{ text: "India", index: 0 }, { text: "Israel", index: 1 }, { text: "USA", index: 2 }];
 
-    /* basic: {
-            photo: "",
-            f_name: "",
-            l_name: "",
-            sex: "",
-            dob: "",
-            sp_cat: "",
-            nationality: "",
-            address: "",
-            city: "",
-            country: ""
-        } */
-
 </script>
 
 <div class="basic">

@@ -42,7 +42,7 @@
     let validateMe = () => {
         const found = options.find(element => element.text.toLowerCase() === searchTerm.toLowerCase());
 
-        if (found.length > 1 || found.length === 0) {
+        if (!found) {
             formGroup.classList.add("invalid");
             warning.innerHTML = "Please select an Option from the list"
         } else {
