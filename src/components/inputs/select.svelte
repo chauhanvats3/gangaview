@@ -80,7 +80,7 @@
     .form__field:focus {
         padding-bottom: 6px;
         border-width: 3px;
-        border-image: linear-gradient(to right, #11998e, #38ef7d);
+        border-image: linear-gradient(90deg, #24b7db, #b7db24);
         border-image-slice: 1;
     }
 
@@ -110,7 +110,7 @@
         max-height: 0;
         transition: max-height 0.4s ease-out;
         overflow: hidden;
-        background: linear-gradient(to right, #11998e, #38ef7d);
+        background: linear-gradient(45deg, #24b6dbce, #b7db24ce);
         border-radius: 10px;
         padding: 0 10px;
     }

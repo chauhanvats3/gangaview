@@ -52,7 +52,7 @@
     .form__field:focus {
         padding-bottom: 6px;
         border-width: 3px;
-        border-image: linear-gradient(to right, #11998e, #38ef7d);
+        border-image: linear-gradient(90deg, #24b7db, #b7db24);
         border-image-slice: 1;
     }
 
