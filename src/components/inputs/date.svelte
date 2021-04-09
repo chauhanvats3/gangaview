@@ -5,16 +5,35 @@
     export let val;
     export let placeholder = "";
     export let minDate = "1900-01-01";
-    export let maxDate = "2021-12-31";
+    export let maxDate = "2100-01-01";
+
 
     let type = "date";
-    let input, warning;
+    let input, warning, formGroup;
+
+    let getDateStr = (date => {
+        return `${date.getFullYear()}-${parseInt(date.getMonth() + 1)}-${date.getDate()}`
+    })
+
+    var today = new Date();
+    let todayStr = getDateStr(today);
+
+
+    maxDate = maxDate === "today" ? todayStr : "2100-01-01";
+    minDate = minDate === "today" ? todayStr : "1900-01-01";
 
     let validateMe = () => {
-        if (!input.checkValidity()) {
+        let inputDate = new Date(input.value);
 
-            warning.innerHTML = "Date is Invalid";
-        } else {
+        if (inputDate > new Date(maxDate)) {
+            formGroup.classList.add("invalid");
+            warning.innerHTML = "Today is the maximum allowed date!"
+        } else if (inputDate < new Date(minDate)) {
+            formGroup.classList.add("invalid");
+            warning.innerHTML = "Today is the minimum allowed date!"
+        }
+        else {
+            formGroup.classList.remove("invalid");
             warning.innerHTML = ""
         }
     }
@@ -39,7 +58,7 @@
         color: rgb(0, 0, 0);
         padding: 7px 0;
         background: transparent;
-        transition: border-color 5s ease-in;
+        transition: border-color 0.5s ease-in;
     }
 
     .form__field::placeholder {
@@ -71,6 +90,19 @@
         border-image-slice: 1;
     }
 
+    :global(.invalid .form__field,
+        .invalid .form__field:focus) {
+        border-bottom: 2px solid #d10404 !important;
+        border-image: linear-gradient(90deg, #d10404, #d10404) !important;
+        border-image-slice: 1 !important;
+    }
+
+    :global(.invalid .form__label) {
+        color: #d10404 !important;
+    }
+
+
+
     .form__field:focus::placeholder {
         color: #bbbbbb;
     }
@@ -90,17 +122,17 @@
     .form__field:invalid {
         box-shadow: none;
     }
+
+    .warning {
+        color: #d10404;
+        width: 100%;
+        justify-content: flex-start;
+    }
 </style>
 
-<div class="form__group field">
-    {#if type==='input'}
-
-    <input type="input" class="form__field noselect" {placeholder} name="{inputName}" {id} required bind:value={val}
-        bind:this={input} on:input={validateMe} />
-    {:else if type==='date'}
+<div class="form__group field" bind:this={formGroup}>
     <input type="date" class="form__field noselect" {placeholder} name="{inputName}" {id} required bind:value={val}
         min={minDate} max={maxDate} bind:this={input} on:input={validateMe} />
-    {/if}
     <label for={id} class="form__label noselect">{inputName}</label>
 
     <p class="warning" bind:this={warning}></p>
