@@ -1,10 +1,10 @@
 <script>
     /* Blatantly Copied from https://codepen.io/lucasyem/pen/ZEEYKdj */
-    export let inputName;
-    export let id;
-    export let val;
-    export let placeholder = "";
-    export let options;
+    export let inputName = "Namey Name";
+    export let id = "dfault";
+    export let val = "Valueable Value";
+    export let placeholder = "Fame";
+    export let options = [{ name: "default", index: 0 }];
 
     function capitalize(str) {
         var result;
