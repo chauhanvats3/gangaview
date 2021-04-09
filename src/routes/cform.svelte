@@ -22,7 +22,7 @@
             f_name: "",
             l_name: "",
             sex: "",
-            date_of_birth: "",
+            dob: "",
             special_category: "",
             nationality: "",
             address: "",

@@ -6,6 +6,8 @@
     export let placeholder = "";
     export let minDate = "1900-01-01";
     export let maxDate = "2100-01-01";
+    export let hint = "Take a hint, dude!"
+
 
 
     let type = "date";
@@ -43,7 +45,7 @@
     .form__group {
         position: relative;
         padding: 15px 0 0;
-        margin-top: 10px;
+        margin-top: 30px;
         width: 80%;
         flex-flow: column nowrap;
     }
@@ -83,6 +85,12 @@
         color: #9b9b9b;
     }
 
+    .hint {
+        display: none;
+        color: #094944;
+        font-size: 0.9rem;
+    }
+
     .form__field:focus {
         padding-bottom: 6px;
         border-width: 3px;
@@ -100,8 +108,8 @@
 
     .form__field:focus~.form__label {
         position: absolute;
-        top: 0;
-        left: 20px;
+        top: -25px;
+        left: 0px;
         display: block;
         transition: 0.2s;
         font-size: 1rem;
@@ -113,12 +121,16 @@
     .form__field:invalid {
         box-shadow: none;
     }
+
+    .form__field:focus~.form__label .hint {
+        display: block;
+    }
 </style>
 
 <div class="form__group field" bind:this={formGroup}>
     <input type="date" class="form__field noselect" {placeholder} name="{inputName}" {id} required bind:value={val}
         min={minDate} max={maxDate} bind:this={input} on:input={validateMe} />
-    <label for={id} class="form__label noselect">{inputName}</label>
+    <label for={id} class="form__label noselect">{inputName}<span class="hint">{hint}</span> </label>
 
     <p class="warning" bind:this={warning}></p>
 </div>

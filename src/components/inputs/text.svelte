@@ -4,6 +4,7 @@
     export let id;
     export let val;
     export let placeholder = "";
+    export let hint = "Take a hint, dude!"
 
 </script>
 
@@ -11,7 +12,7 @@
     .form__group {
         position: relative;
         padding: 15px 0 0;
-        margin-top: 10px;
+        margin-top: 30px;
         width: 80%;
         flex-flow: column nowrap;
     }
@@ -51,6 +52,12 @@
         color: #9b9b9b;
     }
 
+    .hint {
+        display: none;
+        color: #094944;
+        font-size: 0.9rem;
+    }
+
     .form__field:focus {
         padding-bottom: 6px;
         border-width: 3px;
@@ -64,12 +71,16 @@
 
     .form__field:focus~.form__label {
         position: absolute;
-        top: 0;
-        left: 20px;
+        top: -25px;
+        left: 0px;
         display: block;
         transition: 0.2s;
         font-size: 1rem;
-        color: #11998e;
+        color: #0f7970;
+    }
+
+    .form__field:focus~.form__label .hint {
+        display: block;
     }
 
     /* reset input */
@@ -82,6 +93,6 @@
 <div class="form__group field">
 
     <input type="input" class="form__field noselect" {placeholder} name="{inputName}" {id} required bind:value={val} />
-    <label for={id} class="form__label noselect">{inputName}</label>
+    <label for={id} class="form__label noselect">{inputName}<span class="hint">{hint}</span></label>
 
 </div>
