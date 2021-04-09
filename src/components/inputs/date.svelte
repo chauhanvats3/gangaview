@@ -93,7 +93,7 @@
 
     .form__field:focus {
         padding-bottom: 6px;
-        border-width: 3px;
+        border-width: 2px;
         border-image: linear-gradient(90deg, #24b7db, #b7db24);
         border-image-slice: 1;
     }

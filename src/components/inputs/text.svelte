@@ -27,7 +27,7 @@
         color: rgb(0, 0, 0);
         padding: 7px 0;
         background: transparent;
-        transition: border-color 5s ease-in;
+        transition: border-color .5s ease-in;
     }
 
     .form__field::placeholder {
@@ -56,11 +56,12 @@
         display: none;
         color: #094944;
         font-size: 0.9rem;
+        text-align: right;
     }
 
     .form__field:focus {
         padding-bottom: 6px;
-        border-width: 3px;
+        border-width: 2px;
         border-image: linear-gradient(90deg, #24b7db, #b7db24);
         border-image-slice: 1;
     }

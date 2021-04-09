@@ -4,7 +4,7 @@
     export let id = "dfault";
     export let val = "Valueable Value";
     export let placeholder = "Fame";
-    export let options = [{ name: "default", index: 0 }];
+    export let options;
     export let hint = "Take a hint, dude!"
 
     let input, warning, formGroup;
@@ -36,16 +36,13 @@
     let searchTerm = "";
     let filteredOptions = options;
     $: {
-        filteredOptions = options.filter(option => option.text.indexOf(searchTerm.trim().toLowerCase()) !== -1);
+        filteredOptions = options.filter(option => option.text.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
     }
 
     let validateMe = () => {
-        console.log("validate" + searchTerm.trim().toLowerCase())
-        const found = options.find(element => element.text === searchTerm.trim().toLowerCase());
+        const found = options.find(element => element.text.toLowerCase() === searchTerm.toLowerCase());
 
-        console.log(found)
-
-        if (!found) {
+        if (found.length > 1 || found.length === 0) {
             formGroup.classList.add("invalid");
             warning.innerHTML = "Please select an Option from the list"
         } else {
@@ -74,7 +71,7 @@
         color: rgb(0, 0, 0);
         padding: 7px 0;
         background: transparent;
-        transition: border-color 5s ease-in;
+        transition: border-color .5s ease-in;
     }
 
     .form__field::placeholder {
@@ -107,7 +104,7 @@
 
     .form__field:focus {
         padding-bottom: 6px;
-        border-width: 3px;
+        border-width: 2px;
         border-image: linear-gradient(90deg, #24b7db, #b7db24);
         border-image-slice: 1;
     }
@@ -138,8 +135,8 @@
         max-height: 0;
         transition: max-height 0.4s ease-out;
         overflow: hidden;
-        background: linear-gradient(45deg, #24b6dbce, #b7db24ce);
-        border-radius: 10px;
+        background: #252525;
+        border-radius: 0px;
         padding: 0 10px;
     }
 
@@ -149,6 +146,7 @@
         transition: max-height 0.5s ease-in-out;
     }
 
+
     .options p {
         width: 100%;
         justify-content: flex-start;
@@ -156,7 +154,7 @@
         cursor: pointer;
         margin: 5px 10px;
         transition: all 0.3s ease-in-out;
-        color: black;
+        color: white;
     }
 
     .options p:hover {
@@ -170,14 +168,15 @@
 
 <div class="form__group field" bind:this={formGroup}>
     <input type="input" class="form__field noselect" {placeholder} name="{inputName}" {id} required
-        bind:value={searchTerm} bind:this={input} on:input={validateMe} />
+        bind:value={searchTerm} bind:this={input} on:input={validateMe} autocomplete="new-password" />
     <label for={id} class="form__label noselect">{inputName}<span class="hint">{hint}</span></label>
     <p class="warning" bind:this={warning}></p>
 
 
     <div class="options">
         {#each filteredOptions as option}
-        <p on:click={()=>optionClicked(option.index)}>{capitalize(option.text)}</p>
+        <p class="gradient-text gradient-blue-green" on:click={()=>
+            optionClicked(option.index)}>{capitalize(option.text)}</p>
         {/each}
     </div>
 </div>
