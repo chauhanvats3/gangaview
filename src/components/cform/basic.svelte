@@ -22,7 +22,7 @@
     <Text inputName="Last Name" id="l_name" bind:val={data.l_name} placeholder="Ever" hint="Also called surname" />
     <Select inputName="Sex" id="sex" bind:val={data.sex} placeholder="M/F" options={sexOptions}
         hint="Whatever your passport says!" />
-    <Date inputName="Date Of Birth" id="dob" bind:val={data.dob} placeholder="dd/mm/yyyy" minDate="today"
+    <Date inputName="Date Of Birth" id="dob" bind:val={data.dob} placeholder="dd/mm/yyyy" maxDate="today"
         hint="When are we celebrating, mate?" />
     <Select inputName="Special Category" id="sp_cat" bind:val={data.sp_cat} placeholder="Others"
         options={spCatOptions} />

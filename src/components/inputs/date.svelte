@@ -29,7 +29,7 @@
 
         if (inputDate > new Date(maxDate)) {
             formGroup.classList.add("invalid");
-            warning.innerHTML = "Today is the maximum allowed date!"
+            warning.innerHTML = "Yesterday is the maximum allowed date!"
         } else if (inputDate < new Date(minDate)) {
             formGroup.classList.add("invalid");
             warning.innerHTML = "Today is the minimum allowed date!"
@@ -42,6 +42,12 @@
 </script>
 
 <style>
+    .warning {
+        color: #d10404 !important;
+        width: 100% !important;
+        justify-content: flex-start !important;
+    }
+
     .form__group {
         position: relative;
         padding: 15px 0 0;

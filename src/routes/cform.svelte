@@ -155,10 +155,4 @@
     :global(.invalid .form__label) {
         color: #d10404 !important;
     }
-
-    ::global(.warning) {
-        color: #d10404;
-        width: 100%;
-        justify-content: flex-start;
-    }
 </style>

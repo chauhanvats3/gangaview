@@ -54,6 +54,12 @@
 </script>
 
 <style>
+    .warning {
+        color: #d10404 !important;
+        width: 100% !important;
+        justify-content: flex-start !important;
+    }
+
     .form__group {
         position: relative;
         padding: 15px 0 0;
