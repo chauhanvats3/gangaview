@@ -2,7 +2,7 @@
     /* Blatantly Copied from https://codepen.io/lucasyem/pen/ZEEYKdj */
     export let inputName = "whatsherface";
     export let id = "dfault";
-    export let val = "Valueable Value";
+    export let val = "";
     export let placeholder = "Fame";
     export let options;
     export let hint = "Take a hint, dude!"
@@ -33,7 +33,7 @@
         searchTerm = val;
     }
 
-    let searchTerm = "";
+    let searchTerm = val;
     let filteredOptions = options;
     $: {
         filteredOptions = options.filter(option => option.text.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);

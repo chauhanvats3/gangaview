@@ -23,7 +23,7 @@
             l_name: "",
             sex: "",
             dob: "",
-            special_category: "",
+            sp_cat: "",
             nationality: "",
             address: "",
             city: "",
@@ -67,8 +67,6 @@
                 permanent_number: ""
             }
         }
-
-
     };
 
     let showSubmit = false;
