@@ -1,9 +1,32 @@
 <script>
+    import Text from '../inputs/text.svelte';
+    import Select from '../inputs/select.svelte';
+
     export let passport, visa;
+
+    const countries = [{ text: "India", index: 0 }, { text: "Israel", index: 1 }, { text: "USA", index: 2 }];
+    const visaTypes = [{ text: "India", index: 0 }, { text: "Israel", index: 1 }, { text: "USA", index: 2 }];
+    const visaSubtypes = [{ text: "India", index: 0 }, { text: "Israel", index: 1 }, { text: "USA", index: 2 }];
+
 </script>
 
 <div class="passport">
-    <p>Passport & Visa</p>
+    <p>Passport Details</p>
+    <Text inputName="Passport Number" id="pass_no" bind:val={passport.number} placeholder="AB123456" />
+    <Text inputName="Issued On" id="pdoi" bind:val={passport.issue} placeholder="dd/mm/yyyy" />
+    <Text inputName="Expiring On" id="pdoe" bind:val={passport.expiry} placeholder="dd/mm/yyyy" />
+    <Text inputName="City" id="pcity" bind:val={passport.city} placeholder="Birnin Zana" />
+    <Select inputName="Country" id="pcountry" bind:val={passport.country} placeholder="Wakanda" options={countries} />
+
+
+    <p>Visa Details</p>
+    <Text inputName="Visa Number" id="pass_no" bind:val={visa.number} placeholder="AB123456" />
+    <Text inputName="Issued On" id="vdoi" bind:val={visa.issue} placeholder="dd/mm/yyyy" />
+    <Text inputName="Expiring On" id="vdoe" bind:val={visa.expiry} placeholder="dd/mm/yyyy" />
+    <Text inputName="City" id="vcity" bind:val={visa.city} placeholder="Birnin Zana" />
+    <Select inputName="Country" id="vcountry" bind:val={visa.country} placeholder="Wakanda" options={countries} />
+    <Select inputName="Visa Type" id="vtype" bind:val={visa.type} placeholder="Tourist" options={visaTypes} />
+    <Select inputName="Visa Subtype" id="vsubtype" bind:val={visa.subtype} placeholder="e-TV" options={visaSubtypes} />
 
 </div>
 

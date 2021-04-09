@@ -2,8 +2,10 @@
 
     import Text from '../inputs/text.svelte';
     import Select from '../inputs/select.svelte';
-    const sexOptions = [{ text: "male", index: 0 }, { text: "female", index: 1 }, { text: "transgender", index: 2 }];
+
     export let data;
+
+    const sexOptions = [{ text: "male", index: 0 }, { text: "female", index: 1 }, { text: "transgender", index: 2 }];
 
 </script>
 

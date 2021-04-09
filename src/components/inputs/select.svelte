@@ -1,6 +1,6 @@
 <script>
     /* Blatantly Copied from https://codepen.io/lucasyem/pen/ZEEYKdj */
-    export let inputName = "Namey Name";
+    export let inputName = "whatsherface";
     export let id = "dfault";
     export let val = "Valueable Value";
     export let placeholder = "Fame";
