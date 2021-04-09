@@ -7,12 +7,11 @@
     export let passport, visa;
 
 
-    onMount(() => {
 
-        var today = new Date();
-        let todayStr = `${today.getFullYear()}-${parseInt(date.getMonth() + 1)}-${today.getDate()}`;
-        console.log(todayStr + "Date")
-    });
+    var today = new Date();
+    let todayStr = `${today.getFullYear()}-${parseInt(date.getMonth() + 1)}-${today.getDate()}`;
+    console.log(todayStr + "Date")
+
 
     const countries = [{ text: "India", index: 0 }, { text: "Israel", index: 1 }, { text: "USA", index: 2 }];
     const visaTypes = [{ text: "India", index: 0 }, { text: "Israel", index: 1 }, { text: "USA", index: 2 }];
