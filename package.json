@@ -9,7 +9,6 @@
     "start": "node __sapper__/build"
   },
   "dependencies": {
-    "@sveltejs/svelte-virtual-list": "^3.0.1",
     "compression": "^1.7.1",
     "netlify-cli": "^3.16.2",
     "polka": "next",
@@ -17,6 +16,7 @@
     "sirv": "^1.0.0"
   },
   "devDependencies": {
+    "@sveltejs/svelte-virtual-list": "^3.0.1",
     "@babel/core": "^7.0.0",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-transform-runtime": "^7.0.0",
