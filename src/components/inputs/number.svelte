@@ -73,6 +73,7 @@
         transition: 0.3s ease-in-out;
         font-size: 1rem;
         color: #9b9b9b;
+        text-align: left;
     }
 
     .hint {

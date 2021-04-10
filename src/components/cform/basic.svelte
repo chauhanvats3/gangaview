@@ -3,32 +3,17 @@
     import Text from '../inputs/text.svelte';
     import Select from '../inputs/select.svelte';
     import Date from '../inputs/date.svelte'
+    import { specialCategories } from '../../../static/data.js'
+
 
     export let data;
 
     const sexOptions = [{ text: "male", index: 0 }, { text: "female", index: 1 }, { text: "transgender", index: 2 }];
 
-    const spCatOptions = [
-        { index: 0, value: 3, text: "Crew" },
-        { index: 1, value: 7, text: "Diplomat Exempted" },
-        { index: 2, value: 4, text: "Emergency Transit" },
-        { index: 3, value: 12, text: "Loss of Passport" },
-        { index: 4, value: 1, text: "Newly Born" },
-        { index: 5, value: 10, text: "OCI" },
-        { index: 6, value: 6, text: "Official Exempted" },
-        { index: 7, value: 8, text: "Other Exempted" },
-        { index: 8, value: 9, text: "Others" },
-        { index: 9, value: 11, text: "PIO" },
-        { index: 10, value: 2, text: "Refugee" },
-        { index: 11, value: 5, text: "TLP" }];
 
-    /* 
-    
-     */
 
     const countries = [{ text: "India", index: 0 }, { text: "Israel", index: 1 }, { text: "USA", index: 2 }];
 
-    $: console.log(data)
 
 </script>
 
@@ -39,14 +24,14 @@
 
     <Text inputName="Last Name" id="l_name" bind:val={data.l_name} placeholder="Ever" hint="Also called surname" />
 
-    <Select inputName="Sex" id="sex" bind:val={data.sex} placeholder="M/F" options={sexOptions}
+    <Select inputName="Sex" id="sex" height="125px" bind:val={data.sex} placeholder="M/F" options={sexOptions}
         hint="Whatever your passport says!" />
 
     <Date inputName="Date Of Birth" id="dob" bind:val={data.dob} placeholder="" maxDate="today"
         hint="When are we celebrating, mate?" />
 
-    <Select inputName="Special Category" id="sp_cat" bind:val={data.sp_cat} placeholder="Others"
-        options={spCatOptions} />
+    <Select inputName="Special Category" id="sp_cat" height="225px" bind:val={data.sp_cat} placeholder="Others"
+        options={specialCategories} hint="Choose Others if not sure!" />
 
     <Select inputName="Nationality" id="nationality" bind:val={data.nationality} placeholder="Wakanda"
         options={countries} hint="You pledge Allegiance to the flag of. . ." />

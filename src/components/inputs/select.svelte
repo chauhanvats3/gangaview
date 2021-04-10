@@ -6,6 +6,9 @@
     export let placeholder = "Fame";
     export let options;
     export let hint = "Take a hint, dude!"
+    export let height = "150px";
+
+    import VirtualList from '@sveltejs/svelte-virtual-list';
 
     let input, warning, formGroup;
 
@@ -49,7 +52,7 @@
             warning.innerHTML = "Please select an Option from the list"
         } else {
             formGroup.classList.remove("invalid");
-            warning.innerHTML = ""
+            warning.innerHTML = " "
             val = searchTerm;
         }
     }
@@ -103,6 +106,7 @@
         transition: 0.3s ease-in-out;
         font-size: 1rem;
         color: #9b9b9b;
+        text-align: left;
     }
 
     .hint {
@@ -138,7 +142,7 @@
         box-shadow: none;
     }
 
-    .options {
+    /*   .options {
         flex-flow: column nowrap;
         width: 100%;
         max-height: 0;
@@ -146,18 +150,31 @@
         overflow: hidden;
         background: #252525;
         border-radius: 0px;
-        padding: 0 10px;
     }
 
     .form__field:focus~.options {
-        overflow-y: scroll;
+        max-height: 300px;
+        transition: max-height 0.5s ease-in-out;
+        justify-content: flex-start;
+    } */
+
+    :global(svelte-virtual-list-viewport) {
+        flex-flow: column nowrap;
+        width: 100%;
+        max-height: 0;
+        transition: max-height 0.4s ease-out;
+        overflow: hidden;
+        background: #252525;
+        border-radius: 0px;
+    }
+
+    :global(.form__field:focus~svelte-virtual-list-viewport) {
         max-height: 300px;
         transition: max-height 0.5s ease-in-out;
         justify-content: flex-start;
     }
 
-
-    .options p {
+    .eachOption {
         width: 100%;
         justify-content: flex-start;
         font-size: 1.3rem;
@@ -167,7 +184,7 @@
         color: #d1d1d1
     }
 
-    .options p:hover {
+    .eachOption:hover {
         letter-spacing: 0.1rem;
         color: #fff;
     }
@@ -175,19 +192,23 @@
     .form__field:focus~.form__label .hint {
         display: block;
     }
+
+    :global(svelte-virtual-list-viewport) {
+        width: 100%;
+    }
 </style>
 
 <div class="form__group field" bind:this={formGroup}>
     <input type="input" class="form__field noselect" {placeholder} name="{inputName}" {id} required
         bind:value={searchTerm} bind:this={input} on:input={validateMe} autocomplete="new-password" />
     <label for={id} class="form__label noselect">{inputName}<span class="hint">{hint}</span></label>
-    <p class="warning" bind:this={warning}></p>
 
 
-    <div class="options">
-        {#each filteredOptions as option}
-        <p on:click={()=>
-            optionClicked(option.index)}>{capitalize(option.text)}</p>
-        {/each}
-    </div>
+
+    <VirtualList items={filteredOptions} let:item {height}>
+        <p class="eachOption" on:click={()=>
+            optionClicked(item.index)}>{capitalize(item.text)}</p>
+    </VirtualList>
+    <p class="warning" bind:this={warning}> </p>
+
 </div>
