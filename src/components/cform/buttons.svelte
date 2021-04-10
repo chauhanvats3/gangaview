@@ -48,7 +48,7 @@
     }
 
     .button.submit p {
-        color: white;
+        color: var(--dark-gray);
     }
 
     .button p {

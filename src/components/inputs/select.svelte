@@ -28,8 +28,10 @@
     }
 
     function optionClicked(index) {
+        console.log("Clicked")
         let found = options.find(element => element.index == index);
-        val = capitalize(found.text)
+        //val = capitalize(found.text)
+        val = found.text;
         searchTerm = val;
         validateMe();
     }
@@ -42,8 +44,6 @@
 
     let validateMe = () => {
         const found = options.find(element => element.text.toLowerCase() === searchTerm.toLowerCase());
-        console.log(found)
-        console.log(searchTerm.toLowerCase())
         if (!found) {
             formGroup.classList.add("invalid");
             warning.innerHTML = "Please select an Option from the list"
@@ -150,9 +150,10 @@
     }
 
     .form__field:focus~.options {
-
-        max-height: 500px;
+        overflow-y: scroll;
+        max-height: 300px;
         transition: max-height 0.5s ease-in-out;
+        justify-content: flex-start;
     }
 
 
@@ -163,11 +164,12 @@
         cursor: pointer;
         margin: 5px 10px;
         transition: all 0.3s ease-in-out;
-        color: white;
+        color: #d1d1d1
     }
 
     .options p:hover {
         letter-spacing: 0.1rem;
+        color: #fff;
     }
 
     .form__field:focus~.form__label .hint {
@@ -184,7 +186,7 @@
 
     <div class="options">
         {#each filteredOptions as option}
-        <p class="gradient-text gradient-blue-green" on:click={()=>
+        <p on:click={()=>
             optionClicked(option.index)}>{capitalize(option.text)}</p>
         {/each}
     </div>
