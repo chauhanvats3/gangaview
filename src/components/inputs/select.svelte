@@ -31,6 +31,7 @@
         let found = options.find(element => element.index == index);
         val = capitalize(found.text)
         searchTerm = val;
+        validateMe();
     }
 
     let searchTerm = val;
@@ -41,7 +42,8 @@
 
     let validateMe = () => {
         const found = options.find(element => element.text.toLowerCase() === searchTerm.toLowerCase());
-
+        console.log(found)
+        console.log(searchTerm.toLowerCase())
         if (!found) {
             formGroup.classList.add("invalid");
             warning.innerHTML = "Please select an Option from the list"

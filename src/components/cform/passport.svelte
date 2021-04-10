@@ -15,9 +15,9 @@
     <p>Passport Details</p>
     <Text inputName="Passport Number" id="pass_no" bind:val={passport.number} placeholder="AB123456" />
 
-    <Date inputName="Issued On" id="pdoi" bind:val={passport.issue} placeholder="dd/mm/yyyy" maxDate="today" />
+    <Date inputName="Issued On" id="pdoi" bind:val={passport.issue} placeholder="" maxDate="today" />
 
-    <Date inputName="Expiring On" id="pdoe" bind:val={passport.expiry} placeholder="dd/mm/yyyy" minDate="today" />
+    <Date inputName="Expiring On" id="pdoe" bind:val={passport.expiry} placeholder="" minDate="today" />
 
     <Text inputName="City" id="pcity" bind:val={passport.city} placeholder="Birnin Zana" />
 
@@ -26,8 +26,8 @@
 
     <p>Visa Details</p>
     <Text inputName="Visa Number" id="pass_no" bind:val={visa.number} placeholder="AB123456" />
-    <Text inputName="Issued On" id="vdoi" bind:val={visa.issue} placeholder="dd/mm/yyyy" />
-    <Text inputName="Expiring On" id="vdoe" bind:val={visa.expiry} placeholder="dd/mm/yyyy" />
+    <Date inputName="Issued On" id="vdoi" bind:val={visa.issue} placeholder="" maxDate="today" />
+    <Date inputName="Expiring On" id="vdoe" bind:val={visa.expiry} placeholder="" minDate="today" />
     <Text inputName="City" id="vcity" bind:val={visa.city} placeholder="Birnin Zana" />
     <Select inputName="Country" id="vcountry" bind:val={visa.country} placeholder="Wakanda" options={countries} />
     <Select inputName="Visa Type" id="vtype" bind:val={visa.type} placeholder="Tourist" options={visaTypes} />

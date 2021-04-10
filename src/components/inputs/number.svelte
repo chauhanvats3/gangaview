@@ -4,52 +4,34 @@
     export let id;
     export let val;
     export let placeholder = "";
-    export let minDate = "1900-01-01";
-    export let maxDate = "2100-01-01";
     export let hint = "Take a hint, dude!"
 
 
-
-    let type = "date";
     let input, warning, formGroup;
 
-    let getDateStr = (date => {
-        return `${date.getFullYear()}-${parseInt(date.getMonth() + 1)}-${date.getDate()}`
-    })
+    function isNumeric(value) {
+        return /^\d+$/.test(value);
+    }
 
-    let today = new Date();
-    let todayStr = getDateStr(today);
-    let tomorrow = new Date(new Date().setDate(today.getDate() + 1));
-    let tomorrowStr = getDateStr(tomorrow);
-
-    maxDate = maxDate === "today" ? todayStr : maxDate;
-    minDate = minDate === "today" ? todayStr : minDate;
-    maxDate = maxDate === "tomorrow" ? tomorrowStr : maxDate;
-    minDate = minDate === "tomorrow" ? tomorrowStr : minDate;
     let validateMe = () => {
-        let inputDate = new Date(input.value);
+        let inputData = input.value;
 
-        if (inputDate > new Date(maxDate)) {
+        console.log(inputData)
+        console.log(!isNumeric(inputData))
+
+        if (!isNumeric(inputData)) {
             formGroup.classList.add("invalid");
-            warning.innerHTML = `Only A Date Before ${maxDate} Is Allowed!`
-        } else if (inputDate.getDate() <= new Date(minDate).getDate() && inputDate.getMonth() <= new Date(minDate).getMonth() && inputDate.getFullYear() <= new Date(minDate).getFullYear()) {
-            formGroup.classList.add("invalid");
-            warning.innerHTML = `Only a Date After ${minDate} Is Allowed!`
-        }
-        else {
+            warning.innerHTML = `Only Numeric Values Are Allowed!`
+        } else {
             formGroup.classList.remove("invalid");
             warning.innerHTML = ""
         }
+
+
     }
 </script>
 
 <style>
-    .warning {
-        color: #d10404 !important;
-        width: 100% !important;
-        justify-content: flex-start !important;
-    }
-
     .form__group {
         position: relative;
         padding: 15px 0 0;
@@ -68,7 +50,7 @@
         color: rgb(0, 0, 0);
         padding: 7px 0;
         background: transparent;
-        transition: border-color 0.5s ease-in;
+        transition: border-color .5s ease-in;
     }
 
     .form__field::placeholder {
@@ -97,6 +79,7 @@
         display: none;
         color: #094944;
         font-size: 0.9rem;
+        text-align: right;
     }
 
     .form__field:focus {
@@ -105,10 +88,6 @@
         border-image: linear-gradient(90deg, #24b7db, #b7db24);
         border-image-slice: 1;
     }
-
-
-
-
 
     .form__field:focus::placeholder {
         color: #bbbbbb;
@@ -121,7 +100,11 @@
         display: block;
         transition: 0.2s;
         font-size: 1rem;
-        color: #11998e;
+        color: #0f7970;
+    }
+
+    .form__field:focus~.form__label .hint {
+        display: block;
     }
 
     /* reset input */
@@ -130,15 +113,19 @@
         box-shadow: none;
     }
 
-    .form__field:focus~.form__label .hint {
-        display: block;
+    .warning {
+        color: #d10404 !important;
+        width: 100% !important;
+        justify-content: flex-start !important;
     }
 </style>
 
 <div class="form__group field" bind:this={formGroup}>
-    <input type="date" class="form__field noselect" {placeholder} name="{inputName}" {id} required bind:value={val}
-        min={minDate} max={maxDate} bind:this={input} on:input={validateMe} />
-    <label for={id} class="form__label noselect">{inputName}<span class="hint">{hint}</span> </label>
+
+    <input type="input" class="form__field noselect" {placeholder} name="{inputName}" {id} required bind:value={val}
+        bind:this={input} on:input={validateMe} />
+    <label for={id} class="form__label noselect">{inputName}<span class="hint">{hint}</span></label>
 
     <p class="warning" bind:this={warning}></p>
+
 </div>

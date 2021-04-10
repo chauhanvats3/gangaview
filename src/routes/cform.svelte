@@ -13,9 +13,8 @@
     const path = [{ name: "C-Form", href: "./cform" }];
     const heroImage = "images/cform.jpg"
 
-
     const today = new Date();
-
+    let entrySection, welcome;
     let dataset = {
         basic: {
             photo: "",
@@ -46,17 +45,17 @@
             sub_type: "",
         },
         misc: {
-            arrived_from: {
+            arrival: {
+                date: "",
                 country: "",
                 city: "",
                 place: ""
             },
-            india_arrival_date: "",
-            intended_duration: "",
-            employed_in_india: false,
-            purpose_of_visit: "",
+            intended_stay: "",
+            employed: "",
+            purpose: "",
             next_destination: {
-                inside_india: true,
+                india: "",
                 state: "",
                 district: "",
                 place: ""
@@ -76,16 +75,24 @@
 
     $: {
         currentPage = pages[currentPageIndex];
+
     }
 
+    let scrollOptions = { behavior: "smooth", block: "start", inline: "start" };
+
     let buttonPressed = (e) => {
-        //e.detail.text
+
         let whichButton = e.detail.text;
 
         if (whichButton === 'next') {
+            welcome.scrollIntoView(scrollOptions);
             currentPageIndex == pages.length - 1 ? currentPageIndex : currentPageIndex++;
+
+
         } else if (whichButton == 'prev') {
+            welcome.scrollIntoView(scrollOptions);
             currentPageIndex == 0 ? currentPageIndex : currentPageIndex--;
+
         } else {
             //api_send_c_form();
         }
@@ -115,8 +122,15 @@
 
 <div class="cform">
     <Hero {path} {heroImage} />
+    <div class="welcome" bind:this={welcome}>
+        <p>Welcome to</p>
+        <p class="brand gradient-text gradient-blue-pink">Shri Ganga View Guest House</p>
+        <p>Please Fill out the C-Form to Finalise your Check-In.</p>
+    </div>
 
-    <div class="entrySection">
+    <p class="caution">Avoid Using Device's Back Button Until Submit Is Successful.</p>
+
+    <div class="entrySection" bind:this={entrySection}>
         {#if currentPage==='basic'}
         <Basic bind:data={dataset.basic} />
         {:else if currentPage==='passport'}
@@ -138,6 +152,38 @@
         min-height: 100vh;
         justify-content: flex-start;
         margin: 0 0 20px 0;
+        text-align: center;
+    }
+
+    .welcome {
+        flex-flow: column nowrap;
+        width: 100%;
+        font-size: 1.5rem;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .welcome p,
+    .caution {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .welcome p:first-child {
+        font-size: 2.5rem;
+    }
+
+    .brand {
+        font-size: 3rem;
+        font-family: 'julius sans one';
+        margin: 20px auto;
+    }
+
+    .caution {
+        width: 100%;
+        font-size: 1.2rem;
+        margin: 20px auto;
+        color: #d10404;
     }
 
     .entrySection {
