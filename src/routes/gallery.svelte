@@ -23,20 +23,28 @@
             { src: "images/Rooms/double/1.jpg" },
             { src: "images/Rooms/double/2.jpg" },
             { src: "images/Rooms/double/3.jpg" },
-            { src: "images/Rooms/double/4.jpg" }
+            { src: "images/Rooms/double/4.jpg" },
+            { src: "images/Rooms/double/5.jpg" },
+            { src: "images/Rooms/double/6.jpg" },
+            { src: "images/Rooms/double/7.jpg" },
+            { src: "images/Rooms/double/8.jpg" },
+            { src: "images/Rooms/double/9.jpg" },
+            { src: "images/Rooms/double/10.jpg" }
         ]
     },
     {
         id: "3", name: "Budget Room", images: [
             { src: "images/Rooms/budget/1.jpg" },
             { src: "images/Rooms/budget/2.jpg" },
-            { src: "images/Rooms/budget/3.jpg" }
+            { src: "images/Rooms/budget/3.jpg" },
+            { src: "images/Rooms/budget/4.jpg" }
         ]
     },
     {
         id: "4", name: "Patio", images: [
             { src: "images/Rooms/patio/1.jpg" },
-            { src: "images/Rooms/patio/2.jpg" }
+            { src: "images/Rooms/patio/2.jpg" },
+            { src: "images/Rooms/patio/3.jpg" }
         ]
     }]
 

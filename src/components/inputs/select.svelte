@@ -13,23 +13,6 @@
     let input, warning, formGroup;
 
 
-    function capitalize(str) {
-        var result;
-
-        if (!str.trim()) {
-            return "";
-        }
-
-        var slcs = str.split(" ");
-        var new_slcs = [];
-        slcs.forEach(slc => {
-            slc = slc[0].toUpperCase() + slc.slice(1);
-            new_slcs.push(slc);
-        });
-
-        return new_slcs.join(" ");
-    }
-
     function optionClicked(index) {
         console.log("Clicked")
         let found = options.find(element => element.index == index);
@@ -142,22 +125,6 @@
         box-shadow: none;
     }
 
-    /*   .options {
-        flex-flow: column nowrap;
-        width: 100%;
-        max-height: 0;
-        transition: max-height 0.4s ease-out;
-        overflow: hidden;
-        background: #252525;
-        border-radius: 0px;
-    }
-
-    .form__field:focus~.options {
-        max-height: 300px;
-        transition: max-height 0.5s ease-in-out;
-        justify-content: flex-start;
-    } */
-
     :global(svelte-virtual-list-viewport) {
         flex-flow: column nowrap;
         width: 100%;
@@ -207,7 +174,7 @@
 
     <VirtualList items={filteredOptions} let:item {height}>
         <p class="eachOption" on:click={()=>
-            optionClicked(item.index)}>{capitalize(item.text)}</p>
+            optionClicked(item.index)}>{item.text}</p>
     </VirtualList>
     <p class="warning" bind:this={warning}> </p>
 

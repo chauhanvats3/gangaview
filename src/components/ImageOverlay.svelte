@@ -1,5 +1,6 @@
 <script>
     import { createEventDispatcher } from 'svelte';
+
     const dispatch = createEventDispatcher();
     function crossClicked() {
 
@@ -23,7 +24,7 @@
     <div class="content">
         <div class="scroll">
             {#each category.images as image}
-            <img src={image.src} alt="">
+            <img src="{image.src}" alt="">
             {/each}
         </div>
     </div>

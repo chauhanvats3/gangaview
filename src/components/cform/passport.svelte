@@ -2,13 +2,25 @@
     import Text from '../inputs/text.svelte';
     import Select from '../inputs/select.svelte';
     import Date from '../inputs/date.svelte';
+    import { specialCategories, countries, sexOptions, states, visaTypes, purpose } from '../../../static/data.js';
 
     export let passport, visa;
+    let visaSelected = visaTypes[0]
+    let visaSubtypes = visaSelected.subtypes;
 
-    const countries = [{ text: "India", index: 0 }, { text: "Israel", index: 1 }, { text: "USA", index: 2 }];
-    const visaTypes = [{ text: "India", index: 0 }, { text: "Israel", index: 1 }, { text: "USA", index: 2 }];
-    const visaSubtypes = [{ text: "India", index: 0 }, { text: "Israel", index: 1 }, { text: "USA", index: 2 }];
+    $: {
+        visaSubtypes = visaChanged(visa.type);
+    }
 
+    let visaChanged = (selected) => {
+
+        if (!selected) {
+            return [{ text: "", index: 0, value: 0 }]
+        }
+
+        let visaSelected = visaTypes.find(element => element.text.toLowerCase() === selected.toLowerCase());
+        return visaSelected.subtypes;
+    }
 </script>
 
 <div class="passport">
@@ -17,21 +29,24 @@
 
     <Date inputName="Issued On" id="pdoi" bind:val={passport.issue} placeholder="" maxDate="today" />
 
-    <Date inputName="Expiring On" id="pdoe" bind:val={passport.expiry} placeholder="" minDate="today" />
 
     <Text inputName="City" id="pcity" bind:val={passport.city} placeholder="Birnin Zana" />
 
     <Select inputName="Country" id="pcountry" bind:val={passport.country} placeholder="Wakanda" options={countries} />
 
 
+    <Date inputName="Expiring On" id="pdoe" bind:val={passport.expiry} placeholder="" minDate="today" />
+
+
     <p>Visa Details</p>
     <Text inputName="Visa Number" id="pass_no" bind:val={visa.number} placeholder="AB123456" />
     <Date inputName="Issued On" id="vdoi" bind:val={visa.issue} placeholder="" maxDate="today" />
-    <Date inputName="Expiring On" id="vdoe" bind:val={visa.expiry} placeholder="" minDate="today" />
+
     <Text inputName="City" id="vcity" bind:val={visa.city} placeholder="Birnin Zana" />
     <Select inputName="Country" id="vcountry" bind:val={visa.country} placeholder="Wakanda" options={countries} />
     <Select inputName="Visa Type" id="vtype" bind:val={visa.type} placeholder="Tourist" options={visaTypes} />
     <Select inputName="Visa Subtype" id="vsubtype" bind:val={visa.subtype} placeholder="e-TV" options={visaSubtypes} />
+    <Date inputName="Expiring On" id="vdoe" bind:val={visa.expiry} placeholder="" minDate="today" />
 
 </div>
 

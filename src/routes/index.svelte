@@ -11,7 +11,7 @@
 </script>
 <style>
 	.index {
-		flex-direction: column;
+		flex-flow: column nowrap;
 		width: 100%;
 	}
 </style>
@@ -25,4 +25,5 @@
 	<Features />
 	<FAQ />
 	<ContactUs />
+
 </div>

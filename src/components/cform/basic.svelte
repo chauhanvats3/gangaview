@@ -3,16 +3,11 @@
     import Text from '../inputs/text.svelte';
     import Select from '../inputs/select.svelte';
     import Date from '../inputs/date.svelte'
-    import { specialCategories } from '../../../static/data.js'
+    import { specialCategories, countries, sexOptions } from '../../../static/data.js'
 
 
     export let data;
 
-    const sexOptions = [{ text: "male", index: 0 }, { text: "female", index: 1 }, { text: "transgender", index: 2 }];
-
-
-
-    const countries = [{ text: "India", index: 0 }, { text: "Israel", index: 1 }, { text: "USA", index: 2 }];
 
 
 </script>

@@ -63,19 +63,23 @@
     .answrapper {
         width: 100%;
         position: relative;
-        min-height: 144px;
+        min-height: 160px;
+    }
+
+    @media (max-width:850px) {
+
+        .quewrapper,
+        .answrapper {
+            overflow: hidden;
+        }
     }
 
     .quewrapper {
         justify-content: flex-end;
-        overflow: hidden;
-
     }
 
     .answrapper {
         justify-content: flex-start;
-        overflow: hidden;
-
     }
 
     .q,

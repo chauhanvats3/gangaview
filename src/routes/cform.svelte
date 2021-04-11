@@ -56,7 +56,9 @@
             purpose: "",
             next_destination: {
                 india: "",
+                country: "",
                 state: "",
+                city: "",
                 district: "",
                 place: ""
             },
