@@ -72,7 +72,7 @@
 
     let showSubmit = false;
     let pages = ["basic", "passport", "misc", "success"];
-    let currentPageIndex = 0;
+    let currentPageIndex = 2;
     let currentPage = pages[currentPageIndex];
 
     $: {

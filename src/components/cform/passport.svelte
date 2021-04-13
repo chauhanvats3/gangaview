@@ -25,14 +25,16 @@
 
 <div class="passport">
     <p>Passport Details</p>
-    <Text inputName="Passport Number" id="pass_no" bind:val={passport.number} placeholder="AB123456" />
+    <Text inputName="Passport Number" id="pass_no" bind:val={passport.number} placeholder="AB123456" hint="" />
 
     <Date inputName="Issued On" id="pdoi" bind:val={passport.issue} placeholder="" maxDate="today" />
 
 
-    <Text inputName="City" id="pcity" bind:val={passport.city} placeholder="Birnin Zana" />
+    <Text inputName="City" id="pcity" bind:val={passport.city} placeholder="Lannisport"
+        hint="Where passport was issued." />
 
-    <Select inputName="Country" id="pcountry" bind:val={passport.country} placeholder="Wakanda" options={countries} />
+    <Select inputName="Country" id="pcountry" bind:val={passport.country} placeholder="Westeros" options={countries}
+        hint="Where passport was issued." />
 
 
     <Date inputName="Expiring On" id="pdoe" bind:val={passport.expiry} placeholder="" minDate="today" />
@@ -42,11 +44,14 @@
     <Text inputName="Visa Number" id="pass_no" bind:val={visa.number} placeholder="AB123456" />
     <Date inputName="Issued On" id="vdoi" bind:val={visa.issue} placeholder="" maxDate="today" />
 
-    <Text inputName="City" id="vcity" bind:val={visa.city} placeholder="Birnin Zana" />
-    <Select inputName="Country" id="vcountry" bind:val={visa.country} placeholder="Wakanda" options={countries} />
-    <Select inputName="Visa Type" id="vtype" bind:val={visa.type} placeholder="Tourist" options={visaTypes} />
-    <Select inputName="Visa Subtype" id="vsubtype" bind:val={visa.subtype} placeholder="e-TV" options={visaSubtypes} />
-    <Date inputName="Expiring On" id="vdoe" bind:val={visa.expiry} placeholder="" minDate="today" />
+    <Text inputName="City" id="vcity" bind:val={visa.city} placeholder="Lorath" hint="Where Visa was issued." />
+    <Select inputName="Country" id="vcountry" bind:val={visa.country} placeholder="Essos" options={countries}
+        hint="Where Visa was issued." />
+    <Select inputName="Visa Type" id="vtype" bind:val={visa.type} placeholder="e-Visa" options={visaTypes}
+        hint="Special symbols like - are needed" />
+    <Select inputName="Visa Subtype" id="vsubtype" bind:val={visa.subtype} placeholder="e-TV" options={visaSubtypes}
+        hint="Special symbols like - are needed" />
+    <Date inputName=" Expiring On" id="vdoe" bind:val={visa.expiry} placeholder="" minDate="today" />
 
 </div>
 

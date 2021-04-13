@@ -8,40 +8,55 @@
 
     export let data;
 
-    let stateSelected = data.next_destination.state;
-    let districts;
-    $: districts = stateSelected.districts;
+    let stateSelected = states[0]
+    let districts = stateSelected.districts;
+
+    $: {
+        districts = stateChanged(data.next_destination.state);
+    }
+
+    let stateChanged = (selected) => {
+
+        if (!selected) {
+            return [{ text: "", index: 0 }]
+        }
+
+        let stateSelected = states.find(element => element.text.toLowerCase() === selected.toLowerCase());
+        return stateSelected.districts;
+    }
 
 </script>
 
 <div class="misc">
     <p>Miscellaneous</p>
     <Date inputName="Arrival In India" id="doai" bind:val={data.arrival.date} placeholder="" maxDate="tomorrow"
-        hint="Arrival Date according to current Visa" />
-    <Select inputName="Arrived From Country" id="arrcountry" bind:val={data.arrival.country} placeholder="Gondor"
+        hint="Arrival Date according to latest Visa" />
+    <Select inputName="Arrived From Country" id="arrcountry" bind:val={data.arrival.country} placeholder="Westeros"
         options={countries} hint="The last country you were in." />
-    <Text inputName="City" id="arrcity" bind:val={data.arrival.city} placeholder="Osgiliath"
+    <Text inputName="City" id="arrcity" bind:val={data.arrival.city} placeholder="King's Landing"
         hint="And the city in that country" />
-    <Text inputName="Place" id="arrplace" bind:val={data.arrival.place} placeholder="Minas Tirith"
+    <Text inputName="Place" id="arrplace" bind:val={data.arrival.place} placeholder="Red Keep"
         hint="Exact Place in that city" />
     <Number inputName="Intended Stay Duration" id="intstay" bind:val={data.intended_stay} placeholder="30"
-        hint=". . .but you might never leave!" />
+        hint="We too wish Infinite was an option!" />
     <Select inputName="Employed In India?" id="employed" bind:val={data.employed} placeholder="No" options={yesno}
         hint="Yes/No" />
     <Select inputName="Purpose Of Visit" id="purpose" bind:val={data.purpose} placeholder="Tourism" options={purpose}
-        hint="Simple." />
+        hint="" />
     <Select inputName="Next Destination" id="destination" bind:val={data.next_destination.india} placeholder="Yes"
-        options={yesno} hint=" Inside India?" />
+        options={yesno} hint="Inside India?" />
 
     {#if data.next_destination.india==="Yes"}
     <Select inputName="State" id="deststate" bind:val={data.next_destination.state} placeholder="Uttarakhand"
         options={states} hint="" />
-    <Select inputName="District" id="destdist" bind:val={data.next_destination.district} placeholder="Pauri Garhwal"
+    <Select inputName="District" id="destdist" bind:val={data.next_destination.district} placeholder="Uttarkashi"
         options={districts} hint="" />
-    <Select inputName="Place" id="destplace" bind:val={data.next_destination.place} placeholder="Laxman Jhula"
-        options={yesno} hint="" />
+    <Text inputName="Place" id="destplace" bind:val={data.next_destination.place} placeholder="Harsil" hint="" />
     {:else}
-    <!-- else content here -->
+    <Select inputName="Country" id="destcountry" bind:val={data.next_destination.country} placeholder="Sothoryos"
+        options={countries} hint="Next Destination Country" />
+    <Text inputName="City" id="destccity" bind:val={data.next_destination.city} placeholder="Summer Sea" hint="" />
+    <Text inputName="Place" id="destcplace" bind:val={data.next_destination.place} placeholder="Naath" hint="" />
     {/if}
 
     <Number inputName="Indian Contact Number" id="indnum" bind:val={data.contact_info.indian_number}

@@ -6,7 +6,7 @@
     export let placeholder = "";
     export let minDate = "1900-01-01";
     export let maxDate = "2100-01-01";
-    export let hint = "Take a hint, dude!"
+    export let hint = ""
 
 
 

@@ -14,30 +14,28 @@
 
 <div class="basic">
     <p>Basic Details</p>
-    <Text inputName="First Name" id="f_name" bind:val={data.f_name} placeholder="Greatest"
-        hint="According to passport" />
+    <Text inputName="First Name" id="f_name" bind:val={data.f_name} placeholder="John" hint="According to passport" />
 
-    <Text inputName="Last Name" id="l_name" bind:val={data.l_name} placeholder="Ever" hint="Also called surname" />
+    <Text inputName="Last Name" id="l_name" bind:val={data.l_name} placeholder="Doe" hint="Also called surname" />
 
-    <Select inputName="Sex" id="sex" height="125px" bind:val={data.sex} placeholder="M/F" options={sexOptions}
-        hint="Whatever your passport says!" />
+    <Select inputName="Sex" id="sex" height="125px" bind:val={data.sex} placeholder="Female" options={sexOptions}
+        hint="aka Gender" />
 
-    <Date inputName="Date Of Birth" id="dob" bind:val={data.dob} placeholder="" maxDate="today"
-        hint="When are we celebrating, mate?" />
+    <Date inputName="Date Of Birth" id="dob" bind:val={data.dob} placeholder="" maxDate="today" hint="" />
 
     <Select inputName="Special Category" id="sp_cat" height="225px" bind:val={data.sp_cat} placeholder="Others"
         options={specialCategories} hint="Choose Others if not sure!" />
 
-    <Select inputName="Nationality" id="nationality" bind:val={data.nationality} placeholder="Wakanda"
+    <Select inputName="Nationality" id="nationality" bind:val={data.nationality} placeholder="Westerosi"
         options={countries} hint="You pledge Allegiance to the flag of. . ." />
 
     <Text inputName="Address" id="address" bind:val={data.address} placeholder="Address"
-        hint="Home is where the heart is; But we need permanent address here." />
+        hint="Permanent/Mailing Addresss" />
 
-    <Text inputName="City" id="city" bind:val={data.city} placeholder="City" hint="...And city" />
+    <Text inputName="City" id="city" bind:val={data.city} placeholder="King's Landing" hint="Address City" />
 
-    <Select inputName="Country" id="country" bind:val={data.country} placeholder="Wakanda" options={countries}
-        hint="...And The Country" />
+    <Select inputName="Country" id="country" bind:val={data.country} placeholder="Westeros" options={countries}
+        hint="Address Country" />
 
 
 

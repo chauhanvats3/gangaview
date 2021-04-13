@@ -35,7 +35,6 @@
     .sitemap {
         margin-top: 70px;
         width: 100%;
-        max-width: 75ch;
         flex-flow: column nowrap;
         background: var(--back-white);
         justify-content: space-between;
@@ -50,6 +49,7 @@
 
     .route {
         width: 100%;
+        max-width: 75ch;
         height: 100px;
         text-decoration: none;
     }

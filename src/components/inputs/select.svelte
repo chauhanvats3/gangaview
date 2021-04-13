@@ -5,7 +5,7 @@
     export let val = "";
     export let placeholder = "Fame";
     export let options;
-    export let hint = "Take a hint, dude!"
+    export let hint = ""
     export let height = "150px";
 
     import VirtualList from '@sveltejs/svelte-virtual-list';
@@ -152,7 +152,6 @@
     }
 
     .eachOption:hover {
-        letter-spacing: 0.1rem;
         color: #fff;
     }
 

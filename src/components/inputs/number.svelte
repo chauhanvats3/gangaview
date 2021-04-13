@@ -4,7 +4,7 @@
     export let id;
     export let val;
     export let placeholder = "";
-    export let hint = "Take a hint, dude!"
+    export let hint = ""
 
 
     let input, warning, formGroup;
