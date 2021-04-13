@@ -7,7 +7,6 @@
         height: 60px;
         position: absolute;
         bottom: -60px;
-        justify-content: space-between;
         justify-self: flex-end;
         width: 100vw;
         justify-content: space-around;
@@ -39,7 +38,6 @@
 </style>
 
 <div class="footer">
-    <div>Privacy Policy</div>
-    <div>Copyright {year}</div>
+    <div><a href="./sitemap">Sitemap</a></div>
     <div><a href="https://github.com/chauhanvats3" target="_blank" rel="noreferrer">Made by Vatsal</a></div>
 </div>

@@ -26,7 +26,7 @@
 <style>
 	main {
 		width: 100%;
-		min-height: 70vh;
+		min-height: 100vh;
 		align-self: flex-start;
 		justify-content: flex-start;
 		align-items: flex-start;

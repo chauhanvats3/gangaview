@@ -6,7 +6,13 @@
 </script>
 
 <style>
-	h1, p {
+	.error {
+		flex-flow: column nowrap;
+		margin-top: 80px;
+	}
+
+	h1,
+	p {
 		margin: 0 auto;
 	}
 
@@ -30,11 +36,14 @@
 <svelte:head>
 	<title>{status}</title>
 </svelte:head>
+<div class="error">
 
-<h1>{status}</h1>
+	<h1>{status}</h1>
 
-<p>{error.message}</p>
+	<p>{error.message}</p>
 
-{#if dev && error.stack}
+	{#if dev && error.stack}
 	<pre>{error.stack}</pre>
-{/if}
+	{/if}
+
+</div>
