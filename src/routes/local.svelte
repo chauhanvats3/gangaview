@@ -2,7 +2,10 @@
     import Hero from '../components/Hero.svelte'
     import LocalGuideLoader from '../components/LazyLoading/LocalGuideLoader.svelte'
     const path = [{ href: "./local", name: "Local Area" }]
-    const heroImage = "images/local.jpg"
+    const heroImage = "images/local.jpg";
+    import Metadata from '../components/metadata.svelte';
+
+    const metadata = { url: "https://gangaview.com/local", title: "Local Area - Shri Ganga View Guest House", description: "Some of the best things to do around Rishikesh", keywords: "guest house, budget, laxman jhula, ganga, view, hotel, rishikesh, room, sunset, terrace, ghat, cheap", thumb: "images/thumbnails/home.png" }
 
     let localGuides = [
         {
@@ -22,6 +25,7 @@
         }
     ]
 </script>
+<Metadta {metadata} />
 
 <div class="local">
     <Hero {path} {heroImage} />

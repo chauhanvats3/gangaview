@@ -1,4 +1,7 @@
 <script>
+    import Metadata from '../components/metadata.svelte';
+
+    const metadata = { url: "https://gangaview.com/sitemap", title: "Sitemap - Shri Ganga View Guest House", description: "Sitemap", keywords: "guest house, budget, laxman jhula, ganga, view, hotel, rishikesh, room, sunset, terrace, ghat, cheap", thumb: "images/thumbnails/home.png" }
     let routes = [
         { href: ".", name: "Home" },
         { href: "./rooms", name: "Rooms & Amenities" },
@@ -10,7 +13,7 @@
         { href: "./cform", name: "CForm" }
     ];
 </script>
-
+<Metadata {metadata} />
 <div class="sitemap">
     <p class="heading">Sitemap </p>
     {#each routes as route,index}
