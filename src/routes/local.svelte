@@ -25,7 +25,7 @@
         }
     ]
 </script>
-<Metadta {metadata} />
+<Metadata {metadata} />
 
 <div class="local">
     <Hero {path} {heroImage} />

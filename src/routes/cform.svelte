@@ -72,7 +72,7 @@
 
     let showSubmit = false;
     let pages = ["basic", "passport", "misc", "success"];
-    let currentPageIndex = 2;
+    let currentPageIndex = 0;
     let currentPage = pages[currentPageIndex];
 
     $: {
@@ -121,6 +121,7 @@
 
 </script>
 
+<Metadata {metadata} />
 
 <div class="cform">
     <Hero {path} {heroImage} />

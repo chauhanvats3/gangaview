@@ -106,6 +106,8 @@
 
     .form__field:focus~.form__label .hint {
         display: block;
+        text-align: left;
+
     }
 
     /* reset input */
