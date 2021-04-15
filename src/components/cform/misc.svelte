@@ -52,11 +52,13 @@
     <Select inputName="District" id="destdist" bind:val={data.next_destination.district} placeholder="Uttarkashi"
         options={districts} hint="" />
     <Text inputName="Place" id="destplace" bind:val={data.next_destination.place} placeholder="Harsil" hint="" />
-    {:else}
+    {:else if data.next_destination.india==="No"}
     <Select inputName="Country" id="destcountry" bind:val={data.next_destination.country} placeholder="Sothoryos"
         options={countries} hint="Next Destination Country" />
-    <Text inputName="City" id="destccity" bind:val={data.next_destination.city} placeholder="Summer Sea" hint="" />
-    <Text inputName="Place" id="destcplace" bind:val={data.next_destination.place} placeholder="Naath" hint="" />
+    <Text inputName="City" id="destccity" bind:val={data.next_destination.city} placeholder="Summer Sea"
+        hint="Destination City" />
+    <Text inputName="Place" id="destcplace" bind:val={data.next_destination.place} placeholder="Naath"
+        hint="Destination Place" />
     {/if}
 
     <Number inputName="Indian Contact Number" id="indnum" bind:val={data.contact_info.indian_number}

@@ -7,6 +7,7 @@
     import Misc from '../components/cform/misc.svelte'
     import Success from '../components/cform/success.svelte'
     import Buttons from '../components/cform/buttons.svelte'
+    import { dataset } from '../stores/store.js'
 
     const metadata = { url: "https://gangaview.com/cform", title: "CForm - Shri Ganga View Guest House", description: "Lets finalise your check in.", keywords: "guest house, budget, laxman jhula, ganga, view, hotel, rishikesh, room, sunset, terrace, ghat, cheap", thumb: "images/thumbnails/home.png" }
 
@@ -15,60 +16,6 @@
 
     const today = new Date();
     let entrySection, welcome;
-    let dataset = {
-        basic: {
-            photo: "",
-            f_name: "",
-            l_name: "",
-            sex: "",
-            dob: "",
-            sp_cat: "",
-            nationality: "",
-            address: "",
-            city: "",
-            country: ""
-        },
-        passport: {
-            number: "",
-            city: "",
-            country: "",
-            issue: "",
-            expiry: "",
-        },
-        visa: {
-            number: "",
-            city: "",
-            country: "",
-            issue: "",
-            expiry: "",
-            type: "",
-            sub_type: "",
-        },
-        misc: {
-            arrival: {
-                date: "",
-                country: "",
-                city: "",
-                place: ""
-            },
-            intended_stay: "",
-            employed: "",
-            purpose: "",
-            next_destination: {
-                india: "",
-                country: "",
-                state: "",
-                city: "",
-                district: "",
-                place: ""
-            },
-            contact_info: {
-                email: "",
-                indian_number: "",
-                permanent_number: ""
-            }
-        }
-    };
 
     let showSubmit = false;
     let pages = ["basic", "passport", "misc", "success"];
@@ -97,6 +44,7 @@
 
         } else {
             //api_send_c_form();
+
         }
 
         if (currentPageIndex == pages.length - 2) {
@@ -109,7 +57,7 @@
 
 
     async function api_send_c_form() {
-        const url = `/api/send-c-form-email?dataset=${JSON.stringify(dataset)}`;
+        const url = `/api/send-c-form-email?$dataset=${JSON.stringify($dataset)}`;
         try {
             const response = await fetch(url);
             const data = await response.json();
@@ -135,11 +83,11 @@
 
     <div class="entrySection" bind:this={entrySection}>
         {#if currentPage==='basic'}
-        <Basic bind:data={dataset.basic} />
+        <Basic bind:data={$dataset.basic} />
         {:else if currentPage==='passport'}
-        <Passport bind:passport={dataset.passport} bind:visa={dataset.visa} />
+        <Passport bind:passport={$dataset.passport} bind:visa={$dataset.visa} />
         {:else if currentPage==='misc'}
-        <Misc bind:data={dataset.misc} />
+        <Misc bind:data={$dataset.misc} />
         {:else}
         <Success />
         {/if}

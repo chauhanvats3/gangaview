@@ -11,10 +11,10 @@
         {
             title: "Get a Panoramic View Of Rishikesh",
             image: "images/local/panorama.jpg",
-            link: "https://goo.gl/maps/z7jAAebRgpQWBAB4A"
+            link: "https://goo.gl/maps/6adXhMVheG4v2WrT7"
         },
         {
-            title: "Go River Rafting. . . Again",
+            title: "Go River Rafting",
             image: "images/local/rafting.jpg",
             link: "https://goo.gl/maps/9i6WW3JkmwfoVgLx9"
         },

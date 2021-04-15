@@ -16,7 +16,7 @@
     <p>Basic Details</p>
     <Text inputName="First Name" id="f_name" bind:val={data.f_name} placeholder="John" hint="According to passport" />
 
-    <Text inputName="Last Name" id="l_name" bind:val={data.l_name} placeholder="Doe" hint="Also called surname" />
+    <Text inputName="Last Name" id="l_name" bind:val={data.l_name} placeholder="Snow" hint="Also called surname" />
 
     <Select inputName="Sex" id="sex" height="125px" bind:val={data.sex} placeholder="Female" options={sexOptions}
         hint="aka Gender" />
@@ -32,7 +32,7 @@
     <Text inputName="Address" id="address" bind:val={data.address} placeholder="Address"
         hint="Permanent/Mailing Addresss" />
 
-    <Text inputName="City" id="city" bind:val={data.city} placeholder="King's Landing" hint="Address City" />
+    <Text inputName="City" id="city" bind:val={data.city} placeholder="Winterfell" hint="Address City" />
 
     <Select inputName="Country" id="country" bind:val={data.country} placeholder="Westeros" options={countries}
         hint="Address Country" />

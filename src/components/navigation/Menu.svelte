@@ -46,10 +46,6 @@
     }, {
         name: "Home",
         href: "."
-    },
-    {
-        name: "Sitemap",
-        href: "./sitemap"
     }];
 
 </script>

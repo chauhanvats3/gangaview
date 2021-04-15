@@ -30,7 +30,7 @@
     <Date inputName="Issued On" id="pdoi" bind:val={passport.issue} placeholder="" maxDate="today" />
 
 
-    <Text inputName="City" id="pcity" bind:val={passport.city} placeholder="Lannisport"
+    <Text inputName="City" id="pcity" bind:val={passport.city} placeholder="King's Landing"
         hint="Where passport was issued." />
 
     <Select inputName="Country" id="pcountry" bind:val={passport.country} placeholder="Westeros" options={countries}
@@ -41,7 +41,7 @@
 
 
     <p>Visa Details</p>
-    <Text inputName="Visa Number" id="pass_no" bind:val={visa.number} placeholder="AB123456" />
+    <Text inputName="Visa Number" id="visa_no" bind:val={visa.number} placeholder="AB123456" />
     <Date inputName="Issued On" id="vdoi" bind:val={visa.issue} placeholder="" maxDate="today" />
 
     <Text inputName="City" id="vcity" bind:val={visa.city} placeholder="Lorath" hint="Where Visa was issued." />

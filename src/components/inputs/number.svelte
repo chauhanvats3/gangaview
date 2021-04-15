@@ -15,10 +15,6 @@
 
     let validateMe = () => {
         let inputData = input.value;
-
-        console.log(inputData)
-        console.log(!isNumeric(inputData))
-
         if (!isNumeric(inputData)) {
             formGroup.classList.add("invalid");
             warning.innerHTML = `Only Numeric Values Are Allowed!`
