@@ -1,12 +1,17 @@
 <script>
     import { createEventDispatcher } from 'svelte';
 
+    let scroll;
     const dispatch = createEventDispatcher();
     function crossClicked() {
 
         dispatch('crossClicked', {
             text: 'Clicked!'
         });
+        setTimeout(() => {
+            scroll.children[0].scrollIntoView();
+
+        }, 1000)
     }
     export let showImageOverlay = false;
     export let category;
@@ -22,7 +27,7 @@
 
     </div>
     <div class="content">
-        <div class="scroll">
+        <div class="scroll" bind:this={scroll}>
             {#each category.images as image}
             <img src="{image.src}" alt="">
             {/each}

@@ -71,9 +71,11 @@
         });
     }
     function resetDataset() {
-        let res = confirm("This would Clear ALL the fields in C-Form. Continue?")
-        if (res)
-            $dataset.set(defaultData);
+        let res = confirm("This would clear ALL the fields in C-Form. Continue?")
+        if (res) {
+            dataset.set(defaultData);
+            window.location.reload();
+        }
     }
 </script>
 
@@ -81,9 +83,7 @@
     <div class="prev button" on:click={()=>buttonClicked('prev')}>
         <p class="noselect {currentPageIndex==0?'disabled':'gradient-text gradient-blue-green'}">Prev</p>
     </div>
-    <div class="reset button" on:click={()=>resetDataset()}>
-        <p class="noselect">Reset</p>
-    </div>
+
     {#if showSubmit}
     <div class="submit button gradient-blue-green" on:click={()=>buttonClicked('submit')}>
         <p class="noselect">Submit</p>
@@ -94,6 +94,9 @@
     </div>
 
     {/if}
+    <div class="reset button" on:click={()=>resetDataset()}>
+        <p class="noselect">Reset</p>
+    </div>
 
 </div>
 
@@ -102,14 +105,16 @@
         width: 80%;
         max-width: 60ch;
         justify-content: space-between;
+        flex-flow: row wrap;
     }
 
     .button {
-        width: 100%;
-        max-width: 160px;
+        width: 160px;
         height: 60px;
         background-color: var(--dark-gray);
         cursor: pointer;
+        flex-grow: 1;
+        margin: 10px;
     }
 
     .button.submit p {
