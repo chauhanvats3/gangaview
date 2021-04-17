@@ -3,14 +3,12 @@
     import Text from '../inputs/text.svelte';
     import Select from '../inputs/select.svelte';
     import Date from '../inputs/date.svelte'
-/*     import Image from '../inputs/Image.svelte'
- */    import { specialCategories, countries, sexOptions } from '../../../static/data.js'
+    /*     import Image from '../inputs/Image.svelte'
+     */
+    import { specialCategories, countries, sexOptions } from '../../../static/data.js'
 
 
-    export let data;
-
-
-
+    export let data, datavalid;
 </script>
 
 <div class="basic">
@@ -20,24 +18,25 @@
 
     <Text inputName="Last Name" id="l_name" bind:val={data.l_name} placeholder="Snow" hint="Also called surname" />
 
-    <Select inputName="Sex" id="sex" height="125px" bind:val={data.sex} placeholder="Female" options={sexOptions}
-        hint="aka Gender" />
+    <Select inputName="Sex" id="sex" height="125px" bind:val={data.sex} bind:valid={datavalid.sex} placeholder="Female"
+        options={sexOptions} hint="aka Gender" />
 
-    <Date inputName="Date Of Birth" id="dob" bind:val={data.dob} placeholder="" maxDate="today" hint="" />
+    <Date inputName="Date Of Birth" id="dob" bind:val={data.dob} placeholder="" maxDate="today" hint=""
+        bind:valid={datavalid.dob} />
 
-    <Select inputName="Special Category" id="sp_cat" height="225px" bind:val={data.sp_cat} placeholder="Others"
-        options={specialCategories} hint="Choose Others if not sure!" />
+    <Select inputName="Special Category" id="sp_cat" height="225px" bind:val={data.sp_cat} bind:valid={datavalid.sp_cat}
+        placeholder="Others" options={specialCategories} hint="Choose Others if not sure!" />
 
-    <Select inputName="Nationality" id="nationality" bind:val={data.nationality} placeholder="Westerosi"
-        options={countries} hint="You pledge Allegiance to the flag of. . ." />
+    <Select inputName="Nationality" id="nationality" bind:val={data.nationality} bind:valid={datavalid.nationality}
+        placeholder="Westerosi" options={countries} hint="You pledge Allegiance to the flag of. . ." />
 
     <Text inputName="Address" id="address" bind:val={data.address} placeholder="Address"
         hint="Permanent/Mailing Addresss" />
 
     <Text inputName="City" id="city" bind:val={data.city} placeholder="Winterfell" hint="Address City" />
 
-    <Select inputName="Country" id="country" bind:val={data.country} placeholder="Westeros" options={countries}
-        hint="Address Country" />
+    <Select inputName="Country" id="country" bind:val={data.country} bind:valid={datavalid.country}
+        placeholder="Westeros" options={countries} hint="Address Country" />
 
 
 

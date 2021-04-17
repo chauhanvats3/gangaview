@@ -1,7 +1,7 @@
 exports.handler = async function (event, context) {
     const params = event.queryStringParameters;
     const dataset = JSON.parse(params.dataset);
-    console.log("send : " + dataset.basic.image)
+    console.log("send : " + dataset.basic.f_name)
     zoho_pass = process.env.ZOHO_AUTH_PASS;
 
     return {

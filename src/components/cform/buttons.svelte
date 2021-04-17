@@ -1,68 +1,11 @@
 <script>
     import { createEventDispatcher } from 'svelte';
-    import { dataset } from '../../stores/store.js'
-
-
-
+    import { dataset, datavalid, defaults } from '../../stores/store.js'
     export let showSubmit = false;
     export let currentPageIndex = 0;
 
     const dispatch = createEventDispatcher();
 
-    const defaultData = {
-        basic: {
-            photo: "",
-            f_name: "",
-            l_name: "",
-            sex: "",
-            dob: "",
-            sp_cat: "",
-            nationality: "",
-            address: "",
-            city: "",
-            country: ""
-        },
-        passport: {
-            number: "",
-            city: "",
-            country: "",
-            issue: "",
-            expiry: "",
-        },
-        visa: {
-            number: "",
-            city: "",
-            country: "",
-            issue: "",
-            expiry: "",
-            type: "",
-            sub_type: "",
-        },
-        misc: {
-            arrival: {
-                date: "",
-                country: "",
-                city: "",
-                place: ""
-            },
-            intended_stay: "",
-            employed: "",
-            purpose: "",
-            next_destination: {
-                india: "",
-                country: "",
-                state: "",
-                city: "",
-                district: "",
-                place: ""
-            },
-            contact_info: {
-                email: "",
-                indian_number: "",
-                permanent_number: ""
-            }
-        }
-    };
 
     function buttonClicked(name) {
 
@@ -73,7 +16,8 @@
     function resetDataset() {
         let res = confirm("This would clear ALL the fields in C-Form. Continue?")
         if (res) {
-            dataset.set(defaultData);
+            dataset.set(defaults.defaultData);
+            datavalid.set(defaults.defaultValid);
             window.location.reload();
         }
     }

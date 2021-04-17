@@ -1,14 +1,16 @@
 <script>
     /* Blatantly Copied from https://codepen.io/lucasyem/pen/ZEEYKdj */
-    export let inputName = "whatsherface";
+    export let inputName = "whatshisface";
     export let id = "dfault";
     export let val = "";
+    export let valid = true;
     export let placeholder = "Fame";
     export let options;
     export let hint = ""
     export let height = "150px";
 
     import VirtualList from '@sveltejs/svelte-virtual-list';
+    import { onMount } from 'svelte'
 
     let input, warning, formGroup;
 
@@ -31,16 +33,24 @@
     }
 
     let validateMe = () => {
+        if (!searchTerm) return;
         const found = options.find(element => element.text.toLowerCase() === searchTerm.toLowerCase());
         if (!found) {
             formGroup.classList.add("invalid");
-            warning.innerHTML = "Please select an Option from the list"
+            warning.innerHTML = "Please select an Option from the list";
+            val = searchTerm;
+            valid = false;
         } else {
             formGroup.classList.remove("invalid");
             warning.innerHTML = " "
             val = searchTerm;
+            valid = true;
         }
     }
+
+    onMount(() => {
+        validateMe();
+    });
 </script>
 
 <style>

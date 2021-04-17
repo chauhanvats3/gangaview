@@ -3,12 +3,13 @@
     export let inputName;
     export let id;
     export let val;
+    export let valid = true;
     export let placeholder = "";
     export let minDate = "1900-01-01";
     export let maxDate = "2100-01-01";
     export let hint = ""
 
-
+    import { onMount } from 'svelte'
 
     let type = "date";
     let input, warning, formGroup;
@@ -31,16 +32,23 @@
 
         if (inputDate > new Date(maxDate)) {
             formGroup.classList.add("invalid");
-            warning.innerHTML = `Only A Date Before ${maxDate} Is Allowed!`
+            warning.innerHTML = `Only A Date Before ${maxDate} Is Allowed!`;
+            valid = false;
         } else if (inputDate.getDate() <= new Date(minDate).getDate() && inputDate.getMonth() <= new Date(minDate).getMonth() && inputDate.getFullYear() <= new Date(minDate).getFullYear()) {
             formGroup.classList.add("invalid");
             warning.innerHTML = `Only a Date After ${minDate} Is Allowed!`
+            valid = false;
         }
         else {
             formGroup.classList.remove("invalid");
             warning.innerHTML = ""
+            valid = true;
         }
     }
+
+    /*  onMount(() => {
+         validateMe();
+     }); */
 </script>
 
 <style>

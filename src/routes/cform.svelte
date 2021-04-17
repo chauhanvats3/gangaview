@@ -7,7 +7,7 @@
     import Misc from '../components/cform/misc.svelte'
     import Success from '../components/cform/success.svelte'
     import Buttons from '../components/cform/buttons.svelte'
-    import { dataset } from '../stores/store.js'
+    import { dataset, datavalid } from '../stores/store.js'
 
     const metadata = { url: "https://gangaview.com/cform", title: "CForm - Shri Ganga View Guest House", description: "Lets finalise your check in.", keywords: "guest house, budget, laxman jhula, ganga, view, hotel, rishikesh, room, sunset, terrace, ghat, cheap", thumb: "images/thumbnails/home.png" }
 
@@ -21,6 +21,7 @@
     let pages = ["basic", "passport", "misc", "success"];
     let currentPageIndex = 0;
     let currentPage = pages[currentPageIndex];
+    let isDataValid = true;
 
     $: {
         currentPage = pages[currentPageIndex];
@@ -43,8 +44,13 @@
             currentPageIndex == 0 ? currentPageIndex : currentPageIndex--;
 
         } else {
-            api_send_c_form();
-
+            isDataValid = true;
+            validateData();
+            if (isDataValid)
+                api_send_c_form();
+            else {
+                alert("Some of the data isn't Valid.")
+            }
         }
 
         if (currentPageIndex == pages.length - 2) {
@@ -54,7 +60,50 @@
         }
 
     }
+    let validateData = () => {
+        traverse($datavalid, validateNode);
+        traverse($dataset, validateFill);
+    }
+    function traverse(o, func) {
+        for (let i in o) {
+            func.apply(this, [i, o[i]]); //validateNode
+            if (!isDataValid) return;
+            if (o[i] !== null && typeof (o[i]) == "object") {
+                //going one step down in the object tree!!
 
+                if (func.name === "validateFill" && i === "next_destination") {
+                    let o2 = o[i];
+                    if (o2["india"] === "Yes") {
+                        if (!o2.state || !o2.district || !o2.place) {
+                            isDataValid = false; return false;
+                        }
+                    } else {
+                        if (!o2.dest_country || !o2.city || !o2.place) {
+                            isDataValid = false; return false;
+                        }
+                    }
+                } else
+                    traverse(o[i], func);
+            }
+        }
+    }
+
+    function validateNode(key, value) {
+        if (typeof value === 'boolean' && !value) {
+            console.log(key + " : " + value)
+            isDataValid = false;
+            return false;
+        }
+    }
+
+    function validateFill(key, value) {
+
+        if (typeof value == 'string' && !value) {
+            console.log(key + " : " + value)
+            isDataValid = false;
+            return false;
+        }
+    }
 
     async function api_send_c_form() {
         const url = `/api/send-c-form-email?dataset=${JSON.stringify($dataset)}`;
@@ -83,11 +132,12 @@
 
     <div class="entrySection" bind:this={entrySection}>
         {#if currentPage==='basic'}
-        <Basic bind:data={$dataset.basic} />
+        <Basic bind:data={$dataset.basic} bind:datavalid={$datavalid.basic} />
         {:else if currentPage==='passport'}
-        <Passport bind:passport={$dataset.passport} bind:visa={$dataset.visa} />
+        <Passport bind:passport={$dataset.passport} bind:visa={$dataset.visa} bind:passdatavalid={$datavalid.passport}
+            bind:visadatavalid={$datavalid.visa} />
         {:else if currentPage==='misc'}
-        <Misc bind:data={$dataset.misc} />
+        <Misc bind:data={$dataset.misc} bind:datavalid={$datavalid.misc} />
         {:else}
         <Success />
         {/if}
