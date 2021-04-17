@@ -3,7 +3,7 @@ import { cachedStore } from './cachedStore'
 
 const defaultData = {
     basic: {
-        photo: "",
+        image: "",
         f_name: "",
         l_name: "",
         sex: "",

@@ -3,7 +3,8 @@
     import Text from '../inputs/text.svelte';
     import Select from '../inputs/select.svelte';
     import Date from '../inputs/date.svelte'
-    import { specialCategories, countries, sexOptions } from '../../../static/data.js'
+/*     import Image from '../inputs/Image.svelte'
+ */    import { specialCategories, countries, sexOptions } from '../../../static/data.js'
 
 
     export let data;
@@ -14,7 +15,8 @@
 
 <div class="basic">
     <p>Basic Details</p>
-    <Text inputName="First Name" id="f_name" bind:val={data.f_name} placeholder="John" hint="According to passport" />
+    <!--     <Image bind:val={data.image} />
+ --> <Text inputName="First Name" id="f_name" bind:val={data.f_name} placeholder="Jon" hint="According to passport" />
 
     <Text inputName="Last Name" id="l_name" bind:val={data.l_name} placeholder="Snow" hint="Also called surname" />
 

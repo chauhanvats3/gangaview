@@ -43,7 +43,7 @@
             currentPageIndex == 0 ? currentPageIndex : currentPageIndex--;
 
         } else {
-            //api_send_c_form();
+            api_send_c_form();
 
         }
 
@@ -57,7 +57,7 @@
 
 
     async function api_send_c_form() {
-        const url = `/api/send-c-form-email?$dataset=${JSON.stringify($dataset)}`;
+        const url = `/api/send-c-form-email?dataset=${JSON.stringify($dataset)}`;
         try {
             const response = await fetch(url);
             const data = await response.json();

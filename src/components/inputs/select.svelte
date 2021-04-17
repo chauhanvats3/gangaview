@@ -25,7 +25,9 @@
     let searchTerm = val;
     let filteredOptions = options;
     $: {
-        filteredOptions = options.filter(option => option.text.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
+        let matched = options.filter(option => option.text.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
+        let unmatched = options.filter(option => option.text.toLowerCase().indexOf(searchTerm.toLowerCase()) === -1);
+        filteredOptions = [...matched, ...unmatched];
     }
 
     let validateMe = () => {

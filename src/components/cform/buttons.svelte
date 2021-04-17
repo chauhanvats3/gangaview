@@ -138,4 +138,19 @@
     .reset p {
         color: red;
     }
+
+    @media (min-width:675px) {
+        .prev {
+            order: 1;
+        }
+
+        .next,
+        .submit {
+            order: 3
+        }
+
+        .reset {
+            order: 2;
+        }
+    }
 </style>
