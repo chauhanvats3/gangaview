@@ -41,7 +41,7 @@ const defaultData = {
         purpose: "",
         next_destination: {
             india: "",
-            dest_country: "",
+            country: "",
             state: "",
             city: "",
             district: "",

@@ -64,7 +64,7 @@
     <Text inputName="Place" id="destplace" bind:val={data.next_destination.place} placeholder="Harsil" hint="" />
 
     {:else if data.next_destination.india==="No"}
-    <Select inputName="Country" id="destcountry" bind:val={data.next_destination.dest_country}
+    <Select inputName="Country" id="destcountry" bind:val={data.next_destination.country}
         bind:valid={datavalid.next_destination.country} placeholder="Sothoryos" options={countries}
         hint="Next Destination Country" />
 
