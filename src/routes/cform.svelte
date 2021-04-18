@@ -71,16 +71,17 @@
             if (!isDataValid) return;
             if (o[i] !== null && typeof (o[i]) == "object") {
                 //going one step down in the object tree!!
-
+                console.log("func name " + func.name + i)
                 if (func.name === "validateFill" && i === "next_destination") {
                     let o2 = o[i];
-                    if (o2["india"] === "Yes") {
+                    console.log(o2)
+                    if (o2.india === "Yes") {
                         if (!o2.state || !o2.district || !o2.place) {
-                            isDataValid = false; return false;
+                            isDataValid = false; return;
                         }
                     } else {
                         if (!o2.country || !o2.city || !o2.place) {
-                            isDataValid = false; return false;
+                            isDataValid = false; return;
                         }
                     }
                 } else
@@ -103,7 +104,8 @@
             console.log(key + " : " + value)
             isDataValid = false;
             return false;
-        }
+        } else
+            console.log("validatefill " + key)
     }
 
     async function api_send_c_form() {
