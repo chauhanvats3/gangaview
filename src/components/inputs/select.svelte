@@ -16,7 +16,6 @@
 
 
     function optionClicked(index) {
-        console.log("Clicked")
         let found = options.find(element => element.index == index);
         //val = capitalize(found.text)
         val = found.text;

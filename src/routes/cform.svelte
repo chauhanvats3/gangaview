@@ -46,11 +46,12 @@
         } else {
             isDataValid = true;
             validateData();
-            if (isDataValid)
+            if (isDataValid) {
                 console.log("Data Valid")
-            //api_send_c_form();
+                api_send_c_form();
+            }
             else {
-                alert("Some of the data isn't Valid.")
+                alert("Please Recheck If All Information is Provided and is Correct!")
             }
         }
 
@@ -110,9 +111,14 @@
         try {
             const response = await fetch(url);
             const data = await response.json();
+
             console.log("data", data);
+
+            if (data.info.accepted) alert("Mail Sent Successfully")
+            else alert("Mail wasn't sent!")
         } catch (err) {
-            console.log(err);
+            console.error(err);
+            alert("There was some Error! Please Retry.")
         }
     }
 
