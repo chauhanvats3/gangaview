@@ -62,19 +62,17 @@
 
     }
     let validateData = () => {
-        traverse($datavalid, validateNode);
-        traverse($dataset, validateFill);
+        traverse($datavalid, validateNode, "validateNode");
+        traverse($dataset, validateFill, "validateFill");
     }
-    function traverse(o, func) {
+    function traverse(o, func, funcName) {
         for (let i in o) {
             func.apply(this, [i, o[i]]); //validateNode
             if (!isDataValid) return;
             if (o[i] !== null && typeof (o[i]) == "object") {
                 //going one step down in the object tree!!
-                console.log("func name " + func.name + i)
-                if (func.name === "validateFill" && i === "next_destination") {
+                if (funcName === "validateFill" && i === "next_destination") {
                     let o2 = o[i];
-                    console.log(o2)
                     if (o2.india === "Yes") {
                         if (!o2.state || !o2.district || !o2.place) {
                             isDataValid = false; return;
@@ -85,7 +83,7 @@
                         }
                     }
                 } else
-                    traverse(o[i], func);
+                    traverse(o[i], func, funcName);
             }
         }
     }
@@ -104,8 +102,7 @@
             console.log(key + " : " + value)
             isDataValid = false;
             return false;
-        } else
-            console.log("validatefill " + key)
+        }
     }
 
     async function api_send_c_form() {
