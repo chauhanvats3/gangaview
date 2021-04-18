@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "compression": "^1.7.1",
-    "netlify-cli": "^3.16.2",
+    "netlify-cli": "^3.18.2",
+    "nodemailer": "^6.5.0",
     "polka": "next",
     "sapper-page-loading-bar": "^1.0.0",
     "sirv": "^1.0.0"
