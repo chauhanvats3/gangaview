@@ -17,16 +17,16 @@ exports.handler = async function (event, context) {
 
     const fileName = dataset.passport.number + ".json"
 
-    let fileStatus = await createJSONFile(dataset, fileName);
+    //let fileStatus = await createJSONFile(dataset, fileName);
 
-    if (!fileStatus.saved) {
+    /* if (!fileStatus.saved) {
         return {
             statusCode: 400,
             body: JSON.stringify({ message: "File Was Not Saved!" })
         };
     }
 
-    console.log("After Save")
+    console.log("After Save") */
     let transporter;
 
     transporter = nodemailer.createTransport({
@@ -44,8 +44,12 @@ exports.handler = async function (event, context) {
         to: process.env.ZOHO_AUTH_USER,
         subject: `[C-Form] ${dataset.basic.f_name} ${dataset.basic.l_name}`,
         text: "Please Find an Attachment",
-        attachments: [{ path: `files/${fileName}` }]
+        attachments: [{   // utf-8 string as an attachment
+            filename: fileName,
+            content: JSON.stringify(data)
+        }]
     });
+    //JSON.stringify(data)
 
     console.log("Message sent: %s", info);
 

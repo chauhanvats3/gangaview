@@ -47,7 +47,8 @@
             isDataValid = true;
             validateData();
             if (isDataValid)
-                api_send_c_form();
+                console.log("Data Valid")
+            //api_send_c_form();
             else {
                 alert("Some of the data isn't Valid.")
             }
@@ -78,7 +79,7 @@
                             isDataValid = false; return false;
                         }
                     } else {
-                        if (!o2.dest_country || !o2.city || !o2.place) {
+                        if (!o2.country || !o2.city || !o2.place) {
                             isDataValid = false; return false;
                         }
                     }
