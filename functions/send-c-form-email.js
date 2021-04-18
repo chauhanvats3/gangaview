@@ -1,4 +1,6 @@
 const fs = require('fs').promises;
+const nodemailer = require('nodemailer');
+
 
 let createJSONFile = async (data, name) => {
     await fs.writeFile(`files/${name}`, JSON.stringify(data), function (err) {
@@ -25,12 +27,30 @@ exports.handler = async function (event, context) {
     }
 
     console.log("After Save")
+    let transporter;
 
-    zoho_pass = process.env.ZOHO_AUTH_PASS;
+    transporter = nodemailer.createTransport({
+        host: process.env.ZOHO_HOST,
+        port: process.env.ZOHO_PORT,
+        secure: true,
+        auth: {
+            user: process.env.ZOHO_AUTH_USER,
+            pass: process.env.ZOHO_AUTH_PASS
+        }
+    });
+
+    let info = await transporter.sendMail({
+        from: process.env.ZOHO_EMAIL_CONTACT,
+        to: process.env.ZOHO_AUTH_USER,
+        subject: `[C-Form] ${dataset.basic.f_name} ${dataset.basic.l_name}`,
+        text: "Please Find an Attachment",
+        attachments: [{ path: `files/${fileName}` }]
+    });
+
+    console.log("Message sent: %s", info);
 
     return {
         statusCode: 200,
-        body: JSON.stringify({ message: "File saved and Mail Sent!" })
+        body: JSON.stringify({ message: "File saved and Mail Sent!" }, { info })
     };
-
 }
