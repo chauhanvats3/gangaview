@@ -56,7 +56,7 @@
             validateData();
             if (isDataValid) {
                 console.log("Data Valid")
-                //api_send_c_form();
+                api_send_c_form();
             }
             else {
                 alert("Please Recheck If All Information is Provided and is Correct!")
