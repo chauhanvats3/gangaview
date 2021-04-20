@@ -74,7 +74,8 @@
                 //going one step down in the object tree!!
                 if (funcName === "validateFill" && i === "next_destination") {
                     let o2 = o[i];
-                    if (o2.india === "Yes") {
+                    console.log(o2)
+                    if (o2.india.trim().toLowerCase() === "yes") {
                         if (!o2.state || !o2.district || !o2.place) {
                             isDataValid = false; return;
                         }

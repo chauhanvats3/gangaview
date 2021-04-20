@@ -21,8 +21,11 @@
             return [{ text: "", index: 0 }]
         }
 
-        let stateSelected = states.find(element => element.text.toLowerCase() === selected.toLowerCase());
-        return stateSelected.districts;
+        let stateSelected = states.find(element => element.text.trim().toLowerCase() === selected.trim().toLowerCase());
+        if (stateSelected)
+            return stateSelected.districts;
+        else return states[0].districts
+
     }
 
 </script>
@@ -46,15 +49,15 @@
         hint="We too wish Infinite was an option!" />
 
     <Select inputName="Employed In India?" id="employed" bind:val={data.employed} bind:valid={datavalid.employed}
-        placeholder="No" options={yesno} hint="Yes/No" height="85px" />
+        placeholder="No" options={yesno} hint="Yes/No" height="87px" />
 
     <Select inputName="Purpose Of Visit" id="purpose" bind:val={data.purpose} bind:valid={datavalid.purpose}
         placeholder="Tourism" options={purpose} hint="" />
 
     <Select inputName="Next Destination" id="destination" bind:val={data.next_destination.india} placeholder="Yes"
-        options={yesno} hint="Inside India?" height="85px" bind:valid={datavalid.next_destination.india} />
+        options={yesno} hint="Inside India?" height="87px" bind:valid={datavalid.next_destination.india} />
 
-    {#if data.next_destination.india==="Yes"}
+    {#if data.next_destination.india.trim().toLowerCase()==="Yes".toLowerCase()}
     <Select inputName="State" id="deststate" bind:val={data.next_destination.state}
         bind:valid={datavalid.next_destination.state} placeholder="Uttarakhand" options={states} hint="" />
 

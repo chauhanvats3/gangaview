@@ -33,7 +33,7 @@
 
     let validateMe = () => {
         if (!searchTerm) return;
-        const found = options.find(element => element.text.toLowerCase() === searchTerm.toLowerCase());
+        const found = options.find(element => element.text.trim().toLowerCase() === searchTerm.trim().toLowerCase());
         if (!found) {
             formGroup.classList.add("invalid");
             warning.innerHTML = "Please select an Option from the list";
@@ -159,7 +159,7 @@
         cursor: pointer;
         margin: 5px 10px;
         transition: all 0.3s ease-in-out;
-        color: #d1d1d1
+        color: #e0e0e0
     }
 
     .eachOption:hover {
@@ -172,6 +172,10 @@
 
     :global(svelte-virtual-list-viewport) {
         width: 100%;
+    }
+
+    :global(svelte-virtual-list-row) {
+        border-bottom: 2px solid #696969;
     }
 </style>
 

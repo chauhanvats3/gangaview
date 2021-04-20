@@ -18,8 +18,12 @@
             return [{ text: "", index: 0, value: 0 }]
         }
 
-        let visaSelected = visaTypes.find(element => element.text.toLowerCase() === selected.toLowerCase());
-        return visaSelected.subtypes;
+        let visaSelected = visaTypes.find(element => element.text.trim().toLowerCase() === selected.trim().toLowerCase());
+        console.log(selected)
+        console.log(visaSelected)
+        if (visaSelected)
+            return visaSelected.subtypes;
+        else return visaTypes[0].subtypes
     }
 </script>
 

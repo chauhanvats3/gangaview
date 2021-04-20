@@ -18,7 +18,7 @@
 
     <Text inputName="Last Name" id="l_name" bind:val={data.l_name} placeholder="Snow" hint="Also called surname" />
 
-    <Select inputName="Sex" id="sex" height="125px" bind:val={data.sex} bind:valid={datavalid.sex} placeholder="Female"
+    <Select inputName="Sex" id="sex" height="129px" bind:val={data.sex} bind:valid={datavalid.sex} placeholder="Female"
         options={sexOptions} hint="aka Gender" />
 
     <Date inputName="Date Of Birth" id="dob" bind:val={data.dob} placeholder="" maxDate="today" hint=""
