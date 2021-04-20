@@ -22,10 +22,18 @@
     let currentPageIndex = 0;
     let currentPage = pages[currentPageIndex];
     let isDataValid = true;
+    let skipCheckCounter = 0;
+    let skipChecking = false;
+    let toast;
 
-    $: {
-        currentPage = pages[currentPageIndex];
-
+    $: currentPage = pages[currentPageIndex];
+    $: if (skipCheckCounter > 9) {
+        skipChecking = true;
+        toast.classList.add("show");
+        setTimeout(_ => {
+            toast.classList.remove("show");
+            skipCheckCounter = 0;
+        }, 3000);
     }
 
     let scrollOptions = { behavior: "smooth", block: "start", inline: "start" };
@@ -48,7 +56,7 @@
             validateData();
             if (isDataValid) {
                 console.log("Data Valid")
-                api_send_c_form();
+                //api_send_c_form();
             }
             else {
                 alert("Please Recheck If All Information is Provided and is Correct!")
@@ -63,6 +71,7 @@
 
     }
     let validateData = () => {
+        if (skipChecking) return;
         traverse($datavalid, validateNode, "validateNode");
         traverse($dataset, validateFill, "validateFill");
     }
@@ -131,9 +140,12 @@
     <Hero {path} {heroImage} />
     <div class="welcome" bind:this={welcome}>
         <p>Welcome to</p>
-        <p class="brand gradient-text gradient-blue-pink">Shri Ganga View Guest House</p>
+        <p class="brand gradient-text gradient-blue-pink noselect" on:click={()=>{skipCheckCounter++}}>Shri Ganga View
+            Guest
+            House</p>
         <p>Please Fill out the C-Form to Finalise your Check-In.</p>
     </div>
+
 
     <p class="caution">Avoid Using Device's Back Button Until Submit Is Successful.</p>
 
@@ -152,6 +164,8 @@
     </div>
 
     <Buttons on:buttonPressed={buttonPressed} {currentPageIndex} bind:showSubmit={showSubmit} />
+
+    <div class="toast" bind:this={toast}>Data Validation Skip Enabled</div>
 </div>
 <style>
     .cform {
@@ -161,6 +175,7 @@
         justify-content: flex-start;
         margin: 0 0 20px 0;
         text-align: center;
+        position: relative;
     }
 
     .welcome {
@@ -208,5 +223,22 @@
 
     :global(.invalid .form__label) {
         color: #d10404 !important;
+    }
+
+    .toast {
+        position: fixed;
+        bottom: -90px;
+        background-color: #000000c5;
+        border-radius: 15px;
+        z-index: 100;
+        color: white;
+        padding: 10px 25px;
+        font-size: 1.7rem;
+        letter-spacing: .1rem;
+        transition: all 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    }
+
+    :global(.toast.show) {
+        bottom: 25px !important;
     }
 </style>
