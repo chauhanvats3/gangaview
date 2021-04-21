@@ -38,13 +38,15 @@ exports.handler = async function (event, context) {
         attachments: [{   // utf-8 string as an attachment
             filename: jsonFileName,
             content: JSON.stringify(dataset)
-        },
+        }]
+    });
+
+    /* ,
         {   // define custom content type for the attachment
             filename: imageFileName,
             content: cFormImage,
             contentType: 'image/png'
-        }]
-    });
+        } */
 
     console.log("Message sent: %s", info);
 
