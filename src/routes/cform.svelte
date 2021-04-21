@@ -165,7 +165,7 @@
 
     <Buttons on:buttonPressed={buttonPressed} {currentPageIndex} bind:showSubmit={showSubmit} />
 
-    <div class="toast" bind:this={toast}>Data Validation Skip Enabled</div>
+    <div class="toast" bind:this={toast}>Data Validation Disabled!</div>
 </div>
 <style>
     .cform {
@@ -227,15 +227,15 @@
 
     .toast {
         position: fixed;
-        bottom: -90px;
-        background-color: #000000c5;
+        bottom: -15%;
+        background-color: #000000b9;
         border-radius: 15px;
         z-index: 100;
         color: white;
         padding: 10px 25px;
-        font-size: 1.7rem;
+        font-size: 1.2rem;
         letter-spacing: .1rem;
-        transition: all 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+        transition: bottom 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6);
     }
 
     :global(.toast.show) {
