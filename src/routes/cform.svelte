@@ -5,7 +5,7 @@
     import Basic from '../components/cform/basic.svelte'
     import Passport from '../components/cform/passport.svelte'
     import Misc from '../components/cform/misc.svelte'
-    import Success from '../components/cform/success.svelte'
+
     import Buttons from '../components/cform/buttons.svelte'
     import { dataset, datavalid } from '../stores/store.js'
 
@@ -59,7 +59,7 @@
                 api_send_c_form();
             }
             else {
-                alert("Please Recheck If All Information is Provided and is Correct!")
+                alert("Please Recheck If All Information is Provided/Correct!")
             }
         }
 
@@ -70,6 +70,22 @@
         }
 
     }
+    async function api_send_c_form() {
+        const url = `/api/send-c-form-email?dataset=${JSON.stringify($dataset)}`;
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+
+            console.log("data", data);
+
+            if (data.info.accepted) alert("Mail Sent Successfully")
+            else alert("Mail wasn't sent!")
+        } catch (err) {
+            console.error(err);
+            alert("There was some Error! Please Retry.")
+        }
+    }
+
     let validateData = () => {
         if (skipChecking) return;
         traverse($datavalid, validateNode, "validateNode");
@@ -116,21 +132,7 @@
         }
     }
 
-    async function api_send_c_form() {
-        const url = `/api/send-c-form-email?dataset=${JSON.stringify($dataset)}`;
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
 
-            console.log("data", data);
-
-            if (data.info.accepted) alert("Mail Sent Successfully")
-            else alert("Mail wasn't sent!")
-        } catch (err) {
-            console.error(err);
-            alert("There was some Error! Please Retry.")
-        }
-    }
 
 </script>
 
