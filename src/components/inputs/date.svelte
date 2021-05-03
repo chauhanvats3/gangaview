@@ -46,9 +46,6 @@
         }
     }
 
-    /*  onMount(() => {
-         validateMe();
-     }); */
 </script>
 
 <style>
@@ -114,10 +111,6 @@
         border-image: linear-gradient(90deg, #24b7db, #b7db24);
         border-image-slice: 1;
     }
-
-
-
-
 
     .form__field:focus::placeholder {
         color: #bbbbbb;

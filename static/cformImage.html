@@ -10,6 +10,8 @@
             --bg-color: rgba(196, 196, 196, 0.75);
         }
 
+        /* width: 1190px;
+            height: 1684px; */
         body {
             width: 595px;
             height: 842px;
@@ -32,7 +34,8 @@
         }
 
         div {
-            margin: 5px;
+            margin: 5px 0;
+            padding: 0 5px;
         }
 
         script {
@@ -107,7 +110,7 @@
 
         .row {
             flex-direction: row;
-            justify-content: flex-start;
+            justify-content: space-between;
             margin: 0 5px;
             white-space: nowrap;
             overflow: hidden;
@@ -126,7 +129,7 @@
         }
 
         .row p {
-            font-size: 11px;
+            font-size: 10px;
             margin: 0 2px;
         }
     </style>
@@ -176,7 +179,7 @@
 
                 <!-- ------------row------------ -->
                 <div class="row">
-                    <div class="row" style="margin: 0; width: auto;">
+                    <div class="row" style="margin: 0; padding: 0; width: auto;">
                         <div class="field">
                             <p class="title">Sex :</p>
                             <p class="entry">
@@ -184,7 +187,8 @@
                             </p>
                         </div>
 
-                        <div class="field">
+                        <div class="field" style="    max-width: fit-content;
+                        ">
                             <p class="title">DOB :</p>
                             <p class="entry">
                                 {{basic.dob}}
@@ -201,7 +205,8 @@
                 </div>
                 <!-- -----------row----------- -->
                 <div class="row">
-                    <div class="field">
+                    <div class="field" style="    max-width: 100%;
+                    ">
                         <p class="title">Address :</p>
                         <p class="entry">
                             {{basic.address}}
@@ -219,7 +224,7 @@
                         </p>
                     </div>
                     <div class="field">
-                        <p class="title">County :</p>
+                        <p class="title">Country :</p>
                         <p class="entry">
                             {{basic.country}}
 
@@ -399,7 +404,7 @@
     <script>
         let todayField = document.getElementById("today");
         let today = new Date();
-        let todayStr = `${today.getDate()}/${today.getMonth()}/${today.getFullYear()}`;
+        let todayStr = `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()}`;
         todayField.innerText = todayStr;
     </script>
 
