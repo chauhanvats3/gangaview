@@ -34,22 +34,17 @@ exports.handler = async function (event, context) {
         to: process.env.ZOHO_AUTH_USER,
         subject: `[C-Form] ${dataset.basic.f_name} ${dataset.basic.l_name}`,
         text: "Please Find an Attachment",
-        attachments: [{   // utf-8 string as an attachment
+        attachments: [{
             filename: jsonFileName,
             content: JSON.stringify(dataset)
-        }, {   // define custom content type for the attachment
+        }, {
             filename: imageFileName,
             content: cFormImage,
             contentType: 'image/png'
         }]
     });
 
-    /* ,
-        {   // define custom content type for the attachment
-            filename: imageFileName,
-            content: cFormImage,
-            contentType: 'image/png'
-        } */
+
 
     console.log("Message sent: %s", info);
 

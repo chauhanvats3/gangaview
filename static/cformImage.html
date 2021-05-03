@@ -1,11 +1,408 @@
 <!DOCTYPE html>
 
 <head>
-    <title>[CForm] {{basic.f_name}} {{basic.l_name}} | {{passport.number}}</title>
+    <title>[CForm]</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Quicksand&display=swap');
+
+        :root {
+            --bg-color: rgba(196, 196, 196, 0.75);
+        }
+
+        body {
+            width: 595px;
+            height: 842px;
+            font-family: 'Quicksand', sans-serif;
+            background: #f1f1f1df;
+            margin: 0;
+        }
+
+        body,
+        body * {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+            box-sizing: border-box;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        div {
+            margin: 5px;
+        }
+
+        script {
+            display: none;
+        }
+
+        .heading {
+            width: 100%;
+            align-items: flex-start;
+            font-family: Julius Sans One;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            letter-spacing: 0.6em;
+            padding-left: 20px;
+        }
+
+        .bg-dark {
+            background: var(--bg-color);
+        }
+
+        .bg-light {
+            background: white;
+        }
+
+        .wrapper {
+            width: 100%;
+        }
+
+        .header {
+            width: 100%;
+            font-family: 'Julius Sans One', sans-serif;
+            align-items: center;
+
+        }
+
+        .name p {
+            width: max-content;
+            font-size: 34px;
+        }
+
+        .info {
+            width: 547px;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .info p {
+            font-size: 16px;
+            color: #454545;
+        }
+
+        .hr-line {
+            border-bottom: 2px solid var(--bg-color);
+            width: 100%;
+        }
+
+        .cform-title {
+            width: 100%;
+            font-family: 'julius sans one', sans-serif;
+            align-items: center;
+        }
+
+        .section {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .contents {
+            width: 100%;
+        }
+
+        .row {
+            flex-direction: row;
+            justify-content: flex-start;
+            margin: 0 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 100%;
+
+        }
+
+        .field {
+            flex-direction: row;
+            overflow: hidden;
+            max-width: 50%;
+        }
+
+        .title {
+            font-weight: bold;
+        }
+
+        .row p {
+            font-size: 11px;
+            margin: 0 2px;
+        }
+    </style>
 </head>
 
-<body style="width: 595px; height: 842px;">
-    HI {{basic.f_name}} {{basic.l_name}}
+<body>
+
+    <div class="wrapper">
+        <div class="header">
+            <div class="name">
+                <p>Shri Ganga View Guest House</p>
+            </div>
+            <div class="info">
+                <div class="address">
+                    <p>Laxman Jhula , Rishikesh</p>
+                </div>
+                <div class="phone">
+                    <p>+91-7579472022</p>
+                </div>
+            </div>
+        </div>
+        <div class="hr-line">
+        </div>
+        <div class="cform-title">
+            <p>Form-C</p>
+        </div>
+        <div class="section bg-dark ">
+            <div class="heading">Basic Details</div>
+            <div class="contents">
+                <!-- -----------row----------- -->
+                <div class="row">
+                    <div class="field">
+                        <p class="title">Name :</p>
+                        <p class="entry">
+                            {{basic.f_name}}
+
+                        </p>
+                    </div>
+
+                    <div class="field">
+                        <p class="title">Surname :</p>
+                        <p class="entry">
+                            {{basic.l_name}}
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ------------row------------ -->
+                <div class="row">
+                    <div class="row" style="margin: 0; width: auto;">
+                        <div class="field">
+                            <p class="title">Sex :</p>
+                            <p class="entry">
+                                {{basic.sex}}
+                            </p>
+                        </div>
+
+                        <div class="field">
+                            <p class="title">DOB :</p>
+                            <p class="entry">
+                                {{basic.dob}}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <p class="title">Nationality :</p>
+                        <p class="entry">
+                            {{basic.nationality}}
+                        </p>
+                    </div>
+                </div>
+                <!-- -----------row----------- -->
+                <div class="row">
+                    <div class="field">
+                        <p class="title">Address :</p>
+                        <p class="entry">
+                            {{basic.address}}
+
+                        </p>
+                    </div>
+                </div>
+                <!-- -----------row----------- -->
+                <div class="row">
+                    <div class="field">
+                        <p class="title">City :</p>
+                        <p class="entry">
+                            {{basic.city}}
+
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="title">County :</p>
+                        <p class="entry">
+                            {{basic.country}}
+
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="section bg-light ">
+            <div class="heading">Passport Details</div>
+            <div class="contents">
+                <!-- -----------row----------- -->
+                <div class="row">
+                    <div class="field">
+                        <p class="title">Number :</p>
+                        <p class="entry">
+                            {{passport.number}}
+
+                        </p>
+                    </div>
+
+                    <div class="field">
+                        <p class="title">Place Of Issue :</p>
+                        <p class="entry">
+                            {{passport.city}} , {{passport.country}}
+                        </p>
+                    </div>
+                </div>
+
+                <!-- -----------row----------- -->
+                <div class="row">
+                    <div class="field">
+                        <p class="title">Issue Date :</p>
+                        <p class="entry">
+                            {{passport.issue}}
+
+                        </p>
+                    </div>
+
+                    <div class="field">
+                        <p class="title">Expiry Date :</p>
+                        <p class="entry">
+                            {{passport.expiry}}
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="section bg-dark ">
+            <div class="heading">Visa Details</div>
+            <div class="contents">
+                <!-- -----------row----------- -->
+                <div class="row">
+                    <div class="field">
+                        <p class="title">Number :</p>
+                        <p class="entry">
+                            {{visa.number}}
+
+                        </p>
+                    </div>
+
+                    <div class="field">
+                        <p class="title">Place Of Issue :</p>
+                        <p class="entry">
+                            {{visa.city}} , {{visa.country}}
+                        </p>
+                    </div>
+                </div>
+
+                <!-- -----------row----------- -->
+                <div class="row">
+                    <div class="field">
+                        <p class="title">Issue Date :</p>
+                        <p class="entry">
+                            {{visa.issue}}
+
+                        </p>
+                    </div>
+
+                    <div class="field">
+                        <p class="title">Expiry Date :</p>
+                        <p class="entry">
+                            {{visa.expiry}}
+                        </p>
+                    </div>
+                </div>
+
+                <!-- -----------row----------- -->
+                <div class="row">
+                    <div class="field">
+                        <p class="title">Type :</p>
+                        <p class="entry">
+                            {{visa.type}}
+
+                        </p>
+                    </div>
+
+                    <div class="field">
+                        <p class="title">Sub-Type :</p>
+                        <p class="entry">
+                            {{visa.sub_type}}
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="section bg-light ">
+            <div class="heading">Miscellaneous</div>
+            <div class="contents">
+                <!-- -----------row----------- -->
+                <div class="row">
+                    <div class="field">
+                        <p class="title">Date Of Arrival (India) :</p>
+                        <p class="entry">
+                            {{misc.arrival.date}}
+
+                        </p>
+                    </div>
+
+                    <div class="field">
+                        <p class="title">Purpose :</p>
+                        <p class="entry">
+                            {{misc.purpose}}
+                        </p>
+                    </div>
+                </div>
+                <!-- -----------row----------- -->
+                <div class="row">
+                    <div class="field">
+                        <p class="title">Arrived From :</p>
+                        <p class="entry">
+                            {{misc.arrival.place}} , {{misc.arrival.city}}
+                        </p>
+                    </div>
+
+                    <div class="field">
+                        <p class="title">Phone Num :</p>
+                        <p class="entry">
+                            {{misc.contact_info.indian_number}}
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="section bg-dark ">
+            <div class="contents">
+                <!-- -----------row----------- -->
+                <div class="row" style="justify-content: space-between;">
+                    <div class="field">
+                        <p class="title">Date Of Arrival (Guest House) :</p>
+                        <p class="entry" id="today">
+                        </p>
+                    </div>
+
+                    <div class="field">
+                        <p class="title">Signature :</p>
+                        <p class="entry">
+                            .................................................................................
+                        </p>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let todayField = document.getElementById("today");
+        let today = new Date();
+        let todayStr = `${today.getDate()}/${today.getMonth()}/${today.getFullYear()}`;
+        todayField.innerText = todayStr;
+    </script>
+
 </body>
 
 </html>
