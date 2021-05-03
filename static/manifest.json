@@ -1,7 +1,7 @@
 {
 	"background_color": "#252525",
 	"theme_color": "#252525",
-	"name": "Ganga View",
+	"name": "Shri Ganga View",
 	"short_name": "GangaView",
 	"display": "minimal-ui",
 	"start_url": "/",
@@ -21,6 +21,6 @@
 			"sizes": "512x512",
 			"type": "image/png",
 			"purpose": "any maskable"
-		  }
+		}
 	]
 }

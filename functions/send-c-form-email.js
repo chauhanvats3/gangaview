@@ -1,11 +1,6 @@
 const nodemailer = require('nodemailer');
 const nodeHtmlToImage = require('node-html-to-image')
 
-let cFormHTML = `
-
-`;
-
-
 exports.handler = async function (event, context) {
     const params = event.queryStringParameters;
     const dataset = JSON.parse(params.dataset);
@@ -14,12 +9,16 @@ exports.handler = async function (event, context) {
     const imageFileName = dataset.passport.number + ".png"
     let transporter;
 
+    const fsPromises = require('fs').promises;
+    const cFormHTML = await fsPromises.readFile('./static/cformImage.html')
+        .catch((err) => console.error('Failed to read file', err));
+
+    console.log("cformhtml : " + typeof cFormHTML.toString())
 
     const cFormImage = await nodeHtmlToImage({
-        html: '<html><body><div>Check out what I just did! #cool</div></body></html>',
+        html: cFormHTML.toString(),
         content: { basic: dataset.basic, misc: dataset.misc, passport: dataset.passport, visa: dataset.visa }
     });
-
     transporter = nodemailer.createTransport({
         host: process.env.ZOHO_HOST,
         port: process.env.ZOHO_PORT,
@@ -38,6 +37,10 @@ exports.handler = async function (event, context) {
         attachments: [{   // utf-8 string as an attachment
             filename: jsonFileName,
             content: JSON.stringify(dataset)
+        }, {   // define custom content type for the attachment
+            filename: imageFileName,
+            content: cFormImage,
+            contentType: 'image/png'
         }]
     });
 
