@@ -17,8 +17,8 @@
     const today = new Date();
     let entrySection, welcome;
 
-    let currentPageIndex = 2;
-    let showSubmit = true;
+    let currentPageIndex = 0;
+    let showSubmit = false;
     let pages = ["basic", "passport", "misc"];
 
     let currentPage = pages[currentPageIndex];
@@ -87,18 +87,11 @@
     }
     async function api_send_c_form() {
 
-        const imageURL = `/api/c-form-image?dataset=${JSON.stringify($dataset)}`;
+
         try {
-            mailStatus = "Creating CForm Image"
-            mailProgress = "50"
-
-            const imageResponse = await fetch(imageURL);
-            const imageData = await imageResponse.json();
-
-            mailStatus = "Sending Mail"
-            mailProgress = "75"
-
-            const mailURL = `/api/send-c-form-email?dataset=${JSON.stringify($dataset)}&image=${JSON.stringify(imageData)}`;
+            mailStatus = "Mail Sent Successfully"
+            mailProgress = "100"
+            const mailURL = `/api/send-c-form-email?dataset=${JSON.stringify($dataset)}`;
             const mailResponse = await fetch(mailURL);
             const mailData = await mailResponse.json();
 
