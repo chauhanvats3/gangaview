@@ -22,7 +22,7 @@
 	<Hero />
 	<Testimonials />
 	<OurRooms />
-	<Features />
+	<!-- <Features /> -->
 	<FAQ />
 	<ContactUs />
 

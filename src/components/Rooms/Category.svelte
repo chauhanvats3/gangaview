@@ -172,4 +172,19 @@
         font-family: 'Julius Sans One';
         margin: 10px;
     }
+
+    @media (min-width:1000px) {
+        .category {
+            max-width: 50vw;
+        }
+
+        .cta a div p {
+            font-size: 1.5rem;
+        }
+
+        .pro p,
+        .con p {
+            font-size: 1.2rem;
+        }
+    }
 </style>

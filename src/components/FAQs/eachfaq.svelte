@@ -1,11 +1,11 @@
 <script>
     export let qna;
     export let index = 0;
-    index = (index + 1) % 2;
+    index = (index + 1) % 4;
 
 </script>
 
-<div class="faq {index === 1 ? 'bg1' :'bg2'}">
+<div class="faq {index === 1 ? 'bg1' : index===2?'bg2':index===3?'bg2':'bg1'}">
     <div class="qna">
         <div class="quewrapper">
             <p class="q">Q</p>
@@ -20,7 +20,15 @@
 
 <style>
     .faq {
-        width: 100%;
+        width: 50%;
+        min-width: 500px;
+        flex-grow: 1;
+    }
+
+    @media (max-width:500px) {
+        .faq {
+            min-width: 100%;
+        }
     }
 
     .bg1 {
@@ -54,7 +62,7 @@
     }
 
     .qna {
-        max-width: 75ch;
+        max-width: 55ch;
         width: 100%;
         flex-flow: column nowrap;
     }
@@ -66,7 +74,7 @@
         min-height: 160px;
     }
 
-    @media (max-width:850px) {
+    @media (max-width:600px) {
 
         .quewrapper,
         .answrapper {

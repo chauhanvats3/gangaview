@@ -46,9 +46,11 @@
 
 <div class="rooms">
     <Hero {heroImage} {path} />
-    {#each categories as category,i}
-    <Category {category} index={i} />
-    {/each}
+    <div class="categories">
+        {#each categories as category,i}
+        <Category {category} index={i} />
+        {/each}
+    </div>
 </div>
 
 <style>
@@ -56,5 +58,10 @@
         width: 100%;
         height: 100%;
         flex-flow: column nowrap;
+    }
+
+    .categories {
+        width: 100%;
+        flex-flow: row wrap;
     }
 </style>

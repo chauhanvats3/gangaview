@@ -56,9 +56,11 @@
     <div class="heading">
         <p>Frequently Asked Questions</p>
     </div>
-    {#each faqs as qna,index}
-    <EachFAQ {qna} {index} />
-    {/each}
+    <div class="wrapper">
+        {#each faqs as qna,index}
+        <EachFAQ {qna} {index} />
+        {/each}
+    </div>
 </div>
 
 <style>
@@ -76,5 +78,10 @@
         font-family: 'Julius sans one';
         font-size: 4rem;
         text-align: center;
+    }
+
+    .wrapper {
+        width: 100%;
+        flex-flow: row wrap;
     }
 </style>

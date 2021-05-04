@@ -28,4 +28,10 @@
         align-items: flex-end;
         justify-content: flex-end;
     }
+
+    @media (min-width:1000px) {
+        .hero-section {
+            height: 85vh;
+        }
+    }
 </style>

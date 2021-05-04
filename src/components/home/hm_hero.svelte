@@ -108,4 +108,21 @@
         background: var(--dark-gray);
         font-weight: bold;
     }
+
+    @media (min-width:950px) {
+
+        .tag-line {
+            background: rgba(59, 59, 59, 0.739);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .tag-line h1 {
+            font-size: 3rem;
+        }
+
+        .tag-line p {
+            font-size: 2.5rem;
+        }
+    }
 </style>

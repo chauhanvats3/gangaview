@@ -11,7 +11,7 @@
         font-family: 'Julius Sans One';
         width: 100%;
         height: 65.5px;
-        background-color: white;
+        background-color: var(--dark-gray);
         justify-content: flex-start;
         padding: 0 20px;
     }
@@ -21,7 +21,7 @@
     }
 
     .content {
-        border: 6px solid white;
+        border: 6px solid var(--dark-gray);
         border-top: 0px;
         width: 100%;
         flex-grow: 1;
@@ -35,7 +35,8 @@
 
     .contact {
         width: 100%;
-        flex-flow: column nowrap;
+        flex-flow: row wrap;
+        flex-grow: 1;
     }
 
     .contact>* {

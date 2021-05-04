@@ -1,10 +1,11 @@
 <script>
     export let review;
     export let index;
+    export let width = '100vw';
     index = (index + 1) % 4;
 </script>
 
-<div class="review {index === 1 ? 'bg1' : index === 2 ? 'bg2' : index === 3 ? 'bg3' : 'bg2'}">
+<div class="review {index === 1 ? 'bg1' : index === 2 ? 'bg2' : index === 3 ? 'bg3' : 'bg2'}" style="--width:{width}">
     <div class="wrapper">
         <div class="content">
             <p>{@html review.content}</p>
@@ -17,10 +18,12 @@
 
 <style>
     .review {
-        width: 100vw;
+        width: var(--width);
         min-height: 350px;
         flex-flow: column nowrap;
         padding: 40px 10px;
+        min-width: 300px;
+        flex-grow: 1;
     }
 
     .bg1 {

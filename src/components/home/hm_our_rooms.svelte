@@ -36,14 +36,25 @@
         border-top: 0px;
         width: 100%;
         flex-grow: 1;
-        flex-flow: column nowrap;
+        flex-flow: row wrap;
         justify-content: flex-start;
 
     }
 
     .content>img {
-        width: 100%;
+        width: 50%;
         height: auto;
+        max-height: 50vw;
+        object-fit: cover;
+        min-width: 450px;
+        flex-grow: 1;
+    }
+
+    @media (max-width :450px) {
+
+        .content>img {
+            min-width: 100%;
+        }
     }
 </style>
 
@@ -57,7 +68,8 @@
         </div>
 
         <div class="content">
-            <img src="images/Rooms/view/3.jpg" alt="" width="519" height="519">
+            <img src="images/Rooms/view/1.jpg" alt="">
+            <img src="images/Rooms/double/3.jpg" alt="">
         </div>
     </a>
 </div>
