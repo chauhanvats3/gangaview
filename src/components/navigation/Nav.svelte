@@ -78,7 +78,7 @@
 
 <div class="navbar">
     <div id="logo" class="logo" on:click={()=>logoClicked()}>
-        <a href="." style='text-decoration:none'> <img src="images/Logo/Logo-Full.png" alt="Logo"> </a>
+        <a href="." style='text-decoration:none'> <img src="images/Logo/new-logo.png" alt="Logo"> </a>
     </div>
     <div class="hamburger">
         <Ham on:hamClick={()=>hamClicked(0)} bind:ham />
@@ -108,8 +108,8 @@
 
         img {
             z-index: -1;
-            height: 60px;
-            width: 113.14px;
+            height: 70px;
+            width: 70px;
         }
 
         .logo {
