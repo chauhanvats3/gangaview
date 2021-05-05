@@ -260,7 +260,7 @@
 
         .toast {
             position: fixed;
-            bottom: -15%;
+            bottom: -25%;
             background-color: #000000b9;
             border-radius: 15px;
             z-index: 100;
