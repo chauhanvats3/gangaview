@@ -44,35 +44,6 @@
         font-size: 1.5rem;
     }
 
-    .content {
-        border-top: 0px;
-        width: 100%;
-        flex-grow: 1;
-        flex-flow: column nowrap;
-        justify-content: center;
-        max-width: 75ch;
-    }
-
-    .review {
-        margin: 10%;
-        max-width: 30ch;
-        font-family: 'Quicksand';
-        font-size: 1.4rem;
-        line-height: 2.3rem;
-        letter-spacing: .07rem;
-        word-spacing: .27rem;
-        text-align: left;
-    }
-
-    .author {
-        font-size: 1.7rem;
-        width: 100%;
-        justify-content: flex-end;
-        font-family: 'Julius Sans One';
-        color: #797979;
-        padding: 5px 10%;
-    }
-
     .contents {
         flex-flow: row wrap;
         width: 100%;

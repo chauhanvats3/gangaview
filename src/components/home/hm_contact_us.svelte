@@ -99,7 +99,7 @@
 
 <div class="contact-us" id="contact-us">
     <div class="title">
-        <p class=" gradient-text gradient-blue-pink">Contact Us</p>
+        <p class=" gradient-text gradient-blue-green">Contact Us</p>
     </div>
     <div class="content">
         <div class="contact">

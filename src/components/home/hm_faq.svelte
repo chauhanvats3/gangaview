@@ -13,11 +13,11 @@
 
 <a href="./faqs" class="faqs">
     <div class="title">
-        <p class=" gradient-text gradient-blue-green">FAQs</p>
+        <p class=" gradient-text gradient-blue-pink">FAQs</p>
     </div>
     <div class="wrapper">
         {#each faqs as qna,index}
-        <EachFAQ {qna} {index} />
+        <EachFAQ {qna} index={index+2} />
         {/each}
     </div>
 </a>

@@ -233,6 +233,7 @@
             font-size: 3rem;
             font-family: 'julius sans one';
             margin: 20px auto;
+            font-weight: normal;
         }
 
         .caution {
