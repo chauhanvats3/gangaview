@@ -13,13 +13,14 @@
 
         background: #24B7DB;
 
-        background: -moz-linear-gradient(90deg, #24B7DB, #B7DB24);
-        background: -webkit-linear-gradient(90deg, #24B7DB, #B7DB24);
-        background: linear-gradient(90deg, #24B7DB, #B7DB24);
+        background-image: -moz-linear-gradient(90deg, hsl(192, 72%, 35%), hsl(312, 72%, 35%));
+        background-image: -webkit-linear-gradient(90deg, hsl(192, 72%, 35%), hsl(312, 72%, 35%));
+        background-image: linear-gradient(90deg, hsl(192, 72%, 35%), hsl(312, 72%, 35%))
     }
 
+
     div {
-        color: var(--dark-gray);
+        color: white;
         font-weight: bold;
         letter-spacing: 0.1rem;
         word-spacing: 0.2rem;

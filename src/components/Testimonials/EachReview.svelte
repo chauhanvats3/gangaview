@@ -21,9 +21,9 @@
         width: var(--width);
         min-height: 350px;
         flex-flow: column nowrap;
-        padding: 40px 10px;
         min-width: 300px;
         flex-grow: 1;
+        padding: 80px 10px;
     }
 
     .bg1 {

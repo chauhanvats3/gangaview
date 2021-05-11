@@ -23,6 +23,7 @@
         width: 50%;
         min-width: 500px;
         flex-grow: 1;
+        padding: 80px 10px;
     }
 
     @media (max-width:500px) {

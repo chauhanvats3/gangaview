@@ -27,6 +27,8 @@
         flex-grow: 1;
         flex-flow: column nowrap;
         justify-content: flex-start;
+        padding: 80px 10px;
+        min-height: 500px;
     }
 
     .content>div {
@@ -74,7 +76,8 @@
     }
 
     .number>div>a {
-        margin: 5px 0;
+        margin: 10px 0;
+        padding: 10px 0;
     }
 
     .cta {
