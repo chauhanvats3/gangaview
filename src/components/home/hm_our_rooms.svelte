@@ -1,6 +1,18 @@
 <script>
-
 </script>
+
+<div class="rooms">
+    <a href="./rooms">
+        <div class="title">
+            <p class=" gradient-text gradient-blue-green">Our Rooms</p>
+        </div>
+
+        <div class="content">
+            <img src="images/Rooms/view/1.jpg" alt="" />
+            <img src="images/Rooms/double/3.jpg" alt="" />
+        </div>
+    </a>
+</div>
 
 <style>
     .rooms {
@@ -14,11 +26,10 @@
         text-decoration: none;
         width: 100%;
         flex-flow: column nowrap;
-
     }
 
     .title {
-        font-family: 'Julius Sans One';
+        font-family: "Julius Sans One";
         width: 100%;
         height: 65.5px;
         background-color: var(--dark-gray);
@@ -38,38 +49,20 @@
         flex-grow: 1;
         flex-flow: row wrap;
         justify-content: flex-start;
-
     }
 
-    .content>img {
+    .content > img {
         width: 50%;
         height: auto;
-        max-height: 50vw;
+        max-height: 49vw;
         object-fit: cover;
         min-width: 450px;
         flex-grow: 1;
     }
 
-    @media (max-width :450px) {
-
-        .content>img {
+    @media (max-width: 450px) {
+        .content > img {
             min-width: 100%;
         }
     }
 </style>
-
-<div class="rooms">
-    <a href="./rooms">
-        <div class="title">
-
-            <p class=" gradient-text gradient-blue-green">Our Rooms</p>
-
-
-        </div>
-
-        <div class="content">
-            <img src="images/Rooms/view/1.jpg" alt="">
-            <img src="images/Rooms/double/3.jpg" alt="">
-        </div>
-    </a>
-</div>
