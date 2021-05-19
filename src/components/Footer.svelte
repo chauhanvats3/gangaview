@@ -40,5 +40,5 @@
 
 <div class="footer">
     <div><a href="./sitemap">Sitemap</a></div>
-    <div><a href="https://github.com/chauhanvats3" target="_blank" rel="noreferrer">Made by Vatsal</a></div>
+    <div><a href="https://vatsal.dev" target="_blank" rel="noreferrer">Made by Vatsal</a></div>
 </div>
